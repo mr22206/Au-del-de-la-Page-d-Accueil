@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annexe H : Résolution de Problèmes Techniques &mdash; Rapport de Stage - Fortinet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Annexe G : Suivi Chronologique Détaillé" href="Annexe_G_Suivi_Chronologique_Detaille.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Rapport de Stage - Fortinet
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des Matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00_Page_de_Garde.html">Page de Garde</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Fiche_Confidentialite.html">Fiche de confidentialité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_Remerciements.html">Remerciements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Resume_Francais_Anglais.html">Résumé Français et Anglais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_Introduction_Generale.html">Introduction Générale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Developpement_Principal/index.html">Le Cœur du Sujet : L’Usine Logicielle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_Conclusion_et_Perspectives.html">Conclusion et perspectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Bibliographie.html">Bibliographie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_Glossaire.html">Glossaire</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Annexes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Annexe_A_Diagrammes_Architecture.html">Annexe A : Diagrammes d’Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_B_Le_Pipeline_Parent.html">Annexe B : Le Pipeline Parent (<code class="docutils literal notranslate"><span class="pre">docs-index</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_C_Le_Pipeline_Enfant_Type.html">Annexe C : Le Pipeline Enfant Type (<code class="docutils literal notranslate"><span class="pre">project-template-hub</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_D_Environnement_de_Construction.html">Annexe D : Environnement de Construction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_E_Systeme_de_Metadonnees.html">Annexe E : Le Système de Métadonnées</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_F_Laboratoire_ETLab_et_Configuration_SAML.html">Annexe F : Laboratoire ETLab et Configuration SAML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html">Annexe G : Suivi Chronologique Détaillé</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html#suivi-chronologique-avril-2025">Suivi Chronologique - Avril 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html#suivi-chronologique-mai-2025">Suivi Chronologique - Mai 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html#suivi-chronologique-juin-2025">Suivi Chronologique - Juin 2025</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Annexe H : Résolution de Problèmes Techniques</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#le-defi-de-l-environnement-python-externally-managed-environment">Le Défi de l’Environnement Python (<code class="docutils literal notranslate"><span class="pre">externally-managed-environment</span></code>)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#le-probleme">Le Problème</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#la-solution-l-isolation-par-environnement-virtuel">La Solution : L’Isolation par Environnement Virtuel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Rapport de Stage - Fortinet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Annexes</a></li>
+      <li class="breadcrumb-item active">Annexe H : Résolution de Problèmes Techniques</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Rapport_Stage/10_Annexes/Annexe_H_Resolution_de_Problemes_Techniques.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="annexe-h-resolution-de-problemes-techniques">
+<span id="annexe-h-resolution-problemes"></span><h1>Annexe H : Résolution de Problèmes Techniques<a class="headerlink" href="#annexe-h-resolution-de-problemes-techniques" title="Link to this heading"></a></h1>
+<p>Cette annexe détaille certains des problèmes techniques rencontrés durant le projet et les solutions qui ont été apportées.</p>
+<section id="le-defi-de-l-environnement-python-externally-managed-environment">
+<h2>Le Défi de l’Environnement Python (<code class="docutils literal notranslate"><span class="pre">externally-managed-environment</span></code>)<a class="headerlink" href="#le-defi-de-l-environnement-python-externally-managed-environment" title="Link to this heading"></a></h2>
+<p>Lors de la mise en place des environnements de développement et des pipelines, une erreur récurrente est apparue sur les systèmes basés sur Debian (utilisés par les conteneurs Docker et certains postes sous WSL) lors de l’installation de dépendances Python avec <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<section id="le-probleme">
+<h3>Le Problème<a class="headerlink" href="#le-probleme" title="Link to this heading"></a></h3>
+<p>L’exécution de la commande <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> provoquait l’erreur suivante :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+error:<span class="w"> </span>externally-managed-environment
+×<span class="w"> </span>This<span class="w"> </span>environment<span class="w"> </span>is<span class="w"> </span>externally<span class="w"> </span>managed
+╰─&gt;<span class="w"> </span>To<span class="w"> </span>install<span class="w"> </span>Python<span class="w"> </span>packages<span class="w"> </span>system-wide,<span class="w"> </span>use<span class="w"> </span>apt-get.
+<span class="w">    </span>To<span class="w"> </span>install<span class="w"> </span>Python<span class="w"> </span>packages<span class="w"> </span>into<span class="w"> </span>an<span class="w"> </span>environment,<span class="w"> </span>create<span class="w"> </span>a<span class="w"> </span>virtual
+<span class="w">    </span>environment<span class="w"> </span>using<span class="w"> </span><span class="sb">`</span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv<span class="sb">`</span>.
+</pre></div>
+</div>
+<p>Cette erreur, introduite dans les versions récentes de Debian et Python, vise à empêcher les utilisateurs de modifier l’environnement Python global du système, ce qui peut casser des dépendances système et rendre le système instable.</p>
+</section>
+<section id="la-solution-l-isolation-par-environnement-virtuel">
+<h3>La Solution : L’Isolation par Environnement Virtuel<a class="headerlink" href="#la-solution-l-isolation-par-environnement-virtuel" title="Link to this heading"></a></h3>
+<p>La solution, recommandée par le message d’erreur lui-même, est d’adopter les bonnes pratiques de développement Python en isolant les dépendances de chaque projet dans un <strong>environnement virtuel</strong>.</p>
+<p>La procédure suivante a été adoptée et documentée pour tous les développeurs :</p>
+<ol class="arabic">
+<li><p><strong>Installer le paquet <code class="docutils literal notranslate"><span class="pre">venv</span></code> de Python :</strong>
+S’assurer que le module permettant de créer des environnements virtuels est bien présent.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3.12-venv
+</pre></div>
+</div>
+</li>
+<li><p><strong>Créer l’environnement virtuel :</strong>
+Dans le dossier du projet, créer un sous-dossier (par convention, <code class="docutils literal notranslate"><span class="pre">venv</span></code>) qui contiendra une copie de l’interpréteur Python et de ses librairies.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</pre></div>
+</div>
+</li>
+<li><p><strong>Activer l’environnement :</strong>
+Avant chaque session de travail, il faut “activer” cet environnement. Le prompt du terminal change alors pour indiquer que l’on travaille bien dans l’environnement isolé.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+<span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>$
+</pre></div>
+</div>
+</li>
+<li><p><strong>Installer les dépendances :</strong>
+Une fois l’environnement activé, la commande <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> fonctionne sans erreur et installe les paquets uniquement dans <code class="docutils literal notranslate"><span class="pre">venv</span></code>, sans affecter le système global.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<span class="c1"># Succès !</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Cette démarche a non seulement résolu le problème technique, mais a aussi permis de standardiser les pratiques de développement au sein de l’équipe, garantissant que chaque projet ait des dépendances isolées et reproductibles.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Annexe_G_Suivi_Chronologique_Detaille.html" class="btn btn-neutral float-left" title="Annexe G : Suivi Chronologique Détaillé" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Rezki Mohammad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

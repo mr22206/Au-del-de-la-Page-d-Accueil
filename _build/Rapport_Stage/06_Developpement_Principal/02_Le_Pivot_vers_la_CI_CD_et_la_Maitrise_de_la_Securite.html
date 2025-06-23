@@ -1,0 +1,214 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre 2 : La Réponse Architecturale - Concevoir l’Usine Logicielle &mdash; Rapport de Stage - Fortinet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+      <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+      <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+      <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapitre 3 : L’Usine Logicielle en Action" href="03_La_Plateforme_CI_CD_En_Action.html" />
+    <link rel="prev" title="Chapitre 1 : D’un Succès Rapide à une Remise en Question Fondamentale" href="01_La_Mission_et_Le_Mur.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Rapport de Stage - Fortinet
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des Matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00_Page_de_Garde.html">Page de Garde</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Fiche_Confidentialite.html">Fiche de confidentialité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_Remerciements.html">Remerciements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Resume_Francais_Anglais.html">Résumé Français et Anglais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_Introduction_Generale.html">Introduction Générale</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Le Cœur du Sujet : L’Usine Logicielle</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_La_Mission_et_Le_Mur.html">Chapitre 1 : D’un Succès Rapide à une Remise en Question Fondamentale</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Chapitre 2 : La Réponse Architecturale - Concevoir l’Usine Logicielle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#le-choix-de-l-architecture-ci-cd-distribuee">2.1 Le Choix de l’Architecture : CI/CD Distribuée</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#avant-le-monolithe-fragile">AVANT : Le Monolithe Fragile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#apres-l-usine-distribuee-et-robuste">APRÈS : L’Usine Distribuée et Robuste</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#la-standardisation-le-pilier-de-l-usine">2.2 La Standardisation : Le Pilier de l’Usine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="03_La_Plateforme_CI_CD_En_Action.html">Chapitre 3 : L’Usine Logicielle en Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_Le_Defi_de_la_Securite_Maitriser_l_Authentification.html">Chapitre 4 : Le Défi de la Sécurité - Maîtriser l’Authentification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_Power_BI_pour_Analyser_l_Utilisation_de_la_Documentation.html">Chapitre 5 : Mission Secondaire - Analyse Préparatoire pour Power BI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../07_Conclusion_et_Perspectives.html">Conclusion et perspectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Bibliographie.html">Bibliographie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_Glossaire.html">Glossaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_Annexes/index.html">Annexes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Rapport de Stage - Fortinet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Le Cœur du Sujet : L’Usine Logicielle</a></li>
+      <li class="breadcrumb-item active">Chapitre 2 : La Réponse Architecturale - Concevoir l’Usine Logicielle</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Rapport_Stage/06_Developpement_Principal/02_Le_Pivot_vers_la_CI_CD_et_la_Maitrise_de_la_Securite.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chapitre-2-la-reponse-architecturale-concevoir-l-usine-logicielle">
+<h1>Chapitre 2 : La Réponse Architecturale - Concevoir l’Usine Logicielle<a class="headerlink" href="#chapitre-2-la-reponse-architecturale-concevoir-l-usine-logicielle" title="Link to this heading"></a></h1>
+<p>Face au mur du “zéro exécution”, la solution était de déplacer toute l’intelligence de la production en amont. L’idée est simple : si rien ne peut être construit sur le serveur, alors tout doit être construit <strong>avant</strong> d’y arriver. Cette idée est le fondement de l’usine logicielle qu’il a fallu concevoir.</p>
+<section id="le-choix-de-l-architecture-ci-cd-distribuee">
+<h2>2.1 Le Choix de l’Architecture : CI/CD Distribuée<a class="headerlink" href="#le-choix-de-l-architecture-ci-cd-distribuee" title="Link to this heading"></a></h2>
+<p>Plutôt qu’un unique et massif pipeline monolithique, le choix s’est porté sur une <strong>architecture CI/CD distribuée</strong>, basée sur un modèle “Parent/Enfant” sur GitLab.</p>
+<p>Ce découplage est stratégique : il <strong>isole la logique de construction</strong> (spécifique à chaque projet de documentation “enfant”) de la <strong>logique d’orchestration et de déploiement</strong> (gérée par le projet “parent”). Cette séparation des préoccupations est la clé de voûte de la robustesse et de la maintenabilité du système.</p>
+<ul class="simple">
+<li><p><strong>Les Pipelines Enfants (dans chaque projet de documentation) :</strong> Ils agissent comme des “usines de production” locales et autonomes. Leur seule responsabilité est de valider et de construire <em>leur propre</em> documentation en un site HTML statique impeccable.</p></li>
+<li><p><strong>Le Pipeline Parent (central) :</strong> Il joue le rôle de chef d’orchestre. Sa mission est de récupérer les sites construits par les enfants, de les assembler en un portail unifié et de déployer l’ensemble sur le serveur de production.</p></li>
+</ul>
+<p>Le passage du modèle monolithique à l’architecture distribuée a résolu le problème de la fragilité.</p>
+<section id="avant-le-monolithe-fragile">
+<h3>AVANT : Le Monolithe Fragile<a class="headerlink" href="#avant-le-monolithe-fragile" title="Link to this heading"></a></h3>
+<p>Le modèle initial reposait sur un script complexe et centralisé, créant un point de défaillance unique (<em>Single Point of Failure</em>). La moindre erreur dans ce script paralysait les mises à jour pour tous les projets.</p>
+<pre  class="mermaid">
+        %%{init: {'theme': 'neutral'}}%%
+graph TB
+    subgraph &quot;Développeurs&quot;
+        direction LR
+        Dev1[Dev 1]
+        Dev2[Dev 2]
+        Dev3[...]
+    end
+
+    Script(&quot;
+        &lt;b&gt;Script Central Monolithique&lt;/b&gt;
+        - Gère tous les projets
+        - Logique complexe
+        - Single Point of Failure
+    &quot;)
+
+    Resultat(&quot;fa:fa-bomb &lt;b&gt;Casse pour tout le monde&lt;/b&gt;&lt;br&gt;si le script a un bug&quot;)
+
+    Dev1 --&gt; Script
+    Dev2 --&gt; Script
+    Dev3 --&gt; Script
+    Script -.-&gt; Resultat
+
+    style Script fill:#F8D7DA,stroke:#DC3545,stroke-width:2px
+    style Resultat fill:#F8D7DA,stroke:#DC3545,stroke-width:2px
+    </pre></section>
+<section id="apres-l-usine-distribuee-et-robuste">
+<h3>APRÈS : L’Usine Distribuée et Robuste<a class="headerlink" href="#apres-l-usine-distribuee-et-robuste" title="Link to this heading"></a></h3>
+<p>La nouvelle architecture isole chaque projet dans son propre pipeline. Le “Chef d’Orchestre” se contente d’assembler les livrables, sans connaître la logique de construction interne de chaque projet. Une erreur dans un projet n’impacte plus les autres.</p>
+<pre  class="mermaid">
+        %%{init: {'theme': 'neutral'}}%%
+graph TB
+    Chef(&quot;&lt;b&gt;Chef d'Orchestre Central&lt;/b&gt;&lt;br&gt;&lt;i&gt;Pipeline Parent&lt;/i&gt;&lt;br&gt;Assemble et déploie&quot;)
+    
+    subgraph &quot;Projets Autonomes&quot;
+        direction LR
+        Enfant1[&quot;&lt;b&gt;Doc A&lt;/b&gt;&lt;br&gt;&lt;i&gt;Pipeline Enfant&lt;/i&gt;&lt;br&gt;Construit son site&quot;]
+        Enfant2[&quot;&lt;b&gt;Doc B&lt;/b&gt;&lt;br&gt;&lt;i&gt;Pipeline Enfant&lt;/i&gt;&lt;br&gt;Construit son site&quot;]
+    end
+
+    Enfant1 -- &quot;Envoie son livrable&quot; --&gt; Chef
+    Enfant2 -- &quot;Envoie son livrable&quot; --&gt; Chef
+    
+    style Chef fill:#d1e7dd,stroke:#198754,stroke-width:2px
+    style Enfant1 fill:#cfe2ff,stroke:#0d6efd,stroke-width:2px
+    style Enfant2 fill:#cfe2ff,stroke:#0d6efd,stroke-width:2px
+    </pre></section>
+</section>
+<section id="la-standardisation-le-pilier-de-l-usine">
+<h2>2.2 La Standardisation : Le Pilier de l’Usine<a class="headerlink" href="#la-standardisation-le-pilier-de-l-usine" title="Link to this heading"></a></h2>
+<p>Pour qu’une usine fonctionne, chaque composant doit être standardisé. Trois éléments ont été créés pour garantir cette homogénéité :</p>
+<ol class="arabic simple">
+<li><p><strong>Le Template de Projet (<code class="docutils literal notranslate"><span class="pre">project-template-hub</span></code>) :</strong> Un squelette de projet GitLab qui contient toute la structure de dossiers, la configuration Sphinx et surtout le pipeline Enfant préconfiguré. Tout nouveau projet de documentation est un clone de ce template.</p></li>
+<li><p><strong>L’Image Docker (<code class="docutils literal notranslate"><span class="pre">dev_container_image</span></code>) :</strong> L’environnement de construction unique et universel. Cette image contient tous les outils (Sphinx, Python, etc.) et toutes les dépendances, garantissant que chaque site est construit exactement de la même manière. C’est la “source de vérité” de l’environnement, comme détaillé en <a class="reference internal" href="../10_Annexes/Annexe_D_Environnement_de_Construction.html#annexe-d-environnement-de-construction"><span class="std std-ref">Annexe D : Environnement de Construction</span></a>.</p></li>
+<li><p><strong>Les Listes de Métadonnées (<code class="docutils literal notranslate"><span class="pre">env-lists</span></code>) :</strong> Un dépôt central qui définit les valeurs autorisées pour les métadonnées de classification (groupes, priorités…). Cela assure la cohérence des filtres de recherche sur le portail final (voir <a class="reference internal" href="../10_Annexes/Annexe_E_Systeme_de_Metadonnees.html#annexe-e-systeme-de-metadonnees"><span class="std std-ref">Annexe E : Le Système de Métadonnées</span></a>).</p></li>
+</ol>
+<p>Avec cette architecture et ces piliers de standardisation, le plan de l’usine logicielle était prêt. Le chapitre suivant explique comment cette usine a été mise en action et comment elle fonctionne du point de vue de l’utilisateur.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="01_La_Mission_et_Le_Mur.html" class="btn btn-neutral float-left" title="Chapitre 1 : D’un Succès Rapide à une Remise en Question Fondamentale" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_La_Plateforme_CI_CD_En_Action.html" class="btn btn-neutral float-right" title="Chapitre 3 : L’Usine Logicielle en Action" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Rezki Mohammad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

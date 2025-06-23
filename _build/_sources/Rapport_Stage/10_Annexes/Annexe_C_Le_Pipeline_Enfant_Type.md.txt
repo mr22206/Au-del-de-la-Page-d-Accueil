@@ -1,0 +1,37 @@
+(annexe-c-le-pipeline-enfant-type)=
+# Annexe C : Le Pipeline Enfant Type (`project-template-hub`)
+
+Le pipeline Enfant est le cœur de la standardisation et de la production de chaque documentation individuelle. Il est fourni par le template de projet `project-template-hub` et son fichier `.gitlab-ci.yml` est conçu pour être à la fois un constructeur, un gardien de la qualité et un déclencheur.
+
+Il s'articule autour de plusieurs étapes (`stages`) : `check`, `clean`, `build`, et `trigger`.
+
+## Fichier `.gitlab-ci.yml` du Template Enfant (Analyse)
+
+Voici une analyse des `jobs` les plus stratégiques de ce pipeline.
+
+### Étape `check` : Validation et Standardisation
+
+Cette étape est cruciale et se déroule avant même toute tentative de construction.
+
+1.  **`fetch_env_lists` :** Ce `job` clone le projet `env-lists` pour récupérer les listes de valeurs autorisées pour les métadonnées (priorité, groupe thématique, etc.).
+
+2.  **`prepare_env` :** Ce `job` est une véritable moulinette de préparation et de validation. Il prend le fichier `project.env` de l'utilisateur et :
+    -   **Injecte des variables dynamiques :** Il ajoute automatiquement des informations issues de GitLab comme le nom du projet, l'URL du pipeline, etc.
+    -   **Enrichit via l'API GitLab :** Il utilise un token pour appeler l'API GitLab et récupérer des métadonnées comme le nom du créateur, les dates, et la description du projet, pour les injecter dans la configuration.
+    -   **Valide les métadonnées :** Il vérifie que les valeurs fournies par l'utilisateur (ex: `META_GROUP=SASE`) sont bien présentes dans les listes autorisées récupérées précédemment. Si une valeur est invalide, le pipeline échoue immédiatement.
+    -   **Génère un fichier de configuration final (`project.env.tmp`)** qui sera utilisé par les étapes suivantes.
+
+3.  **`check` (Le Gardien du Temple) :** C'est le `job` d'auto-correction.
+    -   **Rôle :** Garantir la standardisation absolue.
+    -   **Mécanisme :** Il compare les fichiers de configuration critiques du projet (`.gitlab-ci.yml`, `Makefile`, `conf.py`...) avec la version "de référence" stockée dans l'image Docker `dev_container_image`.
+    -   **Auto-correction :** Si un fichier a été modifié ou est manquant, le script le remplace automatiquement par la version standard, `commit` la correction, et la `push` sur la branche. Le développeur est ainsi notifié que son projet a été remis en conformité, sans aucune intervention manuelle.
+
+### Étape `build` : La Construction du Site
+
+-   **`build` :** Ce `job` est la ligne de production. Il installe les dépendances Python, utilise le fichier `project.env.tmp` validé pour la configuration, et lance la commande `make html`. Cette dernière orchestre `sphinx-build` pour transformer les sources Markdown en un site HTML complet. Le résultat est sauvegardé en tant qu'artefact GitLab, prêt à être récupéré par le pipeline Parent.
+
+### Étape `trigger` : Le Passage de Relais
+
+-   **`trigger_docs_index` :** C'est l'étape finale. Après un `build` réussi, ce `job` utilise `curl` pour appeler l'API de "trigger" du pipeline Parent (`docs-index`). Il lui transmet des informations cruciales comme le message de commit et le nom du projet, pour que le Parent sache quelle action effectuer (publication ou dépublication).
+
+Ce pipeline enfant est donc bien plus qu'un simple script de build : c'est un système complet qui garantit la qualité, la conformité et la bonne communication avec l'orchestrateur central.

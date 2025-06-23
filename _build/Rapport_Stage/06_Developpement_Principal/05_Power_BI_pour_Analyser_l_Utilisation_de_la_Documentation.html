@@ -1,0 +1,178 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre 5 : Mission Secondaire - Analyse Préparatoire pour Power BI &mdash; Rapport de Stage - Fortinet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+      <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+      <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+      <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Conclusion et perspectives" href="../07_Conclusion_et_Perspectives.html" />
+    <link rel="prev" title="Chapitre 4 : Le Défi de la Sécurité - Maîtriser l’Authentification" href="04_Le_Defi_de_la_Securite_Maitriser_l_Authentification.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Rapport de Stage - Fortinet
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des Matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00_Page_de_Garde.html">Page de Garde</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Fiche_Confidentialite.html">Fiche de confidentialité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_Remerciements.html">Remerciements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Resume_Francais_Anglais.html">Résumé Français et Anglais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_Introduction_Generale.html">Introduction Générale</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Le Cœur du Sujet : L’Usine Logicielle</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_La_Mission_et_Le_Mur.html">Chapitre 1 : D’un Succès Rapide à une Remise en Question Fondamentale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Le_Pivot_vers_la_CI_CD_et_la_Maitrise_de_la_Securite.html">Chapitre 2 : La Réponse Architecturale - Concevoir l’Usine Logicielle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_La_Plateforme_CI_CD_En_Action.html">Chapitre 3 : L’Usine Logicielle en Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_Le_Defi_de_la_Securite_Maitriser_l_Authentification.html">Chapitre 4 : Le Défi de la Sécurité - Maîtriser l’Authentification</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Chapitre 5 : Mission Secondaire - Analyse Préparatoire pour Power BI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#le-besoin-d-une-vision-operationnelle-a-une-vision-strategique">5.1 Le Besoin : D’une Vision Opérationnelle à une Vision Stratégique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#l-analyse-des-donnees-existantes-et-le-constat">5.2 L’Analyse des Données Existantes et le Constat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#la-contribution-specification-et-preparation">5.3 La Contribution : Spécification et Préparation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../07_Conclusion_et_Perspectives.html">Conclusion et perspectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Bibliographie.html">Bibliographie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_Glossaire.html">Glossaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_Annexes/index.html">Annexes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Rapport de Stage - Fortinet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Le Cœur du Sujet : L’Usine Logicielle</a></li>
+      <li class="breadcrumb-item active">Chapitre 5 : Mission Secondaire - Analyse Préparatoire pour Power BI</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Rapport_Stage/06_Developpement_Principal/05_Power_BI_pour_Analyser_l_Utilisation_de_la_Documentation.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chapitre-5-mission-secondaire-analyse-preparatoire-pour-power-bi">
+<h1>Chapitre 5 : Mission Secondaire - Analyse Préparatoire pour Power BI<a class="headerlink" href="#chapitre-5-mission-secondaire-analyse-preparatoire-pour-power-bi" title="Link to this heading"></a></h1>
+<p>En parallèle du projet d’infrastructure CI/CD, une mission secondaire m’a été confiée : analyser la faisabilité de la création de tableaux de bord Power BI pour le suivi de l’activité de l’équipe <em>Consulting Systems Engineering</em>. Cette mission, initialement perçue comme un projet de développement, s’est transformée en une phase cruciale d’analyse et de spécification, révélant des prérequis techniques indispensables avant de pouvoir entamer la phase de visualisation.</p>
+<section id="le-besoin-d-une-vision-operationnelle-a-une-vision-strategique">
+<h2>5.1 Le Besoin : D’une Vision Opérationnelle à une Vision Stratégique<a class="headerlink" href="#le-besoin-d-une-vision-operationnelle-a-une-vision-strategique" title="Link to this heading"></a></h2>
+<p>L’équipe utilisait des outils basés sur Microsoft Power Automate pour le suivi quotidien de ses projets. Ces outils, très efficaces sur le plan opérationnel, généraient une grande quantité de données qui n’étaient pas exploitées pour une analyse stratégique. Le management manquait de tableaux de bord pour répondre à des questions clés :</p>
+<ul class="simple">
+<li><p>Quelle est la charge de travail actuelle de l’équipe ?</p></li>
+<li><p>Quelles sont les performances comparées d’une année sur l’autre ?</p></li>
+<li><p>Quels projets sont en sommeil ou en dérive par rapport à leurs objectifs initiaux ?</p></li>
+</ul>
+<p>L’objectif était de transformer ces données brutes en indicateurs de performance (KPIs) via Power BI.</p>
+</section>
+<section id="l-analyse-des-donnees-existantes-et-le-constat">
+<h2>5.2 L’Analyse des Données Existantes et le Constat<a class="headerlink" href="#l-analyse-des-donnees-existantes-et-le-constat" title="Link to this heading"></a></h2>
+<p>La première étape a été de plonger dans les sources de données (principalement des listes SharePoint alimentées par Power Automate) pour en comprendre la structure et la qualité.</p>
+<p>Cette analyse a rapidement mis en lumière un obstacle majeur : <strong>les données nécessaires à la création des indicateurs souhaités n’étaient pas toutes présentes.</strong> Par exemple, pour comparer les performances annuelles, il manquait des champs de date standardisés et fiables. Pour identifier les projets “dormants”, il n’existait pas de champ “dernière activité” systématiquement mis à jour.</p>
+</section>
+<section id="la-contribution-specification-et-preparation">
+<h2>5.3 La Contribution : Spécification et Préparation<a class="headerlink" href="#la-contribution-specification-et-preparation" title="Link to this heading"></a></h2>
+<p>Mon rôle a donc pivoté de “développeur Power BI” à “analyste fonctionnel”. Ma contribution principale sur ce projet a été de :</p>
+<ol class="arabic simple">
+<li><p><strong>Identifier les données manquantes :</strong> J’ai produit un document détaillant précisément les champs et les informations qui devaient être ajoutés aux outils Power Automate pour permettre un reporting pertinent.</p></li>
+<li><p><strong>Spécifier les évolutions nécessaires :</strong> En collaboration avec les responsables de l’équipe, j’ai défini les modifications à apporter aux processus et aux outils existants. Ces spécifications ont été transmises à un collègue expert de l’environnement Power Platform, qui a pris en charge leur implémentation.</p></li>
+<li><p><strong>Concevoir un modèle de données cible :</strong> J’ai créé une première ébauche du modèle de données (schéma en étoile) qui pourrait être utilisée dans Power BI <em>une fois</em> que les données nécessaires seraient disponibles. Ce flux est illustré ci-dessous.</p></li>
+</ol>
+<pre  class="mermaid">
+        graph LR
+    A[&quot;Power Automate&lt;br&gt;&lt;i&gt;Source de données&lt;/i&gt;&quot;] --&gt; B[&quot;Listes SharePoint&lt;br&gt;&lt;i&gt;Stockage structuré&lt;/i&gt;&quot;];
+    B --&gt; C[&quot;Power BI&lt;br&gt;&lt;i&gt;Modélisation &amp; DAX&lt;/i&gt;&quot;];
+    C --&gt; D[&quot;Tableaux de Bord&lt;br&gt;&lt;i&gt;Rapports Stratégiques&lt;/i&gt;&quot;];
+    </pre><ol class="arabic simple" start="4">
+<li><p><strong>Développer une preuve de concept (PoC) :</strong> Sur la base de données d’exemple que j’ai créées manuellement, j’ai développé un tableau de bord Power BI prototype. Ce PoC avait un double objectif :</p>
+<ul class="simple">
+<li><p>Valider la pertinence des visualisations et des indicateurs envisagés.</p></li>
+<li><p>Servir de démonstration tangible pour convaincre de la valeur du projet et justifier l’effort de développement nécessaire sur Power Automate.</p></li>
+</ul>
+</li>
+</ol>
+<p>En conclusion, bien que ce projet n’ait pas abouti à la mise en production d’un tableau de bord complet durant mon stage, mon travail d’analyse et de spécification a été l’étape préparatoire indispensable sans laquelle le projet n’aurait pas pu aboutir. J’ai “déminé” le terrain, identifié les prérequis et fourni un plan d’action clair pour la suite.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="04_Le_Defi_de_la_Securite_Maitriser_l_Authentification.html" class="btn btn-neutral float-left" title="Chapitre 4 : Le Défi de la Sécurité - Maîtriser l’Authentification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../07_Conclusion_et_Perspectives.html" class="btn btn-neutral float-right" title="Conclusion et perspectives" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Rezki Mohammad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

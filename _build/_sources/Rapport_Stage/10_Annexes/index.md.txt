@@ -1,0 +1,18 @@
+# Annexes
+
+Voici une liste des annexes qui complètent ce rapport. Elles fournissent des détails techniques, des configurations, des scripts et d'autres informations qui appuient le contenu des chapitres principaux.
+
+La structure suit une progression logique, de la vue d'ensemble de l'architecture aux détails d'implémentation spécifiques, pour finir par les aspects contextuels du projet.
+
+```{toctree}
+:maxdepth: 1
+
+Annexe_A_Diagrammes_Architecture.md
+Annexe_B_Le_Pipeline_Parent.md
+Annexe_C_Le_Pipeline_Enfant_Type.md
+Annexe_D_Environnement_de_Construction.md
+Annexe_E_Systeme_de_Metadonnees.md
+Annexe_F_Laboratoire_ETLab_et_Configuration_SAML.md
+Annexe_G_Suivi_Chronologique_Detaille.md
+Annexe_H_Resolution_de_Problemes_Techniques.md
+``` 

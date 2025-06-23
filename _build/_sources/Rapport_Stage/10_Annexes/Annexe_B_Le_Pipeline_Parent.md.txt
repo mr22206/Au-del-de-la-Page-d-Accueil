@@ -1,0 +1,103 @@
+(annexe-b-le-pipeline-parent)=
+# Annexe B : Le Pipeline Parent (`docs-index`)
+
+Le pipeline Parent est le chef d'orchestre de chaque silo de visibilité. Il est hébergé dans un projet **toujours nommé `docs-index`**, qui est lui-même situé dans un groupe GitLab spécifique (par exemple, le groupe `Public` ou le groupe `Core_tech`). C'est l'appartenance à ce groupe qui détermine la portée et la visibilité du Hub.
+
+La mission de ce pipeline est de récupérer les documentations construites par les pipelines Enfants de son silo, de les assembler en un portail unifié, de générer un index de recherche global, et de déployer le tout sur le serveur de production correspondant.
+
+Son fonctionnement est défini dans le fichier `.gitlab-ci.yml`.
+
+## Fichier `.gitlab-ci.yml` du Pipeline Parent
+
+Le pipeline est structuré en quatre étapes principales (`stages`) : `build_image`, `fetch`, `index`, et `deploy`. Il est conçu pour être déclenché (`triggered`) par un pipeline enfant.
+
+```yaml
+stages:
+  - build_image
+  - fetch
+  - index
+  - deploy
+
+# ... (Jobs de build d'images Docker : build_docker_image, build_deploy_image, ...)
+# Ces jobs construisent et publient les images Docker utilisées par les autres étapes.
+# Ils ne s'exécutent que si les Dockerfiles correspondants sont modifiés.
+
+fetch_artifacts:
+  stage: fetch
+  image: python:3.10
+  script:
+    - pip install python-gitlab
+    - python scripts/fetch_child_artifacts.py
+    - mkdir -p Public
+  artifacts:
+    paths:
+      - Public/
+  rules:
+    - if: '$CHILD_COMMIT_MESSAGE =~ /web-pub/ || $CHILD_COMMIT_MESSAGE =~ /web-unpub/'
+
+index_and_build:
+  stage: index
+  image: $CI_REGISTRY_IMAGE:build
+  script:
+    - python gen_index.py
+  artifacts:
+    paths:
+      - Docs_Home/
+      - Public/docs_pagefind/
+      - Public/docs_merged/
+  needs: [fetch_artifacts]
+  rules:
+    # ...
+
+deploy:
+  stage: deploy
+  image: $CI_REGISTRY_IMAGE:deploy
+  before_script:
+    # Configuration de la clé SSH pour le déploiement
+  script: |
+    if echo "$CHILD_COMMIT_MESSAGE" | grep -q "web-pub"; then
+      # Déploie le contenu via rsync
+      rsync -av ... Public/docs_merged/ ...
+    elif echo "$CHILD_COMMIT_MESSAGE" | grep -q "web-unpub"; then
+      # Supprime le dossier du projet dés-publié via ssh
+      ssh ... "rm -rf /path/to/docs_merged/$CHILD_PROJECT_NAME"
+      # Met à jour le reste via rsync
+    fi
+  needs: [index_and_build]
+  rules:
+    # ...
+```
+
+### Analyse des Étapes Clés
+
+1.  **`fetch_artifacts` (Récupération des "colis")**
+    Ce `job` exécute le script `scripts/fetch_child_artifacts.py`. Ce script Python est le cœur de la logique de récupération. Il se connecte à l'API GitLab, parcourt tous les projets du groupe de documentation, et pour chaque projet, il trouve le dernier pipeline réussi sur la branche `main`. Il télécharge alors les artefacts du `job` "build" de ce pipeline (le site HTML statique) et les place dans un dossier local `Public/`.
+
+2.  **`index_and_build` (Assemblage et Indexation)**
+    Une fois tous les sites enfants rapatriés, ce `job` exécute le script `gen_index.py`. Ce script (non détaillé ici) a plusieurs rôles :
+    - Il fusionne les contenus dans une arborescence unique.
+    - Il génère la page d'accueil principale du Hub.
+    - Il lance la commande `pagefind` pour créer l'index de recherche unifié sur l'ensemble des contenus fusionnés.
+
+3.  **`deploy` (Livraison)**
+    C'est la dernière étape. En fonction du mot-clé (`[web-pub]` ou `[web-unpub]`) présent dans le message de commit du projet enfant (transmis via variable d'environnement), ce `job` effectue l'action appropriée :
+    - **Pour `[web-pub]` :** Il utilise `rsync` pour copier l'intégralité du contenu mis à jour vers le serveur de production.
+    - **Pour `[web-unpub]` :** Il utilise `ssh` pour se connecter au serveur et supprimer le répertoire du projet concerné, puis `rsync` pour mettre à jour l'index et la page d'accueil.
+
+Cette orchestration garantit une mise à jour fiable, automatisée et centralisée du portail de documentation.
+
+## Analyse du Script d'Assemblage `gen_index.py`
+
+Le `job` `index_and_build` exécute un script Python, `gen_index.py`, qui est le véritable cerveau de l'assemblage du portail. Voici sa logique de fonctionnement :
+
+1.  **Collecte des Métadonnées :** Le script scanne le répertoire `Public/` pour lire le fichier `project.env` de chaque projet enfant et en extraire les métadonnées (titre, groupe, tags, etc.).
+
+2.  **Génération du `cards.json` :** Les métadonnées sont compilées dans un fichier `cards.json`, utilisé par la page d'accueil pour afficher les cartes de projet interactives.
+
+3.  **Injection des Métadonnées HTML :** C'est une étape cruciale pour la recherche. Le script parcourt ensuite les fichiers HTML de chaque documentation enfant pour y injecter les métadonnées correspondantes sous forme de balises `meta` invisibles (ex: `<meta name="author" content="John Doe">`). C'est cette injection qui permet à l'outil de recherche Pagefind de proposer des filtres de recherche avancés (par auteur, par groupe, etc.).
+
+4.  **Mise à jour de la Table des Matières et Compilation :** Le script met à jour dynamiquement le fichier `index.rst` de la page d'accueil pour y insérer des tables des matières (`toctree`) par groupe, puis lance la compilation de la page d'accueil via `make html`.
+
+5.  **Lancement de l'Indexation Pagefind :** Enfin, une fois tous les contenus assemblés et enrichis des métadonnées, le script lance la commande `pagefind`. L'outil scanne alors les fichiers HTML, lit les balises `meta` standards et les balises `data-pagefind` spécifiques pour construire son index de recherche.
+
+Ce script est donc un exemple concret d'automatisation avancée, transformant des données de configuration brutes en une expérience utilisateur riche et fonctionnelle, tant pour la navigation que pour la recherche.

@@ -1,0 +1,259 @@
+(annexe-g-suivi-chronologique)=
+# Annexe G : Suivi Chronologique Détaillé
+
+## Diagramme de Gantt : Chronologie du Projet
+
+Le diagramme de Gantt ci-dessous présente une vue macroscopique du déroulement du stage, mettant en évidence les différentes phases, du besoin initial au pivot stratégique vers une architecture CI/CD, jusqu'à la finalisation du projet.
+
+```{mermaid}
+gantt
+    title Chronologie du Projet
+    dateFormat  YYYY-MM-DD
+    axisFormat %m-%d
+
+    section Phase Initiale
+    Analyse Homepage : 2025-04-07, 10d
+    Decouverte Blocage : 2025-04-17, 2d
+
+    section Architecture CI/CD
+    Conception CI/CD : 2025-04-21, 5d
+    Pipeline Enfant : 2025-04-28, 10d
+    Pipeline Parent : 2025-05-12, 10d
+
+    section Taches Paralleles
+    Labo et SAML : 2025-05-26, 10d
+    Analyse Power BI : 2025-05-26, 5d
+
+    section Finalisation
+    Tests Plateforme : 2025-06-09, 10d
+    Documentation : 2025-06-23, 10d
+    Rapport et Soutenance : 2025-07-07, 14d
+```
+
+## Journal de Bord Détaillé
+
+Cette annexe présente un journal de bord détaillé des activités menées au cours du stage, semaine par semaine. Il sert de référence pour suivre la progression, les défis rencontrés et les décisions prises au jour le jour.
+
+---
+
+# Suivi Chronologique - Avril 2025
+
+## Semaine 1 (7 avril - 11 avril 2025)
+
+### Lundi 7 avril - Premier jour de stage
+- **Arrivée chez Fortinet** : Accueil et visite des locaux de Valbonne
+- **Récupération du matériel** : Installation et configuration de mon poste de travail
+- **Première découverte du Projet 1** : Analyse de l'existant pour l'implémentation de la page d'accueil
+- **Configuration initiale** : Mise en place de l'environnement de développement
+- **Compréhension de l'architecture** : Étude du fonctionnement du pipeline GitHub et de la génération de documentation
+
+### Mardi 8 avril
+- **Récupération des éléments techniques** pour le Projet 1
+- **Définition des besoins** : Clarification des exigences pour la page d'accueil avec moteur de recherche
+- **Documentation des privilèges d'accès** : Compréhension des différents niveaux d'autorisation
+- **Premier défi technique** : Problème identifié avec l'intégration du moteur Pagefind
+
+### Mercredi 9 avril
+- **Approfondissement du contexte technique** : Compréhension détaillée de l'architecture Sphinx
+- **Analyse de la structure existante** : Étude des répertoires `Docs_*` et de leur génération automatique
+- **Définition de l'approche technique** : 
+  - Intégration d'une page d'index principale regroupant toutes les documentations
+  - Mise en place du moteur de recherche global avec Pagefind
+  - Harmonisation des templates pour une expérience utilisateur cohérente
+- **Première version fonctionnelle** : Mise en place du versioning avec GitLab
+- **Tests initiaux** : Vérification du moteur de recherche et de ses réponses
+
+### Jeudi 10 avril
+- **Réunion avec Sébastien** : Résolution des problèmes de compte utilisateur
+- **Implémentation de la template** : Adaptation pour la page d'index
+- **Développement du système de cartes** : Interface pour les résultats de la page d'index
+- **Transition vers Docs_Home** : Mise en place d'une documentation Sphinx centrale comme page d'accueil
+- **Briefing avec Benoit et Gregory** : Validation de l'approche et des choix techniques
+
+### Vendredi 11 avril
+- **Optimisation du thème global** : Recherche d'une solution pour éviter la duplication de thème
+- **Intégration de la barre de recherche** : Surcharge pour l'ajout du moteur Pagefind dans la sidebar
+- **Développement de la page de recherche** : Création d'une page dédiée aux résultats
+- **Réflexion sur les tags et filtres** : Définition de la stratégie de catégorisation
+- **Investigation SSO** : Étude des possibilités d'authentification unique
+
+## Semaine 2 (14 avril - 18 avril 2025)
+
+### Lundi 14 avril
+- **Intégration technique avancée** : Finalisation de l'intégration de Pagefind dans la sidebar Sphinx
+- **Développement CSS** : Travail sur le style de la sidebar Pagefind
+- **Implémentation des cartes** : Début du développement des cartes pour la page Home avec métadonnées RST
+- **Réunions techniques** : EBC avec Akanchha sur SD-WAN et présentation de la solution SASE par Gregory
+
+### Mardi 15 avril
+- **Définition du format des métadonnées** : Standardisation du format RST
+- **Génération automatique** : Création de fichiers RST dans un répertoire séparé pour plus de propreté
+- **Implémentation des tags de visibilité** : Intégration dans les métadonnées
+- **Stylisation des cartes** : Finalisation du design et intégration à la page d'index
+
+### Mercredi 16 avril
+- **Nettoyage de la structure** : Refactoring complet de l'architecture
+- **Mise en place des tags et filtres** : Implémentation fonctionnelle
+- **Internationalisation** : Passage de l'interface en anglais
+- **Documentation** : Création de la documentation d'utilisation et d'intégration
+- **Optimisation** : Suppression des commentaires inutiles et amélioration des commentaires importants
+
+### Jeudi 17 avril
+- **Gestion des accès** : Résolution des problèmes d'assignation
+- **Réunion stratégique avec Benoit** : Discussion sur la structure de build (internal vs external)
+- **Architecture de déploiement** : Définition des trois environnements (Fortinet/user-based/Public)
+- **Planification GitLab** : Organisation des sous-groupes et de la structure de déploiement
+
+### Vendredi 18 avril
+- **Documentation technique** : Création du diagramme des flux de données
+- **Amélioration des fonctionnalités** : 
+  - Ajout de la date automatique à chaque push
+  - Système de contributeurs
+  - Gestion des accès privé/externe
+- **Optimisation du tri** : Recherche de solutions de tri plus adaptées
+- **Planification du déploiement** : Définition des pipelines GitLab et des règles de déploiement
+
+## Semaine 3 (21 avril - 25 avril 2025)
+
+### Mardi 22 avril
+- **Finalisation des filtres** : Automatisation de la récupération des filtres depuis les tags et groupes
+- **Amélioration de l'interface** : Différenciation visuelle entre groupes et tags
+- **Gestion des métadonnées** : Assurance de la récupération des métadonnées depuis index.rst
+- **Optimisation de la structure** : Décision sur la gestion des dossiers temporaires vs. structure finale
+
+### Mercredi 23 avril
+- **Configuration serveur** : Récupération des informations pour les serveurs Apache interne et externe
+- **Tests d'accès** : Vérification des accès sur les deux serveurs
+- **Configuration IT** : Mise en place des permissions avec l'équipe IT
+- **Création des index** : Développement des index respectifs à chaque catégorie
+- **Support IT (Bilell)** : collecte d'informations SSO (métadonnées IdP/FAC) et liste des dépendances nécessaires.
+
+### Jeudi 24 avril
+- **Résolution de bugs** : Correction des problèmes de filtres
+- **Amélioration des filtres** : Ajout des filtres par tag et date
+- **Décision architecturale** : Choix entre proxy et double arborescence
+- **Introduction au Projet 2** : Premier bilan avec Benoit sur Power BI et Power Automate
+- **Premier lab** : Mise en place avec Fabric Studio
+
+### Vendredi 25 avril
+- **Interface utilisateur** : Passage des cartes à un format rectangulaire
+- **Configuration Apache** : Installation des modules nécessaires
+- **Planification Power BI** : Demande d'accès aux tables et workflow.
+- **Amélioration de l'expérience utilisateur** : Thème sombre/clair, couleurs de groupe, optimisation de l'indexation.
+- **Échanges avec Paul (IT)** : clarification des méthodes de transfert et obtention des droits.
+
+## Semaine 4 (28 avril - 30 avril 2025)
+
+### Lundi 28 avril
+- **Optimisation de la recherche** : Mise en place des résultats sur la page de recherche dédiée
+- **Organisation du contenu** : Placement des articles par groupe sur le côté
+- **Amélioration visuelle** : Mise en place des couleurs Fortinet pour les groupes et tags
+- **Permissions** : Correction des problèmes de droits sur les dossiers.
+
+### Mardi 29 avril
+- **Optimisation de la structure** : Travail sur l'intégration de docs_merged dans _build
+- **Amélioration continue du thème** : Mise à jour de la recherche Pagefind et des cartes
+- **Développement de la table latérale** : Récupération et listage automatique des docs
+- **Planification des pipelines** : Réflexion sur la gestion des dossiers temporaires
+- **Versioning** : Ajout de la date et heure dans les noms de documentation.
+
+### Mercredi 30 avril
+- **Débogage SAML** : Investigation des erreurs de signature via les logs FAC.
+
+---
+
+# Suivi Chronologique - Mai 2025
+
+## Semaine 0 (12 mai - 20 mai 2025)
+
+### Lundi 12 mai
+- **Accès infrastructure** : vérification du portail vCenter.
+
+### Mardi 13 mai
+- **Tests SAML** : premier succès d'authentification après correction des signatures et ajout des attributs.
+
+### Mercredi 14 mai
+- **Erreur SAML récurrente** : retour du message d'erreur de signature.
+
+### Jeudi 15 mai
+- **Synchronisation IdP/SP** : nouvelle importation des métadonnées SP.
+
+### Lundi 19 mai
+- **Rollback VM** : restauration de la VM pour annuler les configurations instables.
+
+### Mardi 20 mai
+- **Réactivation des services** : remise en service des modules SSL et `mod_auth_mellon`.
+
+## Semaine 1 (22 mai - 26 mai 2025)
+
+### Jeudi 22 mai
+- **Optimisation des pipelines CI/CD** : Mise en place d'un conteneur Docker pour les outils de build.
+- **Maintenance** : Mise à jour des modules et librairies.
+- **Nettoyage des workflows** : Reprise et simplification des workflows GitLab.
+- **Démarches pour l'alternance** : Prise de contact avec les RH.
+
+### Vendredi 23 mai
+- **Début du Projet 2 (Power BI)** : Planification, définition des objectifs et analyse des données.
+
+### Dimanche 25 mai
+- **Optimisation des pipelines** et amélioration de l'interface (CSS, navigation, recherche).
+
+### Lundi 26 mai
+- **Amélioration continue du Projet 1** : Nettoyage des builds, gestion des liens et interface utilisateur.
+- **Coordination** sur les deux projets.
+
+## Semaine 2 (27 mai - 31 mai 2025)
+
+### Mardi 27 mai
+- **Déploiement et Sécurité** : Création de pipeline, sécurisation des accès, configuration des variables d'environnement.
+- **Amélioration des fonctionnalités** : Filtres cliquables et optimisation du script de récupération d'artefacts.
+
+### Jeudi 29 mai
+- **Documentation et Sécurité** : Documentation du processus SSH et nettoyage serveur.
+
+### Vendredi 30 mai
+- **Optimisation des pipelines CI/CD** : Ajustement des builds Docker et des commandes de déploiement `rsync`.
+
+### Samedi 31 mai
+- **Finalisation de l'interface utilisateur** : Thème sombre et style.
+- **Sécurité** : Gestion des listes d'accès sur GitLab.
+
+---
+
+# Suivi Chronologique - Juin 2025
+
+## Semaine 1 (10 juin - 13 juin 2025)
+
+### Mardi 10 juin
+- **Documentation utilisateur** : Préparation de la documentation pour les utilisateurs finaux.
+- **Bilan avec l'équipe** : Réunion pour faire un bilan complet des projets.
+- **Préparation de la soutenance** : Premier point sur le contenu et la structure.
+
+### Mercredi 11 juin
+- **Déploiement Public** : Mise à jour des pipelines et configuration Apache.
+- **Planification Infosec** : Préparation des scans de sécurité.
+
+### Jeudi 12 juin
+- **Documentation technique** : Recherche d'outils pour générer les diagrammes.
+- **Optimisation des builds** : Ajout d'un job de vérification et synchronisation Docker.
+
+### Vendredi 13 juin
+- **Finalisation du déploiement** : Fin du déploiement public et lancement des tests de sécurité.
+- **Planification de la documentation** et de l'internationalisation.
+
+## Semaine 2 (15 juin - 18 juin 2025)
+
+### Dimanche 15 juin
+- **Planification finale** : Pipeline, UI, et structure de la documentation.
+
+### Lundi 16 juin
+- **Mise en œuvre** : Finalisation du job de vérification des variables d'environnement et création de documents récapitulatifs.
+
+### Mardi 17 juin
+- **Fusion et tests** : Test de la solution `devcontainer`.
+- **Mise à jour globale** : Mise à jour des index, des pipelines enfants et de la template.
+- **Planification de la fin du stage** : Préparation de la vidéo de démonstration.
+
+### Mercredi 18 juin
+- **Derniers ajustements** : CSS, documentation, et organisation du rapport de stage.
+- **Nettoyage CSS** : injection de correctifs pour le style. 

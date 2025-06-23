@@ -1,0 +1,15 @@
+(annexe-f-etlab-saml)=
+# Annexe F : Laboratoire ETLab et Configuration SAML
+
+Cette annexe détaille la mise en place du laboratoire de test `ETLab` qui a permis de développer et valider la configuration de l'authentification SAML.
+
+La mise en place du Service Provider Apache a reposé sur le module `mod_auth_mellon`. Bien que sa configuration complète soit dense, voici quelques-unes des directives essentielles qui ont été configurées dans le `VirtualHost` Apache pour établir la relation de confiance :
+
+-   **`MellonEnable "info"` :** Active le module pour ce `VirtualHost`.
+-   **`MellonVariable "mellon"` :** Préfixe pour les variables d'environnement qui seront créées après authentification.
+-   **`MellonSPMetadataFile /etc/apache2/mellon/mellon_metadata.xml` :** Spécifie le chemin vers le fichier de métadonnées du Service Provider lui-même. Ce fichier est généré par un script du module et doit être transmis au Fournisseur d'Identité (FortiAuthenticator).
+-   **`MellonIDPMetadataFile /etc/apache2/mellon/fortiauth_idp_metadata.xml` :** Spécifie le chemin vers le fichier de métadonnées du Fournisseur d'Identité. Ce fichier est exporté depuis l'interface du FortiAuthenticator.
+-   **`MellonEndpointPath /mellon/` :** Définit le chemin de base pour les URLs techniques du module (login, logout, postResponse...).
+-   **`MellonSecureProxy On` :** Indispensable lorsque le serveur Apache est derrière un reverse proxy HTTPS, pour garantir que les redirections utilisent le bon protocole.
+
+Ces directives, combinées à la configuration des certificats, ont permis de rendre l'authentification SAML pleinement fonctionnelle dans l'environnement contrôlé du laboratoire. 

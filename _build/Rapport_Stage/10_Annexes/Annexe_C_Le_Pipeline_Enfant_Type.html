@@ -1,0 +1,181 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annexe C : Le Pipeline Enfant Type (project-template-hub) &mdash; Rapport de Stage - Fortinet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Annexe D : Environnement de Construction" href="Annexe_D_Environnement_de_Construction.html" />
+    <link rel="prev" title="Annexe B : Le Pipeline Parent (docs-index)" href="Annexe_B_Le_Pipeline_Parent.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Rapport de Stage - Fortinet
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des Matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00_Page_de_Garde.html">Page de Garde</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Fiche_Confidentialite.html">Fiche de confidentialité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_Remerciements.html">Remerciements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Resume_Francais_Anglais.html">Résumé Français et Anglais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_Introduction_Generale.html">Introduction Générale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Developpement_Principal/index.html">Le Cœur du Sujet : L’Usine Logicielle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_Conclusion_et_Perspectives.html">Conclusion et perspectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Bibliographie.html">Bibliographie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_Glossaire.html">Glossaire</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Annexes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Annexe_A_Diagrammes_Architecture.html">Annexe A : Diagrammes d’Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_B_Le_Pipeline_Parent.html">Annexe B : Le Pipeline Parent (<code class="docutils literal notranslate"><span class="pre">docs-index</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Annexe C : Le Pipeline Enfant Type (<code class="docutils literal notranslate"><span class="pre">project-template-hub</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fichier-gitlab-ci-yml-du-template-enfant-analyse">Fichier <code class="docutils literal notranslate"><span class="pre">.gitlab-ci.yml</span></code> du Template Enfant (Analyse)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#etape-check-validation-et-standardisation">Étape <code class="docutils literal notranslate"><span class="pre">check</span></code> : Validation et Standardisation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etape-build-la-construction-du-site">Étape <code class="docutils literal notranslate"><span class="pre">build</span></code> : La Construction du Site</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#etape-trigger-le-passage-de-relais">Étape <code class="docutils literal notranslate"><span class="pre">trigger</span></code> : Le Passage de Relais</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_D_Environnement_de_Construction.html">Annexe D : Environnement de Construction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_E_Systeme_de_Metadonnees.html">Annexe E : Le Système de Métadonnées</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_F_Laboratoire_ETLab_et_Configuration_SAML.html">Annexe F : Laboratoire ETLab et Configuration SAML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html">Annexe G : Suivi Chronologique Détaillé</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html#suivi-chronologique-avril-2025">Suivi Chronologique - Avril 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html#suivi-chronologique-mai-2025">Suivi Chronologique - Mai 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html#suivi-chronologique-juin-2025">Suivi Chronologique - Juin 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_H_Resolution_de_Problemes_Techniques.html">Annexe H : Résolution de Problèmes Techniques</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Rapport de Stage - Fortinet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Annexes</a></li>
+      <li class="breadcrumb-item active">Annexe C : Le Pipeline Enfant Type (<code class="docutils literal notranslate"><span class="pre">project-template-hub</span></code>)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Rapport_Stage/10_Annexes/Annexe_C_Le_Pipeline_Enfant_Type.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="annexe-c-le-pipeline-enfant-type-project-template-hub">
+<span id="annexe-c-le-pipeline-enfant-type"></span><h1>Annexe C : Le Pipeline Enfant Type (<code class="docutils literal notranslate"><span class="pre">project-template-hub</span></code>)<a class="headerlink" href="#annexe-c-le-pipeline-enfant-type-project-template-hub" title="Link to this heading"></a></h1>
+<p>Le pipeline Enfant est le cœur de la standardisation et de la production de chaque documentation individuelle. Il est fourni par le template de projet <code class="docutils literal notranslate"><span class="pre">project-template-hub</span></code> et son fichier <code class="docutils literal notranslate"><span class="pre">.gitlab-ci.yml</span></code> est conçu pour être à la fois un constructeur, un gardien de la qualité et un déclencheur.</p>
+<p>Il s’articule autour de plusieurs étapes (<code class="docutils literal notranslate"><span class="pre">stages</span></code>) : <code class="docutils literal notranslate"><span class="pre">check</span></code>, <code class="docutils literal notranslate"><span class="pre">clean</span></code>, <code class="docutils literal notranslate"><span class="pre">build</span></code>, et <code class="docutils literal notranslate"><span class="pre">trigger</span></code>.</p>
+<section id="fichier-gitlab-ci-yml-du-template-enfant-analyse">
+<h2>Fichier <code class="docutils literal notranslate"><span class="pre">.gitlab-ci.yml</span></code> du Template Enfant (Analyse)<a class="headerlink" href="#fichier-gitlab-ci-yml-du-template-enfant-analyse" title="Link to this heading"></a></h2>
+<p>Voici une analyse des <code class="docutils literal notranslate"><span class="pre">jobs</span></code> les plus stratégiques de ce pipeline.</p>
+<section id="etape-check-validation-et-standardisation">
+<h3>Étape <code class="docutils literal notranslate"><span class="pre">check</span></code> : Validation et Standardisation<a class="headerlink" href="#etape-check-validation-et-standardisation" title="Link to this heading"></a></h3>
+<p>Cette étape est cruciale et se déroule avant même toute tentative de construction.</p>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">fetch_env_lists</span></code> :</strong> Ce <code class="docutils literal notranslate"><span class="pre">job</span></code> clone le projet <code class="docutils literal notranslate"><span class="pre">env-lists</span></code> pour récupérer les listes de valeurs autorisées pour les métadonnées (priorité, groupe thématique, etc.).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">prepare_env</span></code> :</strong> Ce <code class="docutils literal notranslate"><span class="pre">job</span></code> est une véritable moulinette de préparation et de validation. Il prend le fichier <code class="docutils literal notranslate"><span class="pre">project.env</span></code> de l’utilisateur et :</p>
+<ul class="simple">
+<li><p><strong>Injecte des variables dynamiques :</strong> Il ajoute automatiquement des informations issues de GitLab comme le nom du projet, l’URL du pipeline, etc.</p></li>
+<li><p><strong>Enrichit via l’API GitLab :</strong> Il utilise un token pour appeler l’API GitLab et récupérer des métadonnées comme le nom du créateur, les dates, et la description du projet, pour les injecter dans la configuration.</p></li>
+<li><p><strong>Valide les métadonnées :</strong> Il vérifie que les valeurs fournies par l’utilisateur (ex: <code class="docutils literal notranslate"><span class="pre">META_GROUP=SASE</span></code>) sont bien présentes dans les listes autorisées récupérées précédemment. Si une valeur est invalide, le pipeline échoue immédiatement.</p></li>
+<li><p><strong>Génère un fichier de configuration final (<code class="docutils literal notranslate"><span class="pre">project.env.tmp</span></code>)</strong> qui sera utilisé par les étapes suivantes.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">check</span></code> (Le Gardien du Temple) :</strong> C’est le <code class="docutils literal notranslate"><span class="pre">job</span></code> d’auto-correction.</p>
+<ul class="simple">
+<li><p><strong>Rôle :</strong> Garantir la standardisation absolue.</p></li>
+<li><p><strong>Mécanisme :</strong> Il compare les fichiers de configuration critiques du projet (<code class="docutils literal notranslate"><span class="pre">.gitlab-ci.yml</span></code>, <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>, <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>…) avec la version “de référence” stockée dans l’image Docker <code class="docutils literal notranslate"><span class="pre">dev_container_image</span></code>.</p></li>
+<li><p><strong>Auto-correction :</strong> Si un fichier a été modifié ou est manquant, le script le remplace automatiquement par la version standard, <code class="docutils literal notranslate"><span class="pre">commit</span></code> la correction, et la <code class="docutils literal notranslate"><span class="pre">push</span></code> sur la branche. Le développeur est ainsi notifié que son projet a été remis en conformité, sans aucune intervention manuelle.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="etape-build-la-construction-du-site">
+<h3>Étape <code class="docutils literal notranslate"><span class="pre">build</span></code> : La Construction du Site<a class="headerlink" href="#etape-build-la-construction-du-site" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">build</span></code> :</strong> Ce <code class="docutils literal notranslate"><span class="pre">job</span></code> est la ligne de production. Il installe les dépendances Python, utilise le fichier <code class="docutils literal notranslate"><span class="pre">project.env.tmp</span></code> validé pour la configuration, et lance la commande <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>. Cette dernière orchestre <code class="docutils literal notranslate"><span class="pre">sphinx-build</span></code> pour transformer les sources Markdown en un site HTML complet. Le résultat est sauvegardé en tant qu’artefact GitLab, prêt à être récupéré par le pipeline Parent.</p></li>
+</ul>
+</section>
+<section id="etape-trigger-le-passage-de-relais">
+<h3>Étape <code class="docutils literal notranslate"><span class="pre">trigger</span></code> : Le Passage de Relais<a class="headerlink" href="#etape-trigger-le-passage-de-relais" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">trigger_docs_index</span></code> :</strong> C’est l’étape finale. Après un <code class="docutils literal notranslate"><span class="pre">build</span></code> réussi, ce <code class="docutils literal notranslate"><span class="pre">job</span></code> utilise <code class="docutils literal notranslate"><span class="pre">curl</span></code> pour appeler l’API de “trigger” du pipeline Parent (<code class="docutils literal notranslate"><span class="pre">docs-index</span></code>). Il lui transmet des informations cruciales comme le message de commit et le nom du projet, pour que le Parent sache quelle action effectuer (publication ou dépublication).</p></li>
+</ul>
+<p>Ce pipeline enfant est donc bien plus qu’un simple script de build : c’est un système complet qui garantit la qualité, la conformité et la bonne communication avec l’orchestrateur central.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Annexe_B_Le_Pipeline_Parent.html" class="btn btn-neutral float-left" title="Annexe B : Le Pipeline Parent (docs-index)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Annexe_D_Environnement_de_Construction.html" class="btn btn-neutral float-right" title="Annexe D : Environnement de Construction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Rezki Mohammad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
