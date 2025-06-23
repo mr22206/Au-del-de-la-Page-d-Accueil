@@ -2,6 +2,12 @@
 
 Ce stage chez Fortinet, initialement centré sur le développement d'une simple page d'accueil, s'est transformé en un projet d'ingénierie complet, riche en défis et en apprentissages. La découverte de contraintes de production strictes, notamment la politique de "zéro exécution" sur les serveurs, a été le catalyseur d'une refonte complète de l'approche initiale. Elle m'a contraint à abandonner une solution de facilité pour concevoir et bâtir une architecture bien plus robuste, sécurisée et pérenne : une usine logicielle de documentation basée sur une CI/CD distribuée.
 
+## Résultat Final
+
+![Aperçu du Hub de Documentation Final](../_static/Hub_Documentation.jpg)
+
+Pour des raisons de confidentialité et de sécurité inhérentes au projet, ce rapport se limite à cet aperçu visuel. Une démonstration plus détaillée de la plateforme, incluant la navigation et les fonctionnalités en direct, sera effectuée durant la soutenance orale.
+
 ## Bilan des Apprentissages
 
 Cette expérience a été une double montée en compétences, à la fois sur des technologies de pointe et sur des aspects stratégiques et humains de la gestion de projet.
