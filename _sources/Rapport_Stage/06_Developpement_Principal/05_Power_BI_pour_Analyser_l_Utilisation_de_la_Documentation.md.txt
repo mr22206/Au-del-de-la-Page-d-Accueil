@@ -1,0 +1,38 @@
+# Chapitre 5 : Mission Secondaire - Analyse Préparatoire pour Power BI
+
+En parallèle du projet d'infrastructure CI/CD, une mission secondaire m'a été confiée : analyser la faisabilité de la création de tableaux de bord Power BI pour le suivi de l'activité de l'équipe *Consulting Systems Engineering*. Cette mission, initialement perçue comme un projet de développement, s'est transformée en une phase cruciale d'analyse et de spécification, révélant des prérequis techniques indispensables avant de pouvoir entamer la phase de visualisation.
+
+## 5.1 Le Besoin : D'une Vision Opérationnelle à une Vision Stratégique
+
+L'équipe utilisait des outils basés sur Microsoft Power Automate pour le suivi quotidien de ses projets. Ces outils, très efficaces sur le plan opérationnel, généraient une grande quantité de données qui n'étaient pas exploitées pour une analyse stratégique. Le management manquait de tableaux de bord pour répondre à des questions clés :
+-   Quelle est la charge de travail actuelle de l'équipe ?
+-   Quelles sont les performances comparées d'une année sur l'autre ?
+-   Quels projets sont en sommeil ou en dérive par rapport à leurs objectifs initiaux ?
+
+L'objectif était de transformer ces données brutes en indicateurs de performance (KPIs) via Power BI.
+
+## 5.2 L'Analyse des Données Existantes et le Constat
+
+La première étape a été de plonger dans les sources de données (principalement des listes SharePoint alimentées par Power Automate) pour en comprendre la structure et la qualité.
+
+Cette analyse a rapidement mis en lumière un obstacle majeur : **les données nécessaires à la création des indicateurs souhaités n'étaient pas toutes présentes.** Par exemple, pour comparer les performances annuelles, il manquait des champs de date standardisés et fiables. Pour identifier les projets "dormants", il n'existait pas de champ "dernière activité" systématiquement mis à jour.
+
+## 5.3 La Contribution : Spécification et Préparation
+
+Mon rôle a donc pivoté de "développeur Power BI" à "analyste fonctionnel". Ma contribution principale sur ce projet a été de :
+1.  **Identifier les données manquantes :** J'ai produit un document détaillant précisément les champs et les informations qui devaient être ajoutés aux outils Power Automate pour permettre un reporting pertinent.
+2.  **Spécifier les évolutions nécessaires :** En collaboration avec les responsables de l'équipe, j'ai défini les modifications à apporter aux processus et aux outils existants. Ces spécifications ont été transmises à un collègue expert de l'environnement Power Platform, qui a pris en charge leur implémentation.
+3.  **Concevoir un modèle de données cible :** J'ai créé une première ébauche du modèle de données (schéma en étoile) qui pourrait être utilisée dans Power BI *une fois* que les données nécessaires seraient disponibles. Ce flux est illustré ci-dessous.
+
+```{mermaid}
+graph LR
+    A["Power Automate<br><i>Source de données</i>"] --> B["Listes SharePoint<br><i>Stockage structuré</i>"];
+    B --> C["Power BI<br><i>Modélisation & DAX</i>"];
+    C --> D["Tableaux de Bord<br><i>Rapports Stratégiques</i>"];
+```
+
+4.  **Développer une preuve de concept (PoC) :** Sur la base de données d'exemple que j'ai créées manuellement, j'ai développé un tableau de bord Power BI prototype. Ce PoC avait un double objectif :
+    -   Valider la pertinence des visualisations et des indicateurs envisagés.
+    -   Servir de démonstration tangible pour convaincre de la valeur du projet et justifier l'effort de développement nécessaire sur Power Automate.
+
+En conclusion, bien que ce projet n'ait pas abouti à la mise en production d'un tableau de bord complet durant mon stage, mon travail d'analyse et de spécification a été l'étape préparatoire indispensable sans laquelle le projet n'aurait pas pu aboutir. J'ai "déminé" le terrain, identifié les prérequis et fourni un plan d'action clair pour la suite. 

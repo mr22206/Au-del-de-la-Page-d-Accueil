@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre 4 : Le Défi de la Sécurité - Maîtriser l’Authentification &mdash; Rapport de Stage - Fortinet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+      <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+      <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+      <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapitre 5 : Mission Secondaire - Analyse Préparatoire pour Power BI" href="05_Power_BI_pour_Analyser_l_Utilisation_de_la_Documentation.html" />
+    <link rel="prev" title="Chapitre 3 : L’Usine Logicielle en Action" href="03_La_Plateforme_CI_CD_En_Action.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Rapport de Stage - Fortinet
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des Matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00_Page_de_Garde.html">Page de Garde</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Fiche_Confidentialite.html">Fiche de confidentialité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_Remerciements.html">Remerciements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Resume_Francais_Anglais.html">Résumé Français et Anglais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_Introduction_Generale.html">Introduction Générale</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Le Cœur du Sujet : L’Usine Logicielle</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_La_Mission_et_Le_Mur.html">Chapitre 1 : D’un Succès Rapide à une Remise en Question Fondamentale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Le_Pivot_vers_la_CI_CD_et_la_Maitrise_de_la_Securite.html">Chapitre 2 : La Réponse Architecturale - Concevoir l’Usine Logicielle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_La_Plateforme_CI_CD_En_Action.html">Chapitre 3 : L’Usine Logicielle en Action</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Chapitre 4 : Le Défi de la Sécurité - Maîtriser l’Authentification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#la-contrainte-un-environnement-de-production-verrouille">4.1 La Contrainte : Un Environnement de Production Verrouillé</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#la-solution-la-creation-de-l-etlab">4.2 La Solution : La Création de l’ETLab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-flux-d-authentification-saml">4.3 Le Flux d’Authentification SAML</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="05_Power_BI_pour_Analyser_l_Utilisation_de_la_Documentation.html">Chapitre 5 : Mission Secondaire - Analyse Préparatoire pour Power BI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../07_Conclusion_et_Perspectives.html">Conclusion et perspectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Bibliographie.html">Bibliographie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_Glossaire.html">Glossaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_Annexes/index.html">Annexes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Rapport de Stage - Fortinet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Le Cœur du Sujet : L’Usine Logicielle</a></li>
+      <li class="breadcrumb-item active">Chapitre 4 : Le Défi de la Sécurité - Maîtriser l’Authentification</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Rapport_Stage/06_Developpement_Principal/04_Le_Defi_de_la_Securite_Maitriser_l_Authentification.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chapitre-4-le-defi-de-la-securite-maitriser-l-authentification">
+<h1>Chapitre 4 : Le Défi de la Sécurité - Maîtriser l’Authentification<a class="headerlink" href="#chapitre-4-le-defi-de-la-securite-maitriser-l-authentification" title="Link to this heading"></a></h1>
+<p>La nouvelle usine logicielle était fonctionnelle, mais sa facilité d’utilisation même avait créé un nouveau défi, comme mentionné au chapitre précédent : la <strong>gouvernance des accès</strong>. La plateforme devait héberger des documentations de différentes sensibilités, nécessitant un contrôle d’accès précis et centralisé. La réponse à ce défi a été la mise en place d’une authentification unique (SSO) basée sur le protocole SAML.</p>
+<section id="la-contrainte-un-environnement-de-production-verrouille">
+<h2>4.1 La Contrainte : Un Environnement de Production Verrouillé<a class="headerlink" href="#la-contrainte-un-environnement-de-production-verrouille" title="Link to this heading"></a></h2>
+<p>Tout comme pour le serveur web, l’environnement de production du Fournisseur d’Identité (IdP) de l’entreprise, un FortiAuthenticator, était strictement contrôlé. Il était impossible de l’utiliser pour des tests de configuration SAML.</p>
+<p>Pour ne pas être bloqué une seconde fois, la même logique a été appliquée : si l’on ne peut pas travailler sur la production, il faut la recréer en laboratoire.</p>
+</section>
+<section id="la-solution-la-creation-de-l-etlab">
+<h2>4.2 La Solution : La Création de l’ETLab<a class="headerlink" href="#la-solution-la-creation-de-l-etlab" title="Link to this heading"></a></h2>
+<p>Un environnement de laboratoire complet, baptisé <strong>ETLab</strong> (Environnement de Test et de Laboratoire), a été monté de A à Z pour simuler et maîtriser la chaîne d’authentification SAML avant de la déployer.</p>
+<pre  class="mermaid">
+        %%{init: {'theme': 'neutral'}}%%
+graph LR
+    subgraph Problème
+        A[&quot;&lt;b&gt;Environnement de Production&lt;/b&gt;&lt;br&gt;Serveur d'authentification&lt;br&gt;verrouillé, tests impossibles.&quot;]
+        style A fill:#f8d7da,stroke:#DC3545,stroke-width:2px
+    end
+    
+    subgraph Solution
+        B[&quot;&lt;b&gt;Mon Laboratoire Isolé (ETLab)&lt;/b&gt;&lt;br&gt;Clone de l'infra de production&lt;br&gt;sous mon contrôle total.&quot;]
+        style B fill:#d1e7dd,stroke:#198754,stroke-width:2px
+    end
+
+    A -- &quot;Contourné par&quot; --&gt; B
+    </pre><p>L’ETLab était composé des deux acteurs principaux du dialogue SAML :</p>
+<ul class="simple">
+<li><p><strong>Un Fournisseur de Services (SP) :</strong> Un serveur Apache utilisant le module <code class="docutils literal notranslate"><span class="pre">mod_auth_mellon</span></code>. Ce module open-source est une référence pour l’implémentation du protocole SAML côté Apache, ce qui en faisait un choix fiable pour reproduire le comportement de la production.</p></li>
+<li><p><strong>Un Fournisseur d’Identité (IdP) :</strong> Une instance dédiée du FortiAuthenticator installée pour le laboratoire.</p></li>
+</ul>
+<p>Ce laboratoire a permis de maîtriser le flux d’authentification SAML complet, de la configuration de la relation de confiance à la gestion des certificats.</p>
+</section>
+<section id="le-flux-d-authentification-saml">
+<h2>4.3 Le Flux d’Authentification SAML<a class="headerlink" href="#le-flux-d-authentification-saml" title="Link to this heading"></a></h2>
+<p>Le diagramme de séquence suivant illustre le flux qui a été implémenté et validé grâce à l’ETLab.</p>
+<pre  class="mermaid">
+        %%{init: {'theme': 'neutral'}}%%
+sequenceDiagram
+    participant Client
+    participant Apache (SP) as Service Provider
+    participant FAC (IdP) as Identity Provider
+
+    Client-&gt;&gt;Apache (SP): 1. Accès au Hub
+    Apache (SP)-&gt;&gt;Client: 2. Redirection vers le portail d'authentification
+    Client-&gt;&gt;FAC (IdP): 3. Saisie des identifiants
+    FAC (IdP)--&gt;&gt;Client: 4. Envoi de l'assertion SAML signée
+    Client-&gt;&gt;Apache (SP): 5. Présentation de l'assertion
+    Apache (SP)-&gt;&gt;Apache (SP): 6. Validation de la signature
+    Apache (SP)--&gt;&gt;Client: 7. Accès autorisé et page servie
+    </pre><p>Grâce à l’ETLab, un problème potentiellement bloquant a été transformé en un exercice technique maîtrisé. La justification du choix de <code class="docutils literal notranslate"><span class="pre">mod_auth_mellon</span></code> et les détails de la configuration sont disponibles en <a class="reference internal" href="../10_Annexes/Annexe_F_Laboratoire_ETLab_et_Configuration_SAML.html#annexe-f-etlab-saml"><span class="std std-ref">Annexe F : Laboratoire ETLab et Configuration SAML</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="03_La_Plateforme_CI_CD_En_Action.html" class="btn btn-neutral float-left" title="Chapitre 3 : L’Usine Logicielle en Action" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="05_Power_BI_pour_Analyser_l_Utilisation_de_la_Documentation.html" class="btn btn-neutral float-right" title="Chapitre 5 : Mission Secondaire - Analyse Préparatoire pour Power BI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Rezki Mohammad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

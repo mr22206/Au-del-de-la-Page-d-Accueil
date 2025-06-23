@@ -1,0 +1,26 @@
+# Conclusion et perspectives
+
+Ce stage chez Fortinet, initialement centré sur le développement d'une simple page d'accueil, s'est transformé en un projet d'ingénierie complet, riche en défis et en apprentissages. La découverte de contraintes de production strictes, notamment la politique de "zéro exécution" sur les serveurs, a été le catalyseur d'une refonte complète de l'approche initiale. Elle m'a contraint à abandonner une solution de facilité pour concevoir et bâtir une architecture bien plus robuste, sécurisée et pérenne : une usine logicielle de documentation basée sur une CI/CD distribuée.
+
+## Bilan des Apprentissages
+
+Cette expérience a été une double montée en compétences, à la fois sur des technologies de pointe et sur des aspects stratégiques et humains de la gestion de projet.
+
+| Compétences Techniques | Compétences Stratégiques & Humaines |
+| :--- | :--- |
+| • GitLab CI/CD & Pipelines Parent/Enfant | • Analyse de Problèmes Complexes |
+| • Docker & Conteneurisation | • Vision Architecturale & Solutions Scalables |
+| • Python (Scripts, Automatisation) | • Autonomie & Prise d'Initiative |
+| • Sphinx (Génération de site statique) | • Résolution de Problèmes sous Contrainte |
+| • Apache, SAML & Certificats (XCA) | • Collaboration Inter-équipes (IT, Sécurité) |
+| • FortiAuthenticator (IdP en Lab) | |
+
+## Valeur Livrée et Perspectives
+
+Au-delà de la mission initiale, le projet a apporté une valeur ajoutée significative à l'équipe, en posant des fondations solides pour l'avenir.
+
+| LIVRÉ | VALEUR AJOUTÉE | PERSPECTIVES |
+| :---: | :---: | :---: |
+| Une plateforme de documentation CI/CD fonctionnelle. | **Sécurité :** Accès contrôlé par SSO.<br>**Fiabilité :** Déploiements automatisés et standardisés.<br>**Productivité :** Onboarding simplifié pour les nouveaux projets de documentation. | Le socle est prêt à évoluer.<br>On peut y intégrer plus de projets, enrichir les métadonnées ou encore améliorer l'expérience de recherche. |
+
+En conclusion, ce stage a été une démonstration concrète que les plus grands défis sont souvent les meilleures opportunités d'apprendre. Il m'a permis de développer une solution robuste et durable qui répond non seulement au besoin initial, mais qui résout également des problèmes de fond liés à la standardisation, la sécurité et l'automatisation.

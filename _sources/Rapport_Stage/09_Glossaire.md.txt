@@ -1,0 +1,38 @@
+(glossaire)=
+# Glossaire
+
+Ce glossaire répertorie les abréviations et les termes techniques clés utilisés dans ce rapport, ainsi que leurs définitions, afin de faciliter la compréhension du lecteur.
+
+*   **APAC :** Asia-Pacific. Région géographique comprenant l'Asie et le Pacifique.
+*   **Apache :** Serveur HTTP Apache. Logiciel de serveur web open-source largement utilisé.
+*   **BI :** Business Intelligence. Ensemble de technologies et de processus pour transformer des données brutes en informations exploitables pour la prise de décision.
+*   **CI/CD :** Continuous Integration/Continuous Delivery (ou Deployment). Méthodologies et pratiques permettant d'intégrer et de déployer fréquemment et de manière fiable des modifications de code.
+*   **Conteneur Docker :** Unité logicielle standardisée qui regroupe du code et toutes ses dépendances. L'application s'exécute rapidement et de manière fiable d'un environnement informatique à un autre. Les pipelines de ce projet s'exécutent dans des conteneurs.
+*   **DAX :** Data Analysis Expressions. Langage de formule utilisé dans Power BI, Analysis Services et Power Pivot pour créer des mesures, des colonnes calculées et des tables calculées.
+*   **Dashboard :** Tableau de bord. Interface graphique présentant des indicateurs clés et des visualisations de données pour un aperçu rapide et interactif.
+*   **EMEA :** Europe, Middle East, and Africa. Région géographique comprenant l'Europe, le Moyen-Orient et l'Afrique.
+*   **ETL :** Extraction, Transformation, Chargement (Extract, Transform, Load). Processus en trois étapes utilisé pour déplacer des données d'une source vers un entrepôt de données ou une base de données cible.
+*   **ETLab :** (Environnement de Test en Laboratoire) Clone de l'infrastructure de production créé pour permettre le développement et les tests de la configuration d'authentification SAML en toute sécurité, sans impacter l'environnement réel.
+*   **FortiAuthenticator :** Solution de gestion des identités et des accès de Fortinet, utilisée dans le projet comme fournisseur d'identité (IdP) SAML.
+*   **FortiGate :** Produit phare de Fortinet, il s'agit d'un pare-feu de nouvelle génération (NGFW) offrant des capacités de sécurité complètes.
+*   **Fortinet :** Entreprise multinationale spécialisée dans les solutions de cybersécurité.
+*   **Git :** Système de contrôle de version distribué, utilisé pour le suivi des modifications du code source pendant le développement.
+*   **GitLab :** Plateforme web DevOps qui fournit un système de gestion de versions basé sur Git ainsi que des fonctionnalités complètes de CI/CD, de suivi des problèmes, etc. C'est la plateforme centrale utilisée pour ce projet.
+*   **Jinja2 :** Moteur de template pour Python, largement utilisé pour générer dynamiquement des fichiers HTML, de configuration ou autre. Il est utilisé par Sphinx pour construire les pages du site.
+*   **KPI :** Key Performance Indicator. Indicateur clé de performance. Mesure quantifiable qui aide à évaluer le succès d'une organisation ou d'une activité particulière.
+*   **Markdown :** Langage de balisage léger, utilisé pour formater du texte en utilisant une syntaxe simple.
+*   **Métadonnées :** Données qui décrivent d'autres données. Dans ce projet, il s'agit des informations (titre, auteur, tags...) contenues en en-tête des fichiers source et utilisées pour générer les cartes de la page d'accueil.
+*   **Microsoft Power Automate :** Service permettant de créer des flux de travail automatisés entre des applications et des services.
+*   **Microsoft Power BI :** Suite d'outils d'analyse de données et de visualisation de Microsoft.
+*   **Microsoft SharePoint :** Plateforme web de collaboration et de gestion de documents de Microsoft.
+*   **mod_auth_mellon :** Module pour le serveur web Apache qui implémente le rôle de "Service Provider" (SP) dans une fédération d'identité SAML. Utilisé dans l'ETLab pour sécuriser l'accès au portail de pré-production.
+*   **MyST :** Markedly Structured Text. Une variante (ou "flavour") de Markdown qui étend ses capacités de base pour y inclure des fonctionnalités avancées de Sphinx, comme les références croisées, les admonitions, etc.
+*   **NGFW :** Next-Generation Firewall. Pare-feu de nouvelle génération. Combinaison de fonctionnalités de pare-feu traditionnelles avec des capacités de prévention d'intrusion et de contrôle des applications.
+*   **Pagefind :** Outil de recherche statique qui crée un index de recherche lors de la phase de construction d'un site web. La recherche est ensuite effectuée entièrement côté client, dans le navigateur, sans nécessiter de backend.
+*   **Pipeline CI/CD :** Suite de jobs (tâches) automatisés qui s'exécutent pour compiler, tester et déployer un projet. Dans ce rapport, le terme fait référence aux pipelines GitLab.
+*   **Pipeline Parent/Enfant :** Architecture de pipeline où un pipeline (l'enfant, dans un projet de documentation) peut déclencher un autre pipeline central (le parent, dans le projet hub) et lui passer des informations.
+*   **rsync :** Utilitaire de synchronisation de fichiers en ligne de commande, utilisé dans le pipeline de déploiement pour transférer efficacement les fichiers du site web vers le serveur Apache.
+*   **SAML (Security Assertion Markup Language) :** Standard ouvert et format de données basé sur XML qui permet d'échanger des informations d'authentification et d'autorisation entre un fournisseur d'identité (comme FortiAuthenticator) et un fournisseur de services (comme le portail de documentation).
+*   **Sphinx :** Générateur de documentation Python qui transforme des fichiers source en texte brut (comme Markdown) en formats de sortie variés, notamment HTML.
+*   **SSO (Single Sign-On) :** Authentification unique. Service qui permet à un utilisateur de s'authentifier une seule fois pour accéder à plusieurs applications ou services distincts.
+*   **YAML (YAML Ain't Markup Language) :** Langage de sérialisation de données lisible par l'homme, souvent utilisé pour les fichiers de configuration, comme c'est le cas pour les pipelines GitLab (`.gitlab-ci.yml`) et les listes de métadonnées dans ce projet. 

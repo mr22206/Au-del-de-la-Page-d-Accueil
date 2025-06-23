@@ -1,0 +1,36 @@
+# Introduction Générale
+
+Ce rapport retrace l'intégralité de mon stage de fin d'études, d'une durée de 16 semaines, réalisé du 7 avril au 25 juillet 2025. J'ai eu l'opportunité d'intégrer l'entreprise Fortinet en tant qu'ingénieur stagiaire en développement et Business Intelligence, au sein d'une équipe stratégique du siège social EMEA (Europe, Moyen-Orient, Afrique).
+
+C'est dans ce contexte stimulant que le présent rapport de stage a été rédigé.
+
+## 1. Contexte de l'Entreprise : Fortinet EMEA Headquarters
+
+Fortinet est une multinationale américaine, leader mondial de la cybersécurité, fondée en 2000 par Ken Xie. L'entreprise est renommée pour son approche de sécurité intégrée, le **Security Fabric**, qui couvre l'ensemble de la surface d'attaque.
+
+Pour ce stage, l'entité d'accueil était le siège social de la région EMEA, dont les informations sont les suivantes :
+*   **Nom de l'entité :** Fortinet EMEA Headquarters
+*   **Adresse :** 905 Rue Albert Einstein, 06560 Valbonne
+*   **Secteur d'activité :** Cybersécurité, Réseaux
+*   **Effectif France :** Environ 600 personnes
+*   **Tuteur de Stage :** Benoit Rech
+
+### 1.1 L'équipe Consulting Systems Engineering
+
+Mon intégration s'est faite au sein de l'équipe Consulting Systems Engineering, un pôle d'expertise technique agissant comme un maillon essentiel entre la R&D et les ingénieurs avant-vente des régions EMEA (Europe, Moyen-Orient, Afrique) et APAC (Asie-Pacifique).
+
+La mission de l'équipe est de fournir un support technique avancé, de développer des outils internes, des démonstrations et de la documentation pour aider les équipes terrain à maîtriser et vendre les solutions complexes de Fortinet.
+
+## 2. La Problématique Initiale : Un Double Défi
+
+Le besoin initial de l'équipe était double :
+
+1.  **Centraliser l'accès à la documentation :** Les nombreuses ressources techniques produites par l'équipe étaient dispersées sur divers sites internes. Il manquait une page d'accueil unifiée, avec un moteur de recherche, pour permettre aux ingénieurs de trouver rapidement l'information pertinente.
+2.  **Valoriser les données de projets :** L'équipe utilise des outils Microsoft (Power Automate, SharePoint) pour son suivi d'activité. Les données collectées étaient sous-exploitées et nécessitaient d'être transformées en indicateurs de performance (KPIs) via Power BI pour un pilotage stratégique.
+
+## 3. Organisation du Rapport
+
+Pour dérouler le récit du projet, le rapport suivra le plan suivant :
+*   **Développement Principal :** Cette partie constituera le cœur du rapport, détaillant chaque étape du projet principal, de l'analyse du besoin à la mise en production de la plateforme de documentation. Le projet Power BI sera également présenté.
+*   **Conclusion et Perspectives :** Un bilan du travail accompli, des compétences développées et des évolutions futures possibles pour le projet.
+*   **Bibliographie, Glossaire et Annexes :** Ces sections regrouperont les références, les définitions des termes techniques ({ref}`glossaire`), les diagrammes d'architecture, des extraits de configuration et le suivi chronologique détaillé de mon stage.

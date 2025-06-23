@@ -1,0 +1,225 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annexe A : Diagrammes d’Architecture &mdash; Rapport de Stage - Fortinet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+      <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+      <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+      <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Annexe B : Le Pipeline Parent (docs-index)" href="Annexe_B_Le_Pipeline_Parent.html" />
+    <link rel="prev" title="Annexes" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Rapport de Stage - Fortinet
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des Matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00_Page_de_Garde.html">Page de Garde</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Fiche_Confidentialite.html">Fiche de confidentialité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_Remerciements.html">Remerciements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Resume_Francais_Anglais.html">Résumé Français et Anglais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_Introduction_Generale.html">Introduction Générale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Developpement_Principal/index.html">Le Cœur du Sujet : L’Usine Logicielle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_Conclusion_et_Perspectives.html">Conclusion et perspectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Bibliographie.html">Bibliographie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_Glossaire.html">Glossaire</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Annexes</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Annexe A : Diagrammes d’Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#architecture-globale-de-l-usine-logicielle">Architecture Globale de l’Usine Logicielle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flux-de-donnees-ci-cd-pour-un-silo">Flux de Données CI/CD (pour un silo)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_B_Le_Pipeline_Parent.html">Annexe B : Le Pipeline Parent (<code class="docutils literal notranslate"><span class="pre">docs-index</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_C_Le_Pipeline_Enfant_Type.html">Annexe C : Le Pipeline Enfant Type (<code class="docutils literal notranslate"><span class="pre">project-template-hub</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_D_Environnement_de_Construction.html">Annexe D : Environnement de Construction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_E_Systeme_de_Metadonnees.html">Annexe E : Le Système de Métadonnées</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_F_Laboratoire_ETLab_et_Configuration_SAML.html">Annexe F : Laboratoire ETLab et Configuration SAML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html">Annexe G : Suivi Chronologique Détaillé</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html#suivi-chronologique-avril-2025">Suivi Chronologique - Avril 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html#suivi-chronologique-mai-2025">Suivi Chronologique - Mai 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html#suivi-chronologique-juin-2025">Suivi Chronologique - Juin 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_H_Resolution_de_Problemes_Techniques.html">Annexe H : Résolution de Problèmes Techniques</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Rapport de Stage - Fortinet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Annexes</a></li>
+      <li class="breadcrumb-item active">Annexe A : Diagrammes d’Architecture</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Rapport_Stage/10_Annexes/Annexe_A_Diagrammes_Architecture.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="annexe-a-diagrammes-d-architecture">
+<span id="annexe-a-diagrammes-architecture"></span><h1>Annexe A : Diagrammes d’Architecture<a class="headerlink" href="#annexe-a-diagrammes-d-architecture" title="Link to this heading"></a></h1>
+<section id="architecture-globale-de-l-usine-logicielle">
+<h2>Architecture Globale de l’Usine Logicielle<a class="headerlink" href="#architecture-globale-de-l-usine-logicielle" title="Link to this heading"></a></h2>
+<p>Le système n’est pas basé sur une unique architecture Parent/Enfant, mais sur un modèle <strong>fédéré et multi-Hub</strong>. Il existe un projet “Parent”, toujours nommé <code class="docutils literal notranslate"><span class="pre">docs-index</span></code>, pour chaque grand silo de visibilité. C’est le <strong>groupe GitLab</strong> qui héberge ce projet qui définit le niveau de confidentialité (Public, Corporate, etc.).</p>
+<p>Chaque projet Parent est autonome : il gère son propre groupe de projets “Enfants”, génère son propre portail et son propre index de recherche.</p>
+<pre  class="mermaid">
+        graph TD
+    subgraph &quot;Silo de Visibilité 1 : Groupe 'Public'&quot;
+        direction LR
+        Parent1[&quot;Projet Hub&lt;br&gt;&lt;b&gt;docs-index&lt;/b&gt;&quot;]
+        Enfant1A[&quot;Doc Enfant A&quot;]
+        Enfant1B[&quot;Doc Enfant B&quot;]
+        
+        Enfant1A -- trigger --&gt; Parent1
+        Enfant1B -- trigger --&gt; Parent1
+        Parent1 -- déploie sur --&gt; SitePublic[&quot;Serveur Web&lt;br&gt;/public&quot;]
+    end
+
+    subgraph &quot;Silo de Visibilité 2 : Groupe 'Core_tech'&quot;
+        direction LR
+        Parent2[&quot;Projet Hub&lt;br&gt;&lt;b&gt;docs-index&lt;/b&gt;&quot;]
+        Enfant2A[&quot;Doc Enfant C&quot;]
+        Enfant2B[&quot;Doc Enfant D&quot;]
+
+        Enfant2A -- trigger --&gt; Parent2
+        Enfant2B -- trigger --&gt; Parent2
+        Parent2 -- déploie sur --&gt; SiteCorporate[&quot;Serveur Web&lt;br&gt;/corporate (protégé par SSO)&quot;]
+    end
+
+    subgraph &quot;Silo de Visibilité N...&quot;
+        ParentN[&quot;...&quot;]
+        EnfantN[&quot;...&quot;]
+    end
+
+    style Parent1 fill:#d1e7dd,stroke:#198754
+    style Parent2 fill:#cfe2ff,stroke:#0d6efd
+    </pre></section>
+<section id="flux-de-donnees-ci-cd-pour-un-silo">
+<h2>Flux de Données CI/CD (pour un silo)<a class="headerlink" href="#flux-de-donnees-ci-cd-pour-un-silo" title="Link to this heading"></a></h2>
+<p>Ce diagramme illustre l’architecture complète du pipeline de CI/CD mis en place. Il montre le flux de travail depuis le push du code sur GitLab jusqu’au déploiement automatisé de la documentation sur le serveur Apache.</p>
+<pre  class="mermaid">
+        graph TD
+    subgraph &quot;1. Développement&quot;
+        A[Developer] -- &quot;git push&quot; --&gt; B(GitLab Repository);
+    end
+
+    subgraph &quot;2. Orchestration CI/CD&quot;
+        B -- &quot;Déclenche le Pipeline&quot; --&gt; C{GitLab CI/CD Pipeline};
+    end
+
+    subgraph &quot;3. Étapes du Pipeline (Conteneurs Docker)&quot;
+        C -- &quot;Si Dockerfile changes&quot; --&gt; D[&quot;Build Images&lt;br/&gt;Construit les images Docker et les pousse au registre.&quot;];
+        D --&gt; E(GitLab Container Registry);
+
+        C --&gt; F[&quot;Fetch Child Artifacts&lt;br/&gt;Un script Python récupère les artefacts&lt;br/&gt;des projets de documentation enfants.&quot;];
+        
+        F --&gt; G[&quot;Index &amp; Build Docs&lt;br/&gt;Génère la page d'accueil, construit les docs&lt;br/&gt;avec Sphinx, et crée l'index de recherche avec Pagefind.&quot;];
+        
+        G --&gt; H[&quot;Deploy to Server&lt;br/&gt;Copie les fichiers HTML et l'index&lt;br/&gt;sur le serveur Apache via rsync et SSH.&quot;];
+    end
+
+    subgraph &quot;4. Hébergement&quot;
+        direction LR
+        I[Serveur Web Apache]
+        subgraph &quot;Environnements&quot;
+            J[&quot;/var/www/html/public&quot;]
+            K[&quot;/var/www/html/core_tech&quot;]
+        end
+        I --- J &amp; K
+    end
+    
+    H -- &quot;Déploie sur&quot; --&gt; I;
+
+    subgraph &quot;5. Accès Utilisateur&quot;
+        M[Ingénieur Fortinet] -- &quot;Accède à la documentation via HTTPS/SSO&quot; --&gt; I;
+    end
+
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style I fill:#cfc,stroke:#333,stroke-width:2px
+    style M fill:#fec,stroke:#333,stroke-width:2px
+    </pre></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Annexes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Annexe_B_Le_Pipeline_Parent.html" class="btn btn-neutral float-right" title="Annexe B : Le Pipeline Parent (docs-index)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Rezki Mohammad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

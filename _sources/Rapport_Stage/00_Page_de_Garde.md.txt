@@ -1,0 +1,63 @@
+```{danger} Note Importante sur la Mise en Page
+Ce rapport a été conçu et optimisé pour une consultation en ligne. Pour la meilleure expérience de lecture, avec une mise en page adaptée, des diagrammes interactifs et une navigation fluide, il est fortement recommandé de consulter la version web :
+
+[**Consulter le rapport en ligne via ce lien : https://mr22206.github.io/Au-del-de-la-Page-d-Accueil**](https://mr22206.github.io/Au-del-de-la-Page-d-Accueil/)
+```
+
+# Page de Garde
+```{raw} html
+<div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid black; padding-bottom: 20px; margin-bottom: 50px;">
+    <img src="../_static/light-cesi-logo.jpg" alt="Logo CESI" width="200">
+    <div style="text-align: right;">
+        <img src="../_static/light-fortinet-logo.png" alt="Logo Fortinet" width="200">
+    </div>
+</div>
+
+<div style="text-align: center;">
+    <p style="font-size: 1.5em; font-weight: bold; margin-bottom: 0; margin-top: 0;">NATURE DU RAPPORT</p>
+    <p style="margin-top: 5px;">(Rapport de stage 2° Année)</p>
+
+    <br><br>
+
+    <p style="font-size: 1.5em; font-weight: bold; margin-bottom: 0; margin-top: 0;">TITRE DU RAPPORT</p>
+    <p style="font-size: 1.2em; font-weight: bold; margin-top: 5px;">Au-delà de la Page d'Accueil</p>
+    <!-- <p style="font-size: 0.9em; margin-top: 5px;">(60 caractères <span style="color:red; font-weight:bold;">MAXIMUM</span> - espaces inclus)</p> -->
+    
+    <br>
+    
+    <p>23 Juin 2025</p>
+</div>
+
+<div style="text-align: center; margin-top: 80px; margin-bottom: 80px;">
+</div>
+
+<table style="width: 90%; border: none; margin: 0 auto;">
+    <tr style="border: none;">
+        <td style="border: none; width: 50%; vertical-align: top;">
+            <p>NOM DE L'ENTREPRISE<br><b>Fortinet EMEA Headquarters</b></p>
+            <p style="margin-top: 20px;">LIEU DE L'ENTREPRISE<br><b>905, rue Albert Einstein, 06560 Valbonne</b></p>
+            <p style="margin-top: 20px;">NOM PRÉNOM DU TUTEUR<br><b>Benoit Rech</b></p>
+        </td>
+        <td style="border: none; width: 50%; vertical-align: top;">
+            <p>NOM PRÉNOM DE L'ÉLÈVE<br><b>Rezki Mohammad</b></p>
+            <p style="margin-top: 20px;">PXX - GROUPE X<br><b>CPIA2 - Groupe 1</b></p>
+            <p style="margin-top: 20px;">NOM PRÉNOM DE L'EF<br><b>Célina Mitri</b></p>
+        </td>
+    </tr>
+</table>
+
+<br><br>
+
+<div style="width: 90%; margin: 0 auto;">
+    <p style="text-decoration: underline;">Mode de diffusion :</p>
+    <table style="width: 100%; border: none;">
+        <tr style="border: none;">
+            <td style="border: none; width: 50%; vertical-align: top;">
+                <span>Restreinte <span style="display: inline-block; border: 1px solid black; width: 15px; height: 15px; vertical-align: middle; text-align: center; font-weight: bold; line-height: 15px;">X</span></span>
+            </td>
+            <td style="border: none; width: 50%; vertical-align: top;">
+                <span>Libre <span style="display: inline-block; border: 1px solid black; width: 15px; height: 15px; vertical-align: middle;"></span></span>
+            </td>
+        </tr>
+    </table>
+</div>

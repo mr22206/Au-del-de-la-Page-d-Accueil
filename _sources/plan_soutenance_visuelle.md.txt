@@ -1,0 +1,386 @@
+# Storyboard de Production pour une Soutenance Impactante
+
+Ce document est votre guide de production. Chaque diapositive est détaillée avec son objectif, son contenu visuel, ses instructions de création et son discours clé.
+
+**Palette de couleurs :**
+- **Bleu Principal :** `#0D6EFD`
+- **Vert (Succès) :** `#198754`
+- **Rouge (Problème) :** `#DC3545`
+- **Gris (Texte) :** `#6C757D`
+- **Gris Clair (Fond) :** `#F8F9FA`
+
+---
+## **Diapositive 1 : Titre**
+*   **Objectif :** Capter l'attention et poser l'enjeu.
+*   **Contenu Visuel :** Un titre fort, votre nom, et un sous-titre qui crée du suspense.
+*   **Discours Clé :** "Bonjour à tous. Je vais vous présenter le projet que j'ai mené chez Fortinet, un projet qui a commencé par une simple page d'accueil pour se transformer en une architecture complète."
+
+---
+## **Diapositive 2 : Contexte : Un Leader Mondial de la Cybersécurité**
+*   **Objectif :** Situer l'entreprise et donner une idée de son envergure.
+*   **Titre :** `Contexte : Un Leader Mondial de la Cybersécurité`
+*   **Contenu Visuel :** Le diagramme "Fortinet en Chiffres".
+```{mermaid}
+%%{init: {'theme': 'neutral'}}%%
+mindmap
+  root((Fortinet en Chiffres))
+    Leader du Marché
+      ::icon(fa fa-trophy)
+      N°1 en appliances de sécurité livrées
+      Reconnu dans 10+ Magic Quadrants Gartner
+    Innovation Continue
+      ::icon(fa fa-lightbulb)
+      +1500 brevets déposés
+      Plateforme "Security Fabric"
+    Croissance Solide
+      ::icon(fa fa-chart-line)
+      CA 2024: 5.96 Milliards $
+      +14 000 employés
+    Confiance des Clients
+      ::icon(fa fa-shield-alt)
+      +700 000 clients
+      96% des entreprises du Fortune 100
+```
+*   **Discours Clé :** "Mon stage s'est déroulé chez Fortinet, un leader mondial de la cybersécurité. Pour vous donner une idée, c'est plus de 700 000 clients et un chiffre d'affaires de près de 6 milliards de dollars."
+
+---
+## **Diapositive 3 : Ma Mission au Cœur de la Chaîne de Valeur**
+*   **Objectif :** Montrer où votre équipe et votre projet s'insèrent dans la stratégie de l'entreprise.
+*   **Titre :** `Ma Mission au Cœur de la Chaîne de Valeur`
+*   **Contenu Visuel :** Le diagramme de la "chaîne de valeur".
+    ```{mermaid}
+    %%{init: {'theme': 'neutral'}}%%
+    graph TD
+        A["<b>R&D Fortinet</b><br>Crée les produits de sécurité"] --> B;
+        
+        subgraph "<b>Mon Équipe (CSE)</b>"
+            B["<b>Consulting Systems Engineering</b><br>Développe l'expertise et les outils"]
+        end
+
+        B --> C["<b>Forces de Vente (Mondiales)</b><br>Utilisent cette expertise"];
+
+        B -.-> D["<b>Mon Projet :</b><br>Faciliter l'accès à cette expertise"];
+        style B fill:#cfe2ff,stroke:#0D6EFD,stroke-width:2px
+        style D fill:#d1e7dd,stroke:#198754,stroke-width:2px
+    ```
+*   **Discours Clé :** "J'ai intégré une équipe qui fait le pont entre la R&D et les forces de vente. Notre rôle est de transformer l'innovation technique en outils et en expertise. Mon projet s'inscrit directement dans cette mission."
+
+---
+## **Diapositive 4 : La Problématique Initiale**
+*   **Objectif :** Présenter le problème de départ de manière claire et concise.
+*   **Titre :** `La Problématique Initiale : Le Savoir Dispersé`
+*   **Contenu Visuel :** Une icône centrale (ex: un cerveau ou une base de données) d'où partent des flèches vers plusieurs logos de plateformes (SharePoint, site interne, etc.), montrant l'éparpillement.
+    ```{mermaid}
+    %%{init: {'theme': 'neutral'}}%%
+    graph LR
+        subgraph "Savoir de l'équipe"
+            A[("Ressources<br>Techniques")]
+        end
+
+        subgraph "Où le trouver ?"
+            B["Site interne A"]
+            C["SharePoint B"]
+            D["Wiki C"]
+            E["..."]
+        end
+
+        A --> B;
+        A --> C;
+        A --> D;
+        A --> E;
+
+        style A fill:#f8d7da
+    ```
+*   **Discours Clé :** "Le problème était simple : toutes ces ressources de grande valeur étaient dispersées. Il fallait donc créer un point d'accès centralisé pour que les ingénieurs trouvent l'information rapidement."
+
+---
+## **Diapositive 5 : Le Mur de la Production**
+*   **Objectif :** Créer le conflit, le point de rupture du récit.
+*   **Titre :** `Le Premier Obstacle : Le Mur de la Production`
+*   **Contenu Visuel :** Un visuel montrant un script Python simple, puis une grosse croix rouge et le diagramme du "mur".
+
+    ```{mermaid}
+    %%{init: {'theme': 'neutral'}}%%
+    graph LR
+        A["<b>Mon Approche Initiale</b><br>Script Python côté serveur"] --> B{{"<br><b>LE MUR</b><br>Politique de Sécurité<br><b>ZÉRO EXÉCUTION</b><br>"}};
+        B --> C["<br><b>Conséquence</b><br>Solution initiale<br><b>INCOMPATIBLE</b><br>"];
+        style B fill:#F8D7DA,stroke:#DC3545,stroke-width:4px
+    ```
+*   **Discours Clé :** "J'ai donc développé un prototype... mais au moment de le déployer, il s'est heurté à la politique de sécurité des serveurs : zéro exécution de script. Ma solution était incompatible."
+
+---
+## **Diapositive 6 : L'Effet Oignon - Révélation de la Vraie Mission**
+*   **Objectif :** Présenter la totalité de la complexité découverte de manière visuelle et mémorable, juste après le premier échec.
+*   **Titre :** `L'Effet Oignon : La Vraie Nature du Projet`
+*   **Instructions de Création (ne pas utiliser Mermaid ici) :**
+    1.  **Utilisez l'animation "Apparition"** sur chaque couche de l'oignon pour les faire apparaître au clic.
+    2.  **Créez les 4 "couches"** avec l'outil "Formes" de votre logiciel de présentation.
+    3.  **Superposez-les** du plus grand au plus petit.
+    4.  **Placez le texte** au centre de chaque couche.
+*   **Contenu Visuel :** 
+    -   **Couche 1 (Vert):** `Mission Initiale : Une page d'accueil`
+    -   **Couche 2 (Rouge):** `Le Vrai Mur : Contraintes de Production`
+    -   **Couche 3 (Orange):** `Le Défi Annexe : Sécuriser avec le SSO`
+    -   **Couche 4 (Bleu):** `Solution Globale : Bâtir une architecture complète (Lab + CI/CD)`
+*   **Discours Clé :** "Cet échec a révélé la vraie nature du projet. Pour l'expliquer, j'utilise la métaphore de l'oignon. On part de la mission de surface (clic), on heurte immédiatement **le vrai mur** des contraintes (clic), ce qui nous impose de **sécuriser la solution** (clic), et nous force enfin à envisager une **solution globale et industrielle**."
+
+---
+## **Diapositive 7 : Les 3 Défis à Relever**
+*   **Objectif :** Exposer clairement le plan de la présentation tout en créant du suspense sur le dernier défi.
+*   **Titre :** `Le Plan d'Attaque : Résoudre 3 Problèmes Majeurs`
+*   **Contenu Visuel :** Trois blocs. Le troisième est "verrouillé" pour attiser la curiosité.
+    ```{mermaid}
+    %%{init: {'theme': 'neutral'}}%%
+    graph LR
+        subgraph "Les 3 Problématiques"
+            P1["<b>1. Hétérogénéité</b><br>Des dizaines de projets de documentation<br>sans standard commun."]
+            P2["<b>2. Fragilité</b><br>Le moindre changement dans un script<br>central peut tout casser."]
+            P3["fa:fa-lock <b>3. Défi Verrouillé</b><br>Sera révélé plus tard..."]
+        end
+        style P1 fill:#f8d7da
+        style P2 fill:#f8d7da
+        style P3 fill:#e9ecef,stroke:#adb5bd,stroke-width:2px,stroke-dasharray: 5 5
+    ```
+*   **Discours Clé :** "Le vrai projet consistait donc à résoudre deux problèmes immédiats : l'hétérogénéité et la fragilité. Un troisième défi, tout aussi crucial, se révélera une fois que nous aurons résolu les deux premiers."
+
+---
+## **Diapositive 8 : Solution 1 : L'Usine CI/CD**
+*   **Objectif :** Présenter la solution architecturale qui répond aux deux premiers problèmes.
+*   **Titre :** `Solution 1 : L'Usine CI/CD contre l'Hétérogénéité et la Fragilité`
+*   **Instructions de Création :** Placer les deux diagrammes côte à côte, avec un titre clair au-dessus de chacun ("AVANT" et "APRÈS").
+*   **Contenu Visuel :** 
+
+    **AVANT : Monolithe Fragile**
+    ```{mermaid}
+    %%{init: {'theme': 'neutral'}}%%
+    graph TB
+        subgraph "Développeurs"
+            direction LR
+            Dev1[Dev 1]
+            Dev2[Dev 2]
+            Dev3[...]
+        end
+
+        Script("
+            <b>Script Central Monolithique</b>
+            - Gère tous les projets
+            - Logique complexe
+            - Single Point of Failure
+        ")
+
+        Resultat("fa:fa-bomb <b>Casse pour tout le monde</b>")
+
+        Dev1 --> Script; Dev2 --> Script; Dev3 --> Script
+        Script -.-> Resultat
+
+        style Script fill:#F8D7DA,stroke:#DC3545,stroke-width:2px
+        style Resultat fill:#F8D7DA,stroke:#DC3545,stroke-width:2px
+    ```
+
+    **APRÈS : Usine Distribuée**
+    ```{mermaid}
+    %%{init: {'theme': 'neutral'}}%%
+    graph TB
+        Chef("<b>Chef d'Orchestre Central</b><br><i>Pipeline Parent</i>")
+        
+        subgraph "Projets Autonomes"
+            direction LR
+            Enfant1["<b>Doc A</b>"]
+            Enfant2["<b>Doc B</b>"]
+        end
+
+        Enfant1 -- "Livrable" --> Chef
+        Enfant2 -- "Livrable" --> Chef
+        
+        style Chef fill:#d1e7dd,stroke:#198754,stroke-width:2px
+        style Enfant1 fill:#cfe2ff,stroke:#0d6efd,stroke-width:2px
+        style Enfant2 fill:#cfe2ff,stroke:#0d6efd,stroke-width:2px
+    ```
+*   **Discours Clé :** "La solution a été de passer de ce modèle monolithique fragile, où tout pouvait casser, à cette architecture distribuée, où chaque projet est indépendant."
+
+---
+## **Diapositive 9 : Premier Succès & Problème Restant**
+*   **Objectif :** Montrer la progression, révéler le dernier défi et relancer le récit.
+*   **Titre :** `Premier Succès... et Nouveau Défi Révélé`
+*   **Contenu Visuel :** Reprise de la diapositive des 3 défis. Les deux premiers sont maintenant en vert, et le troisième est "déverrouillé", révélant le problème de la confidentialité.
+    ```{mermaid}
+    %%{init: {'theme': 'neutral'}}%%
+    graph LR
+        subgraph "Les 3 Problématiques"
+            P1["<b>✅ 1. Hétérogénéité</b><br>Standardisation via les pipelines enfants."]
+            P2["<b>✅ 2. Fragilité</b><br>Décentralisation du build.<br>Plus de Single Point of Failure."]
+            P3["<b>3. Confidentialité</b><br>Comment contrôler qui voit quoi<br>dans un système unifié ?"]
+        end
+        style P1 fill:#d1e7dd
+        style P2 fill:#d1e7dd
+        style P3 fill:#f8d7da
+    ```
+*   **Discours Clé :** "Cette usine fonctionne, et elle résout nos deux premiers problèmes. Mais ce succès révèle la nature du troisième défi que nous avions verrouillé : maintenant que tout est si facile à publier, comment gérer la confidentialité et les droits d'accès ?"
+
+---
+## **Diapositive 10 : Le Défi SSO : De l'Impasse à la Maîtrise**
+*   **Objectif :** Montrer le passage d'une situation bloquée à une solution maîtrisée grâce à l'ETLab, en utilisant un format visuel "Avant/Après".
+*   **Titre :** `Le Défi SSO : De l'Impasse à la Maîtrise`
+*   **Instructions de Création :** Placer les deux diagrammes côte à côte, avec un titre clair au-dessus de chacun ("AVANT" et "APRÈS").
+*   **Contenu Visuel :** 
+
+    **AVANT : L'Impasse de la Production**
+    ```{mermaid}
+    %%{init: {'theme': 'neutral'}}%%
+    graph TD
+        subgraph "Environnement de Production"
+            Dev["Moi (Développeur)"]
+            Server["Serveur Web"]
+            FAC["Authentification (FAC)"]
+        end
+        
+        Mur{{"<b>ACCÈS VERROUILLÉ</b><br>Contrôlé par l'IT"}}
+        
+        Dev -- "Veut configurer" --> Mur
+        Mur -- "Bloque" --> Server
+        Server <-.-> FAC
+    
+        Resultat["<b>IMPASSE :</b><br>Configuration & Tests<br>impossibles"]
+    
+        Mur -.-> Resultat
+    
+        style Mur fill:#F8D7DA,stroke:#DC3545,stroke-width:2px
+        style Resultat fill:#F8D7DA,stroke:#DC3545,stroke-width:2px
+    ```
+
+    **APRÈS : La Maîtrise avec l'ETLab**
+    ```{mermaid}
+    %%{init: {'theme': 'neutral'}}%%
+    graph TD
+        subgraph "Mon Laboratoire Isolé (ETLab)"
+            Dev["Moi (Admin du Lab)"]
+            Server["Serveur Web Clone"]
+            FAC["FAC Clone"]
+    
+            Dev -- "Configure librement" --> Server
+            Server <--> FAC
+        end
+
+        Resultat["<b>MAÎTRISE :</b><br>Tests et validation<br>réussis"]
+
+        FAC --> Resultat
+
+        style Dev fill:#cfe2ff,stroke:#0d6efd,stroke-width:2px
+        style Resultat fill:#d1e7dd,stroke:#198754,stroke-width:2px
+    ```
+*   **Discours Clé :** "On se retrouvait donc dans cette impasse, face à un environnement de production verrouillé. Pour en sortir, la solution a été de bâtir mon propre laboratoire, l'ETLab. En clonant l'environnement, je suis devenu l'administrateur, ce qui m'a donné la maîtrise totale pour configurer et valider l'authentification de bout en bout."
+
+---
+## **Diapositive 11 : Le Flux d'Authentification SSO en Action**
+*   **Objectif :** Montrer concrètement le fonctionnement de la solution d'authentification qui a été mise au point.
+*   **Titre :** `Le Flux d'Authentification SSO en Action`
+*   **Contenu Visuel :** Le diagramme de séquence SAML.
+    ```{mermaid}
+    %%{init: {'theme': 'neutral'}}%%
+    sequenceDiagram
+        participant Client
+        participant Apache (SP) as Service Provider
+        participant FAC (IdP) as Identity Provider
+
+        Client->>Apache (SP): 1. Accès au Hub
+        Apache (SP)->>Client: 2. Redirection vers le portail d'authentification
+        Client->>FAC (IdP): 3. Saisie des identifiants
+        FAC (IdP)-->>Client: 4. Envoi de l'assertion SAML signée
+        Client->>Apache (SP): 5. Présentation de l'assertion
+        Apache (SP)->>Apache (SP): 6. Validation de la signature
+        Apache (SP)-->>Client: 7. Accès autorisé et page servie
+    ```
+*   **Discours Clé :** "Et voici le résultat obtenu grâce à ce laboratoire : le flux d'authentification standard de l'entreprise, entièrement fonctionnel. L'utilisateur est redirigé, s'identifie, et revient avec une preuve cryptographique de son identité."
+
+---
+## **Diapositive 12 : Bilan : Les 3 Problèmes Majeurs Résolus**
+*   **Objectif :** Conclure la partie technique en montrant que les 3 défis identifiés ont été surmontés.
+*   **Titre :** `Bilan : Les 3 Problèmes Majeurs Résolus`
+*   **Instructions de Création :** Le diagramme occupe l'espace central. La couleur verte uniforme signifie la réussite sur tous les fronts.
+*   **Contenu Visuel :** 
+    ```{mermaid}
+    %%{init: {'theme': 'neutral'}}%%
+    graph LR
+        subgraph "Les 3 Problématiques Résolues"
+            P1["<b>✅ 1. Hétérogénéité</b><br>Standardisation via les pipelines enfants."]
+            P2["<b>✅ 2. Fragilité</b><br>Décentralisation du build.<br>Plus de Single Point of Failure."]
+            P3["<b>✅ 3. Confidentialité</b><br>Contrôle d'accès assuré<br>par l'intégration SSO."]
+        end
+        style P1 fill:#d1e7dd
+        style P2 fill:#d1e7dd
+        style P3 fill:#d1e7dd
+    ```
+*   **Discours Clé :** "Et nous voici au bilan final de la partie technique. Les trois problèmes majeurs que sont l'hétérogénéité, la fragilité et la confidentialité sont maintenant résolus grâce à l'architecture que nous venons de voir."
+
+---
+## **Diapositive 13 : Bilan & Valeur Livrée**
+*   **Objectif :** Résumer l'apport du projet et votre montée en compétences.
+*   **Instructions de Création :** Utiliser des tableaux simples.
+    -   **Compétences :** Mettre en avant les 3 compétences techniques et les 2 compétences stratégiques les plus importantes.
+    -   **Valeur :** Utiliser 3 colonnes : "[✓] Livré", "[🎁] Valeur Ajoutée", "[🛣️] Futur".
+*   **Discours Clé :** "Ce projet m'a permis de développer des compétences clés. Il apporte une réelle valeur à l'équipe en termes de sécurité, de fiabilité et de productivité, et il est conçu pour l'avenir."
+
+---
+## **Diapositive 14 : Questions & Remerciements**
+*   **Objectif :** Ouvrir la discussion de manière professionnelle.
+*   **Contenu Visuel :** Simple et épuré. Votre nom, vos contacts.
+*   **Discours Clé :** "Je vous remercie de votre attention. Je suis disponible pour répondre à vos questions."
+
+---
+## Annexe : Diapositives de Support
+
+## **Annexe A : Zoom sur le Pipeline ENFANT**
+
+*   **Concept Visuel :** Extrait de code YAML commenté.
+
+    ```{mermaid}
+    %%{init: {'theme': 'neutral'}}%%
+    flowchart LR
+        A["<b>Commit de l'ingénieur</b><br>avec tag [web-pub]"] --> Enfant;
+        subgraph Enfant [Pipeline Enfant]
+            direction TB
+            B["Build du site statique"] --> T["Déclenchement du Parent"];
+        end
+        Enfant --> Parent;
+        subgraph Parent [Pipeline Parent]
+            direction TB
+            D["Récupération des artefacts"] --> E["Indexation globale"] --> F["Déploiement"];
+        end
+        Parent --> G["Hub de Documentation<br><b>Mis à Jour</b>"];
+        
+        style A fill:#cfe2ff,stroke:#0D6EFD,stroke-width:2px
+        style G fill:#D1E7DD,stroke:#198754,stroke-width:4px
+    ```
+
+## **Annexe B : Zoom sur le système de Métadonnées**
+
+### Le fichier `project.env`
+
+Fichier à la racine de chaque projet de documentation, où l'utilisateur renseigne les métadonnées de son projet.
+
+```yaml
+# === Variables à valider via YAML (clé) ===
+META_PRIORITY= PR0001       # clé pour "High"
+META_GROUP= GR0002          # clé pour "SASE"
+
+# === Variables éditoriales ===
+PROJECT_TITLE= "Guide de déploiement SASE"
+PROJECT_DESC= "Ce guide explique comment..."
+
+# === Mots-clés pour la recherche ===
+META_TAGS="SASE, ZTNA, FortiSASE"
+```
+
+### Le script Python `gen_index.py` (cœur de l'intelligence)
+
+Ce script, exécuté dans le pipeline PARENT :
+1.  **Lit** tous les `project.env` de chaque projet.
+2.  **Valide** les métadonnées (`META_GROUP`, etc.) contre les listes de référence.
+3.  **Injecte** les métadonnées dans le HTML de chaque documentation enfant via des `meta` tags.
+    ```html
+    <meta name="pagefind:filter" content="group:SASE" />
+    <meta name="pagefind:filter" content="priority:High" />
+    ```
+4.  **Génère** un fichier `index.html` global qui contient tous les projets.
+
+Ce mécanisme est **crucial** car il permet à l'outil de recherche Pagefind de filtrer les résultats.

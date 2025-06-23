@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annexe B : Le Pipeline Parent (docs-index) &mdash; Rapport de Stage - Fortinet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Annexe C : Le Pipeline Enfant Type (project-template-hub)" href="Annexe_C_Le_Pipeline_Enfant_Type.html" />
+    <link rel="prev" title="Annexe A : Diagrammes d’Architecture" href="Annexe_A_Diagrammes_Architecture.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Rapport de Stage - Fortinet
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des Matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00_Page_de_Garde.html">Page de Garde</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Fiche_Confidentialite.html">Fiche de confidentialité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_Remerciements.html">Remerciements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Resume_Francais_Anglais.html">Résumé Français et Anglais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_Introduction_Generale.html">Introduction Générale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Developpement_Principal/index.html">Le Cœur du Sujet : L’Usine Logicielle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_Conclusion_et_Perspectives.html">Conclusion et perspectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Bibliographie.html">Bibliographie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_Glossaire.html">Glossaire</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Annexes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Annexe_A_Diagrammes_Architecture.html">Annexe A : Diagrammes d’Architecture</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Annexe B : Le Pipeline Parent (<code class="docutils literal notranslate"><span class="pre">docs-index</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fichier-gitlab-ci-yml-du-pipeline-parent">Fichier <code class="docutils literal notranslate"><span class="pre">.gitlab-ci.yml</span></code> du Pipeline Parent</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#analyse-des-etapes-cles">Analyse des Étapes Clés</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#analyse-du-script-d-assemblage-gen-index-py">Analyse du Script d’Assemblage <code class="docutils literal notranslate"><span class="pre">gen_index.py</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_C_Le_Pipeline_Enfant_Type.html">Annexe C : Le Pipeline Enfant Type (<code class="docutils literal notranslate"><span class="pre">project-template-hub</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_D_Environnement_de_Construction.html">Annexe D : Environnement de Construction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_E_Systeme_de_Metadonnees.html">Annexe E : Le Système de Métadonnées</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_F_Laboratoire_ETLab_et_Configuration_SAML.html">Annexe F : Laboratoire ETLab et Configuration SAML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html">Annexe G : Suivi Chronologique Détaillé</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html#suivi-chronologique-avril-2025">Suivi Chronologique - Avril 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html#suivi-chronologique-mai-2025">Suivi Chronologique - Mai 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_G_Suivi_Chronologique_Detaille.html#suivi-chronologique-juin-2025">Suivi Chronologique - Juin 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_H_Resolution_de_Problemes_Techniques.html">Annexe H : Résolution de Problèmes Techniques</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Rapport de Stage - Fortinet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Annexes</a></li>
+      <li class="breadcrumb-item active">Annexe B : Le Pipeline Parent (<code class="docutils literal notranslate"><span class="pre">docs-index</span></code>)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Rapport_Stage/10_Annexes/Annexe_B_Le_Pipeline_Parent.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="annexe-b-le-pipeline-parent-docs-index">
+<span id="annexe-b-le-pipeline-parent"></span><h1>Annexe B : Le Pipeline Parent (<code class="docutils literal notranslate"><span class="pre">docs-index</span></code>)<a class="headerlink" href="#annexe-b-le-pipeline-parent-docs-index" title="Link to this heading"></a></h1>
+<p>Le pipeline Parent est le chef d’orchestre de chaque silo de visibilité. Il est hébergé dans un projet <strong>toujours nommé <code class="docutils literal notranslate"><span class="pre">docs-index</span></code></strong>, qui est lui-même situé dans un groupe GitLab spécifique (par exemple, le groupe <code class="docutils literal notranslate"><span class="pre">Public</span></code> ou le groupe <code class="docutils literal notranslate"><span class="pre">Core_tech</span></code>). C’est l’appartenance à ce groupe qui détermine la portée et la visibilité du Hub.</p>
+<p>La mission de ce pipeline est de récupérer les documentations construites par les pipelines Enfants de son silo, de les assembler en un portail unifié, de générer un index de recherche global, et de déployer le tout sur le serveur de production correspondant.</p>
+<p>Son fonctionnement est défini dans le fichier <code class="docutils literal notranslate"><span class="pre">.gitlab-ci.yml</span></code>.</p>
+<section id="fichier-gitlab-ci-yml-du-pipeline-parent">
+<h2>Fichier <code class="docutils literal notranslate"><span class="pre">.gitlab-ci.yml</span></code> du Pipeline Parent<a class="headerlink" href="#fichier-gitlab-ci-yml-du-pipeline-parent" title="Link to this heading"></a></h2>
+<p>Le pipeline est structuré en quatre étapes principales (<code class="docutils literal notranslate"><span class="pre">stages</span></code>) : <code class="docutils literal notranslate"><span class="pre">build_image</span></code>, <code class="docutils literal notranslate"><span class="pre">fetch</span></code>, <code class="docutils literal notranslate"><span class="pre">index</span></code>, et <code class="docutils literal notranslate"><span class="pre">deploy</span></code>. Il est conçu pour être déclenché (<code class="docutils literal notranslate"><span class="pre">triggered</span></code>) par un pipeline enfant.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">stages</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build_image</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fetch</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+
+<span class="c1"># ... (Jobs de build d&#39;images Docker : build_docker_image, build_deploy_image, ...)</span>
+<span class="c1"># Ces jobs construisent et publient les images Docker utilisées par les autres étapes.</span>
+<span class="c1"># Ils ne s&#39;exécutent que si les Dockerfiles correspondants sont modifiés.</span>
+
+<span class="nt">fetch_artifacts</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fetch</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python:3.10</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install python-gitlab</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python scripts/fetch_child_artifacts.py</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdir -p Public</span>
+<span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Public/</span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$CHILD_COMMIT_MESSAGE</span><span class="nv"> </span><span class="s">=~</span><span class="nv"> </span><span class="s">/web-pub/</span><span class="nv"> </span><span class="s">||</span><span class="nv"> </span><span class="s">$CHILD_COMMIT_MESSAGE</span><span class="nv"> </span><span class="s">=~</span><span class="nv"> </span><span class="s">/web-unpub/&#39;</span>
+
+<span class="nt">index_and_build</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_REGISTRY_IMAGE:build</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python gen_index.py</span>
+<span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Docs_Home/</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Public/docs_pagefind/</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Public/docs_merged/</span>
+<span class="w">  </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">fetch_artifacts</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># ...</span>
+
+<span class="nt">deploy</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_REGISTRY_IMAGE:deploy</span>
+<span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Configuration de la clé SSH pour le déploiement</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">if echo &quot;$CHILD_COMMIT_MESSAGE&quot; | grep -q &quot;web-pub&quot;; then</span>
+<span class="w">      </span><span class="no"># Déploie le contenu via rsync</span>
+<span class="w">      </span><span class="no">rsync -av ... Public/docs_merged/ ...</span>
+<span class="w">    </span><span class="no">elif echo &quot;$CHILD_COMMIT_MESSAGE&quot; | grep -q &quot;web-unpub&quot;; then</span>
+<span class="w">      </span><span class="no"># Supprime le dossier du projet dés-publié via ssh</span>
+<span class="w">      </span><span class="no">ssh ... &quot;rm -rf /path/to/docs_merged/$CHILD_PROJECT_NAME&quot;</span>
+<span class="w">      </span><span class="no"># Met à jour le reste via rsync</span>
+<span class="w">    </span><span class="no">fi</span>
+<span class="w">  </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">index_and_build</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># ...</span>
+</pre></div>
+</div>
+<section id="analyse-des-etapes-cles">
+<h3>Analyse des Étapes Clés<a class="headerlink" href="#analyse-des-etapes-cles" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">fetch_artifacts</span></code> (Récupération des “colis”)</strong>
+Ce <code class="docutils literal notranslate"><span class="pre">job</span></code> exécute le script <code class="docutils literal notranslate"><span class="pre">scripts/fetch_child_artifacts.py</span></code>. Ce script Python est le cœur de la logique de récupération. Il se connecte à l’API GitLab, parcourt tous les projets du groupe de documentation, et pour chaque projet, il trouve le dernier pipeline réussi sur la branche <code class="docutils literal notranslate"><span class="pre">main</span></code>. Il télécharge alors les artefacts du <code class="docutils literal notranslate"><span class="pre">job</span></code> “build” de ce pipeline (le site HTML statique) et les place dans un dossier local <code class="docutils literal notranslate"><span class="pre">Public/</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">index_and_build</span></code> (Assemblage et Indexation)</strong>
+Une fois tous les sites enfants rapatriés, ce <code class="docutils literal notranslate"><span class="pre">job</span></code> exécute le script <code class="docutils literal notranslate"><span class="pre">gen_index.py</span></code>. Ce script (non détaillé ici) a plusieurs rôles :</p>
+<ul class="simple">
+<li><p>Il fusionne les contenus dans une arborescence unique.</p></li>
+<li><p>Il génère la page d’accueil principale du Hub.</p></li>
+<li><p>Il lance la commande <code class="docutils literal notranslate"><span class="pre">pagefind</span></code> pour créer l’index de recherche unifié sur l’ensemble des contenus fusionnés.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">deploy</span></code> (Livraison)</strong>
+C’est la dernière étape. En fonction du mot-clé (<code class="docutils literal notranslate"><span class="pre">[web-pub]</span></code> ou <code class="docutils literal notranslate"><span class="pre">[web-unpub]</span></code>) présent dans le message de commit du projet enfant (transmis via variable d’environnement), ce <code class="docutils literal notranslate"><span class="pre">job</span></code> effectue l’action appropriée :</p>
+<ul class="simple">
+<li><p><strong>Pour <code class="docutils literal notranslate"><span class="pre">[web-pub]</span></code> :</strong> Il utilise <code class="docutils literal notranslate"><span class="pre">rsync</span></code> pour copier l’intégralité du contenu mis à jour vers le serveur de production.</p></li>
+<li><p><strong>Pour <code class="docutils literal notranslate"><span class="pre">[web-unpub]</span></code> :</strong> Il utilise <code class="docutils literal notranslate"><span class="pre">ssh</span></code> pour se connecter au serveur et supprimer le répertoire du projet concerné, puis <code class="docutils literal notranslate"><span class="pre">rsync</span></code> pour mettre à jour l’index et la page d’accueil.</p></li>
+</ul>
+</li>
+</ol>
+<p>Cette orchestration garantit une mise à jour fiable, automatisée et centralisée du portail de documentation.</p>
+</section>
+</section>
+<section id="analyse-du-script-d-assemblage-gen-index-py">
+<h2>Analyse du Script d’Assemblage <code class="docutils literal notranslate"><span class="pre">gen_index.py</span></code><a class="headerlink" href="#analyse-du-script-d-assemblage-gen-index-py" title="Link to this heading"></a></h2>
+<p>Le <code class="docutils literal notranslate"><span class="pre">job</span></code> <code class="docutils literal notranslate"><span class="pre">index_and_build</span></code> exécute un script Python, <code class="docutils literal notranslate"><span class="pre">gen_index.py</span></code>, qui est le véritable cerveau de l’assemblage du portail. Voici sa logique de fonctionnement :</p>
+<ol class="arabic simple">
+<li><p><strong>Collecte des Métadonnées :</strong> Le script scanne le répertoire <code class="docutils literal notranslate"><span class="pre">Public/</span></code> pour lire le fichier <code class="docutils literal notranslate"><span class="pre">project.env</span></code> de chaque projet enfant et en extraire les métadonnées (titre, groupe, tags, etc.).</p></li>
+<li><p><strong>Génération du <code class="docutils literal notranslate"><span class="pre">cards.json</span></code> :</strong> Les métadonnées sont compilées dans un fichier <code class="docutils literal notranslate"><span class="pre">cards.json</span></code>, utilisé par la page d’accueil pour afficher les cartes de projet interactives.</p></li>
+<li><p><strong>Injection des Métadonnées HTML :</strong> C’est une étape cruciale pour la recherche. Le script parcourt ensuite les fichiers HTML de chaque documentation enfant pour y injecter les métadonnées correspondantes sous forme de balises <code class="docutils literal notranslate"><span class="pre">meta</span></code> invisibles (ex: <code class="docutils literal notranslate"><span class="pre">&lt;meta</span> <span class="pre">name=&quot;author&quot;</span> <span class="pre">content=&quot;John</span> <span class="pre">Doe&quot;&gt;</span></code>). C’est cette injection qui permet à l’outil de recherche Pagefind de proposer des filtres de recherche avancés (par auteur, par groupe, etc.).</p></li>
+<li><p><strong>Mise à jour de la Table des Matières et Compilation :</strong> Le script met à jour dynamiquement le fichier <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> de la page d’accueil pour y insérer des tables des matières (<code class="docutils literal notranslate"><span class="pre">toctree</span></code>) par groupe, puis lance la compilation de la page d’accueil via <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>.</p></li>
+<li><p><strong>Lancement de l’Indexation Pagefind :</strong> Enfin, une fois tous les contenus assemblés et enrichis des métadonnées, le script lance la commande <code class="docutils literal notranslate"><span class="pre">pagefind</span></code>. L’outil scanne alors les fichiers HTML, lit les balises <code class="docutils literal notranslate"><span class="pre">meta</span></code> standards et les balises <code class="docutils literal notranslate"><span class="pre">data-pagefind</span></code> spécifiques pour construire son index de recherche.</p></li>
+</ol>
+<p>Ce script est donc un exemple concret d’automatisation avancée, transformant des données de configuration brutes en une expérience utilisateur riche et fonctionnelle, tant pour la navigation que pour la recherche.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Annexe_A_Diagrammes_Architecture.html" class="btn btn-neutral float-left" title="Annexe A : Diagrammes d’Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Annexe_C_Le_Pipeline_Enfant_Type.html" class="btn btn-neutral float-right" title="Annexe C : Le Pipeline Enfant Type (project-template-hub)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Rezki Mohammad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

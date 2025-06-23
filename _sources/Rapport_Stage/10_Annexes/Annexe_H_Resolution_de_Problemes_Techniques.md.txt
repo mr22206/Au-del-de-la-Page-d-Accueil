@@ -1,0 +1,58 @@
+(annexe-h-resolution-problemes)=
+# Annexe H : Résolution de Problèmes Techniques
+
+Cette annexe détaille certains des problèmes techniques rencontrés durant le projet et les solutions qui ont été apportées.
+
+## Le Défi de l'Environnement Python (`externally-managed-environment`)
+
+Lors de la mise en place des environnements de développement et des pipelines, une erreur récurrente est apparue sur les systèmes basés sur Debian (utilisés par les conteneurs Docker et certains postes sous WSL) lors de l'installation de dépendances Python avec `pip`.
+
+### Le Problème
+
+L'exécution de la commande `pip install -r requirements.txt` provoquait l'erreur suivante :
+
+```shell
+$ pip install -r requirements.txt
+
+error: externally-managed-environment
+× This environment is externally managed
+╰─> To install Python packages system-wide, use apt-get.
+    To install Python packages into an environment, create a virtual
+    environment using `python3 -m venv venv`.
+```
+
+Cette erreur, introduite dans les versions récentes de Debian et Python, vise à empêcher les utilisateurs de modifier l'environnement Python global du système, ce qui peut casser des dépendances système et rendre le système instable.
+
+### La Solution : L'Isolation par Environnement Virtuel
+
+La solution, recommandée par le message d'erreur lui-même, est d'adopter les bonnes pratiques de développement Python en isolant les dépendances de chaque projet dans un **environnement virtuel**.
+
+La procédure suivante a été adoptée et documentée pour tous les développeurs :
+
+1.  **Installer le paquet `venv` de Python :**
+    S'assurer que le module permettant de créer des environnements virtuels est bien présent.
+    ```shell
+    $ sudo apt install python3.12-venv
+    ```
+
+2.  **Créer l'environnement virtuel :**
+    Dans le dossier du projet, créer un sous-dossier (par convention, `venv`) qui contiendra une copie de l'interpréteur Python et de ses librairies.
+    ```shell
+    $ python3 -m venv venv
+    ```
+
+3.  **Activer l'environnement :**
+    Avant chaque session de travail, il faut "activer" cet environnement. Le prompt du terminal change alors pour indiquer que l'on travaille bien dans l'environnement isolé.
+    ```shell
+    $ source venv/bin/activate
+    (venv) $
+    ```
+
+4.  **Installer les dépendances :**
+    Une fois l'environnement activé, la commande `pip install` fonctionne sans erreur et installe les paquets uniquement dans `venv`, sans affecter le système global.
+    ```shell
+    (venv) $ pip install -r requirements.txt
+    # Succès !
+    ```
+
+Cette démarche a non seulement résolu le problème technique, mais a aussi permis de standardiser les pratiques de développement au sein de l'équipe, garantissant que chaque projet ait des dépendances isolées et reproductibles. 

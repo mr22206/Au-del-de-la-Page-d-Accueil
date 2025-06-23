@@ -1,0 +1,217 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre 3 : L’Usine Logicielle en Action &mdash; Rapport de Stage - Fortinet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+      <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+      <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+      <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapitre 4 : Le Défi de la Sécurité - Maîtriser l’Authentification" href="04_Le_Defi_de_la_Securite_Maitriser_l_Authentification.html" />
+    <link rel="prev" title="Chapitre 2 : La Réponse Architecturale - Concevoir l’Usine Logicielle" href="02_Le_Pivot_vers_la_CI_CD_et_la_Maitrise_de_la_Securite.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Rapport de Stage - Fortinet
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des Matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00_Page_de_Garde.html">Page de Garde</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Fiche_Confidentialite.html">Fiche de confidentialité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_Remerciements.html">Remerciements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Resume_Francais_Anglais.html">Résumé Français et Anglais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_Introduction_Generale.html">Introduction Générale</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Le Cœur du Sujet : L’Usine Logicielle</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_La_Mission_et_Le_Mur.html">Chapitre 1 : D’un Succès Rapide à une Remise en Question Fondamentale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Le_Pivot_vers_la_CI_CD_et_la_Maitrise_de_la_Securite.html">Chapitre 2 : La Réponse Architecturale - Concevoir l’Usine Logicielle</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Chapitre 3 : L’Usine Logicielle en Action</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#le-workflow-utilisateur-la-simplicite-par-l-abstraction">3.1 Le Workflow Utilisateur : La Simplicité par l’Abstraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sous-le-capot-l-orchestration-des-pipelines">3.2 Sous le Capot : L’Orchestration des Pipelines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#le-pipeline-enfant-le-gardien-de-la-qualite">Le Pipeline Enfant : Le Gardien de la Qualité</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#le-pipeline-parent-l-assembleur-et-le-livreur">Le Pipeline Parent : L’Assembleur et le Livreur</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#le-succes-de-l-usine-et-le-nouveau-defi">3.3 Le Succès de l’Usine et le Nouveau Défi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04_Le_Defi_de_la_Securite_Maitriser_l_Authentification.html">Chapitre 4 : Le Défi de la Sécurité - Maîtriser l’Authentification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_Power_BI_pour_Analyser_l_Utilisation_de_la_Documentation.html">Chapitre 5 : Mission Secondaire - Analyse Préparatoire pour Power BI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../07_Conclusion_et_Perspectives.html">Conclusion et perspectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Bibliographie.html">Bibliographie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_Glossaire.html">Glossaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_Annexes/index.html">Annexes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Rapport de Stage - Fortinet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Le Cœur du Sujet : L’Usine Logicielle</a></li>
+      <li class="breadcrumb-item active">Chapitre 3 : L’Usine Logicielle en Action</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Rapport_Stage/06_Developpement_Principal/03_La_Plateforme_CI_CD_En_Action.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chapitre-3-l-usine-logicielle-en-action">
+<h1>Chapitre 3 : L’Usine Logicielle en Action<a class="headerlink" href="#chapitre-3-l-usine-logicielle-en-action" title="Link to this heading"></a></h1>
+<p>Le chapitre précédent a présenté le plan de l’usine logicielle. Ce chapitre explique comment cette usine fonctionne concrètement, du point de vue de l’ingénieur qui publie sa documentation jusqu’au détail de l’orchestration des pipelines qui s’exécute en coulisses.</p>
+<section id="le-workflow-utilisateur-la-simplicite-par-l-abstraction">
+<h2>3.1 Le Workflow Utilisateur : La Simplicité par l’Abstraction<a class="headerlink" href="#le-workflow-utilisateur-la-simplicite-par-l-abstraction" title="Link to this heading"></a></h2>
+<p>L’un des objectifs clés du projet était de masquer la complexité de l’usine. Pour l’ingénieur, le processus de publication est simple et se résume à une commande <code class="docutils literal notranslate"><span class="pre">git</span></code>.</p>
+<ol class="arabic simple">
+<li><p><strong>Création :</strong> L’utilisateur crée son projet de documentation à partir d’un template GitLab, qui contient déjà toute la configuration nécessaire (pipeline enfant, structure de dossiers, etc.).</p></li>
+<li><p><strong>Édition :</strong> Il rédige sa documentation en Markdown, comme il le ferait pour n’importe quel projet.</p></li>
+<li><p><strong>Publication :</strong> Pour publier ou mettre à jour sa documentation, il ajoute simplement un tag à la fin de son message de commit.</p></li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Tag de commit</p></th>
+<th class="head text-left"><p>Action déclenchée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">[web-pub]</span></code></p></td>
+<td class="text-left"><p>Publication / Mise à jour de la documentation sur le Hub.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">[web-unpub]</span></code></p></td>
+<td class="text-left"><p>Dépublication de la documentation du Hub.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><em>(aucun tag)</em></p></td>
+<td class="text-left"><p>Le code est versionné sur GitLab, sans aucun impact sur le site.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Une simple commande <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;feat:</span> <span class="pre">ajout</span> <span class="pre">de</span> <span class="pre">mon</span> <span class="pre">guide</span> <span class="pre">[web-pub]&quot;</span></code> suivie d’un <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> suffit à déclencher toute l’usine logicielle.</p>
+</section>
+<section id="sous-le-capot-l-orchestration-des-pipelines">
+<h2>3.2 Sous le Capot : L’Orchestration des Pipelines<a class="headerlink" href="#sous-le-capot-l-orchestration-des-pipelines" title="Link to this heading"></a></h2>
+<p>Cette simplicité repose sur l’interaction entre les deux types de pipelines, dont le fonctionnement détaillé est décrit dans les annexes techniques. Le diagramme suivant résume ce flux.</p>
+<pre  class="mermaid">
+        %%{init: {'theme': 'neutral'}}%%
+flowchart LR
+    A[&quot;&lt;b&gt;Commit de l'ingénieur&lt;/b&gt;&lt;br&gt;avec tag [web-pub]&quot;] --&gt; Enfant;
+    subgraph Enfant [Pipeline Enfant]
+        direction TB
+        B[&quot;Build du site statique&quot;] --&gt; T[&quot;Déclenchement du Parent&quot;];
+    end
+    Enfant --&gt; Parent;
+    subgraph Parent [Pipeline Parent]
+        direction TB
+        D[&quot;Récupération des artefacts&quot;] --&gt; E[&quot;Indexation globale&quot;] --&gt; F[&quot;Déploiement&quot;];
+    end
+    Parent --&gt; G[&quot;Hub de Documentation&lt;br&gt;&lt;b&gt;Mis à Jour&lt;/b&gt;&quot;];
+    
+    style A fill:#cfe2ff,stroke:#0D6EFD,stroke-width:2px
+    style G fill:#D1E7DD,stroke:#198754,stroke-width:4px
+    </pre><section id="le-pipeline-enfant-le-gardien-de-la-qualite">
+<h3>Le Pipeline Enfant : Le Gardien de la Qualité<a class="headerlink" href="#le-pipeline-enfant-le-gardien-de-la-qualite" title="Link to this heading"></a></h3>
+<p>Le pipeline enfant (détaillé en <a class="reference internal" href="../10_Annexes/Annexe_C_Le_Pipeline_Enfant_Type.html#annexe-c-le-pipeline-enfant-type"><span class="std std-ref">Annexe C : Le Pipeline Enfant Type (project-template-hub)</span></a>), présent dans chaque projet, agit comme un <strong>contrôle qualité</strong> et un atelier de préparation. Ses <code class="docutils literal notranslate"><span class="pre">jobs</span></code> clés sont :</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">check</span></code> :</strong> Il garantit la conformité et la standardisation. Grâce à une logique d’<strong>auto-correction</strong>, il restaure automatiquement les fichiers de configuration s’ils dévient du standard.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">build</span></code> :</strong> Il transforme les sources Markdown en un site HTML complet.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">trigger</span></code> :</strong> Il déclenche le pipeline Parent et lui passe le relais.</p></li>
+</ul>
+</section>
+<section id="le-pipeline-parent-l-assembleur-et-le-livreur">
+<h3>Le Pipeline Parent : L’Assembleur et le Livreur<a class="headerlink" href="#le-pipeline-parent-l-assembleur-et-le-livreur" title="Link to this heading"></a></h3>
+<p>Le pipeline Parent (détaillé en <a class="reference internal" href="../10_Annexes/Annexe_B_Le_Pipeline_Parent.html#annexe-b-le-pipeline-parent"><span class="std std-ref">Annexe B : Le Pipeline Parent (docs-index)</span></a>) est le <strong>centre logistique</strong> du silo. Ses <code class="docutils literal notranslate"><span class="pre">jobs</span></code> clés sont :</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">fetch_artifacts</span></code> :</strong> Il télécharge les sites HTML de tous les projets enfants de son périmètre.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">index_and_build</span></code> :</strong> Un script Python (<code class="docutils literal notranslate"><span class="pre">gen_index.py</span></code>) assemble la page d’accueil, <strong>injecte les métadonnées</strong> pour la recherche dans le HTML, et lance Pagefind pour créer l’index global.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">deploy</span></code> :</strong> Il copie les fichiers mis à jour sur le serveur web ou supprime le dossier d’un projet dépublié.</p></li>
+</ul>
+</section>
+</section>
+<section id="le-succes-de-l-usine-et-le-nouveau-defi">
+<h2>3.3 Le Succès de l’Usine et le Nouveau Défi<a class="headerlink" href="#le-succes-de-l-usine-et-le-nouveau-defi" title="Link to this heading"></a></h2>
+<p>La mise en service de cette usine logicielle est un succès : la publication est désormais simple, fiable et entièrement automatisée. Cependant, ce succès a immédiatement fait émerger une nouvelle question, qui n’était plus technique mais de gouvernance :</p>
+<p><strong>Maintenant que n’importe qui peut publier si facilement du contenu, comment s’assurer que seules les bonnes personnes y ont accès ?</strong></p>
+<p>La plateforme devait héberger des documentations aux niveaux de confidentialité variés (public, interne, partenaire, etc.). Il devenait donc impératif de mettre en place un système de contrôle d’accès robuste. Le prochain chapitre décrit comment ce nouveau défi de la sécurité a été relevé.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="02_Le_Pivot_vers_la_CI_CD_et_la_Maitrise_de_la_Securite.html" class="btn btn-neutral float-left" title="Chapitre 2 : La Réponse Architecturale - Concevoir l’Usine Logicielle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="04_Le_Defi_de_la_Securite_Maitriser_l_Authentification.html" class="btn btn-neutral float-right" title="Chapitre 4 : Le Défi de la Sécurité - Maîtriser l’Authentification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Rezki Mohammad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

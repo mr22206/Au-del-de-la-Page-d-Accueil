@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre 1 : D’un Succès Rapide à une Remise en Question Fondamentale &mdash; Rapport de Stage - Fortinet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+      <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+      <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+      <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapitre 2 : La Réponse Architecturale - Concevoir l’Usine Logicielle" href="02_Le_Pivot_vers_la_CI_CD_et_la_Maitrise_de_la_Securite.html" />
+    <link rel="prev" title="Le Cœur du Sujet : L’Usine Logicielle" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Rapport de Stage - Fortinet
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des Matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00_Page_de_Garde.html">Page de Garde</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Fiche_Confidentialite.html">Fiche de confidentialité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_Remerciements.html">Remerciements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Resume_Francais_Anglais.html">Résumé Français et Anglais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_Introduction_Generale.html">Introduction Générale</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Le Cœur du Sujet : L’Usine Logicielle</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Chapitre 1 : D’un Succès Rapide à une Remise en Question Fondamentale</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#la-mission-initiale-une-porte-d-entree-pour-le-savoir">1.1 La Mission Initiale : Une Porte d’Entrée pour le Savoir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-mur-du-deploiement-la-regle-du-zero-execution">1.2 Le Mur du Déploiement : La Règle du “Zéro Exécution”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#la-remise-en-question-d-un-probleme-de-developpement-a-un-probleme-d-architecture">1.3 La Remise en Question : D’un Problème de Développement à un Problème d’Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#l-effet-oignon-revelation-de-la-complexite-du-projet">1.4 L’Effet Oignon : Révélation de la Complexité du Projet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="02_Le_Pivot_vers_la_CI_CD_et_la_Maitrise_de_la_Securite.html">Chapitre 2 : La Réponse Architecturale - Concevoir l’Usine Logicielle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_La_Plateforme_CI_CD_En_Action.html">Chapitre 3 : L’Usine Logicielle en Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_Le_Defi_de_la_Securite_Maitriser_l_Authentification.html">Chapitre 4 : Le Défi de la Sécurité - Maîtriser l’Authentification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_Power_BI_pour_Analyser_l_Utilisation_de_la_Documentation.html">Chapitre 5 : Mission Secondaire - Analyse Préparatoire pour Power BI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../07_Conclusion_et_Perspectives.html">Conclusion et perspectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Bibliographie.html">Bibliographie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_Glossaire.html">Glossaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_Annexes/index.html">Annexes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Rapport de Stage - Fortinet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Le Cœur du Sujet : L’Usine Logicielle</a></li>
+      <li class="breadcrumb-item active">Chapitre 1 : D’un Succès Rapide à une Remise en Question Fondamentale</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Rapport_Stage/06_Developpement_Principal/01_La_Mission_et_Le_Mur.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chapitre-1-d-un-succes-rapide-a-une-remise-en-question-fondamentale">
+<h1>Chapitre 1 : D’un Succès Rapide à une Remise en Question Fondamentale<a class="headerlink" href="#chapitre-1-d-un-succes-rapide-a-une-remise-en-question-fondamentale" title="Link to this heading"></a></h1>
+<p>Mon stage s’est déroulé au sein de Fortinet, un acteur mondial et incontournable de la cybersécurité. Pour bien saisir les enjeux de ma mission, il est essentiel de comprendre l’envergure de l’entreprise.</p>
+<pre  class="mermaid">
+        %%{init: {'theme': 'neutral'}}%%
+mindmap
+  root((Fortinet en Chiffres))
+    Leader du Marché
+      ::icon(fa fa-trophy)
+      N°1 en appliances de sécurité livrées
+      Reconnu dans 10+ Magic Quadrants Gartner
+    Innovation Continue
+      ::icon(fa fa-lightbulb)
+      +1500 brevets déposés
+      Plateforme &quot;Security Fabric&quot;
+    Croissance Solide
+      ::icon(fa fa-chart-line)
+      CA 2024: 5.96 Milliards $
+      +14 000 employés
+    Confiance des Clients
+      ::icon(fa fa-shield-alt)
+      +700 000 clients
+      96% des entreprises du Fortune 100
+    </pre><p>C’est dans ce contexte de forte innovation et de complexité technique que s’inscrit la mission de mon équipe, dont le rôle de pivot est illustré ci-dessous.</p>
+<pre  class="mermaid">
+        %%{init: {'theme': 'neutral'}}%%
+graph TD
+    A[&quot;**R&amp;D Fortinet**&lt;br&gt;Crée les produits de sécurité&quot;] --&gt; B;
+    
+    subgraph &quot;**Mon Équipe (CSE)**&quot;
+        direction LR
+        B[&quot;**Consulting Systems Engineering**&lt;br&gt;Développe l'expertise et les outils&quot;]
+    end
+
+    B --&gt; C[&quot;**Forces de Vente (Mondiales)**&lt;br&gt;Utilisent cette expertise&quot;];
+
+    B -.-&gt; D[&quot;**Mon Projet :**&lt;br&gt;Faciliter l'accès à cette expertise&quot;];
+    style B fill:#cfe2ff,stroke:#0D6EFD,stroke-width:2px
+    style D fill:#d1e7dd,stroke:#198754,stroke-width:2px
+    </pre><p>La première semaine fut marquée par une progression rapide, mais elle a abouti à la découverte d’une contrainte d’infrastructure majeure qui a redéfini toute la trajectoire de ma mission.</p>
+<section id="la-mission-initiale-une-porte-d-entree-pour-le-savoir">
+<h2>1.1 La Mission Initiale : Une Porte d’Entrée pour le Savoir<a class="headerlink" href="#la-mission-initiale-une-porte-d-entree-pour-le-savoir" title="Link to this heading"></a></h2>
+<p>Le besoin de l’équipe <em>Consulting Systems Engineering</em> était clair : face à des ressources documentaires de grande valeur mais dispersées sur plusieurs sites, il fallait créer un point d’accès central. La mission était de développer une page d’accueil dynamique, dotée d’un moteur de recherche, pour fédérer ces contenus. Le schéma suivant illustre cette problématique.</p>
+<pre  class="mermaid">
+        %%{init: {'theme': 'neutral'}}%%
+graph LR
+    subgraph &quot;Savoir de l'équipe&quot;
+        A[(&quot;Ressources&lt;br&gt;Techniques&quot;)]
+    end
+
+    subgraph &quot;Où le trouver ?&quot;
+        B[&quot;Site interne A&quot;]
+        C[&quot;Site interne B&quot;]
+        D[&quot;Site interne C&quot;]
+        E[&quot;...&quot;]
+    end
+
+    A --&gt; B;
+    A --&gt; C;
+    A --&gt; D;
+    A --&gt; E;
+
+    style A fill:#f8d7da
+    </pre><p>Pour répondre à ce besoin, j’ai rapidement développé un prototype fonctionnel. La pile technologique initiale s’est définie comme suit :</p>
+<ul class="simple">
+<li><p><strong>Sphinx</strong> s’est imposé comme générateur de site statique, étant la technologie déjà en place et maîtrisée par les équipes. Cette contrainte de départ était cependant bienvenue : Sphinx est un outil mature, puissant et un standard de facto dans le monde de la documentation technique. Sa capacité à être étendu, notamment avec le parser <code class="docutils literal notranslate"><span class="pre">MyST</span></code> pour un support avancé de Markdown, en faisait une fondation solide sur laquelle bâtir.</p></li>
+<li><p><strong>Pagefind</strong> a été sélectionné pour la fonctionnalité de recherche. Son avantage décisif est sa capacité à produire un index de recherche 100% statique, fonctionnant entièrement côté client. Cette caractéristique le rendait parfaitement compatible avec la contrainte fondamentale du “zéro exécution” que nous découvririons par la suite.</p></li>
+</ul>
+<p>En une semaine, ce prototype démontrait la faisabilité technique : un portail unique capable d’agréger plusieurs documentations et d’offrir une recherche performante sur l’ensemble. Le site était prêt, fonctionnel, et la solution semblait à portée de main.</p>
+</section>
+<section id="le-mur-du-deploiement-la-regle-du-zero-execution">
+<h2>1.2 Le Mur du Déploiement : La Règle du “Zéro Exécution”<a class="headerlink" href="#le-mur-du-deploiement-la-regle-du-zero-execution" title="Link to this heading"></a></h2>
+<p>C’est au moment de planifier le déploiement de cette solution que le véritable défi du stage est apparu. Une discussion avec les architectes et l’équipe IT a révélé une politique de sécurité fondamentale pour les serveurs web de production : <strong>aucune exécution de code ou de script n’est autorisée côté serveur</strong>.</p>
+<p>Cette politique, surnommée “Le Mur”, rendait mon approche initiale incompatible avec l’infrastructure, comme le montre le diagramme ci-dessous.</p>
+<pre  class="mermaid">
+        graph LR
+    A[&quot;**Mon Approche Initiale**&lt;br&gt;Script côté serveur (Python)&quot;] --&gt; B{{&quot;&lt;br&gt;**LE MUR**&lt;br&gt;Politique de Sécurité&lt;br&gt;**ZÉRO EXÉCUTION**&lt;br&gt;&quot;}};
+    B --&gt; C[&quot;&lt;br&gt;**Conséquence**&lt;br&gt;Solution initiale&lt;br&gt;**INCOMPATIBLE**&lt;br&gt;&quot;];
+
+    style B fill:#F8D7DA,stroke:#DC3545,stroke-width:4px
+    style C fill:#F8F9FA,stroke:#DC3545,stroke-width:2px
+    </pre><p>Le serveur Apache était configuré pour ne servir que des fichiers statiques (HTML, CSS, JavaScript, images). Ma solution initiale, bien que fonctionnelle en développement, reposait sur des scripts Python côté serveur pour générer dynamiquement la page d’accueil et l’index de recherche. Elle était donc, de fait, <strong>incompatible avec l’infrastructure de production.</strong></p>
+</section>
+<section id="la-remise-en-question-d-un-probleme-de-developpement-a-un-probleme-d-architecture">
+<h2>1.3 La Remise en Question : D’un Problème de Développement à un Problème d’Architecture<a class="headerlink" href="#la-remise-en-question-d-un-probleme-de-developpement-a-un-probleme-d-architecture" title="Link to this heading"></a></h2>
+<p>Cette contrainte a provoqué un changement de paradigme complet. Le problème n’était plus : <em>“Comment construire une page web ?”</em> mais <em>“Comment livrer et mettre à jour un site web sur un serveur qui ne peut rien exécuter ?”</em></p>
+<p>La solution ne pouvait plus être un simple script de génération. Elle devait prendre la forme d’une <strong>architecture d’intégration et de déploiement continu (CI/CD)</strong>. Il fallait concevoir une “usine” externe qui effectuerait tout le travail de construction en amont (génération du HTML, indexation pour la recherche) pour ne livrer sur le serveur que le produit fini : un ensemble de fichiers 100% statiques.</p>
+<p>Ce constat a été le véritable point de départ de mon projet d’ingénierie. Le chapitre suivant détaille la réponse architecturale qui a été apportée pour concevoir cette usine logicielle.</p>
+</section>
+<section id="l-effet-oignon-revelation-de-la-complexite-du-projet">
+<h2>1.4 L’Effet Oignon : Révélation de la Complexité du Projet<a class="headerlink" href="#l-effet-oignon-revelation-de-la-complexite-du-projet" title="Link to this heading"></a></h2>
+<p>Pour mieux comprendre l’ampleur du projet, il est utile d’utiliser la métaphore de “l’oignon”. Chaque couche représente une nouvelle strate de complexité qui est apparue, transformant la mission initiale en un projet d’architecture complet.</p>
+<div style="border: 2px solid #0D6EFD; padding: 15px; background-color: #F8F9FA; border-radius: 5px;">
+    <b>Solution Globale : Bâtir une architecture complète (Lab + CI/CD)</b>
+    <div style="border: 2px solid #FFC107; padding: 15px; margin-top: 15px; background-color: #fff; border-radius: 5px;">
+        <b>Défi Annexe : Sécuriser les accès avec le SSO</b>
+        <div style="border: 2px solid #DC3545; padding: 15px; margin-top: 15px; background-color: #fff; border-radius: 5px;">
+            <b>Le Vrai Mur : Contraintes de Production "Zéro Exécution"</b>
+            <div style="border: 2px solid #198754; padding: 15px; margin-top: 15px; background-color: #fff; border-radius: 5px;">
+                <b>Mission Initiale : Une simple page d'accueil</b>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Le Cœur du Sujet : L’Usine Logicielle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="02_Le_Pivot_vers_la_CI_CD_et_la_Maitrise_de_la_Securite.html" class="btn btn-neutral float-right" title="Chapitre 2 : La Réponse Architecturale - Concevoir l’Usine Logicielle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Rezki Mohammad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+# Chapitre 4 : Le Défi de la Sécurité - Maîtriser l'Authentification
+
+La nouvelle usine logicielle était fonctionnelle, mais sa facilité d'utilisation même avait créé un nouveau défi, comme mentionné au chapitre précédent : la **gouvernance des accès**. La plateforme devait héberger des documentations de différentes sensibilités, nécessitant un contrôle d'accès précis et centralisé. La réponse à ce défi a été la mise en place d'une authentification unique (SSO) basée sur le protocole SAML.
+
+## 4.1 La Contrainte : Un Environnement de Production Verrouillé
+
+Tout comme pour le serveur web, l'environnement de production du Fournisseur d'Identité (IdP) de l'entreprise, un FortiAuthenticator, était strictement contrôlé. Il était impossible de l'utiliser pour des tests de configuration SAML.
+
+Pour ne pas être bloqué une seconde fois, la même logique a été appliquée : si l'on ne peut pas travailler sur la production, il faut la recréer en laboratoire.
+
+## 4.2 La Solution : La Création de l'ETLab
+
+Un environnement de laboratoire complet, baptisé **ETLab** (Environnement de Test et de Laboratoire), a été monté de A à Z pour simuler et maîtriser la chaîne d'authentification SAML avant de la déployer.
+
+```{mermaid}
+%%{init: {'theme': 'neutral'}}%%
+graph LR
+    subgraph Problème
+        A["<b>Environnement de Production</b><br>Serveur d'authentification<br>verrouillé, tests impossibles."]
+        style A fill:#f8d7da,stroke:#DC3545,stroke-width:2px
+    end
+    
+    subgraph Solution
+        B["<b>Mon Laboratoire Isolé (ETLab)</b><br>Clone de l'infra de production<br>sous mon contrôle total."]
+        style B fill:#d1e7dd,stroke:#198754,stroke-width:2px
+    end
+
+    A -- "Contourné par" --> B
+```
+
+L'ETLab était composé des deux acteurs principaux du dialogue SAML :
+
+-   **Un Fournisseur de Services (SP) :** Un serveur Apache utilisant le module `mod_auth_mellon`. Ce module open-source est une référence pour l'implémentation du protocole SAML côté Apache, ce qui en faisait un choix fiable pour reproduire le comportement de la production.
+-   **Un Fournisseur d'Identité (IdP) :** Une instance dédiée du FortiAuthenticator installée pour le laboratoire.
+
+Ce laboratoire a permis de maîtriser le flux d'authentification SAML complet, de la configuration de la relation de confiance à la gestion des certificats.
+
+## 4.3 Le Flux d'Authentification SAML
+
+Le diagramme de séquence suivant illustre le flux qui a été implémenté et validé grâce à l'ETLab.
+
+```{mermaid}
+%%{init: {'theme': 'neutral'}}%%
+sequenceDiagram
+    participant Client
+    participant Apache (SP) as Service Provider
+    participant FAC (IdP) as Identity Provider
+
+    Client->>Apache (SP): 1. Accès au Hub
+    Apache (SP)->>Client: 2. Redirection vers le portail d'authentification
+    Client->>FAC (IdP): 3. Saisie des identifiants
+    FAC (IdP)-->>Client: 4. Envoi de l'assertion SAML signée
+    Client->>Apache (SP): 5. Présentation de l'assertion
+    Apache (SP)->>Apache (SP): 6. Validation de la signature
+    Apache (SP)-->>Client: 7. Accès autorisé et page servie
+```
+
+Grâce à l'ETLab, un problème potentiellement bloquant a été transformé en un exercice technique maîtrisé. La justification du choix de `mod_auth_mellon` et les détails de la configuration sont disponibles en {ref}`annexe-f-etlab-saml`. 

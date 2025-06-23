@@ -1,0 +1,603 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annexe G : Suivi Chronologique Détaillé &mdash; Rapport de Stage - Fortinet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+      <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+      <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+      <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Annexe H : Résolution de Problèmes Techniques" href="Annexe_H_Resolution_de_Problemes_Techniques.html" />
+    <link rel="prev" title="Annexe F : Laboratoire ETLab et Configuration SAML" href="Annexe_F_Laboratoire_ETLab_et_Configuration_SAML.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Rapport de Stage - Fortinet
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des Matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00_Page_de_Garde.html">Page de Garde</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Fiche_Confidentialite.html">Fiche de confidentialité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_Remerciements.html">Remerciements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Resume_Francais_Anglais.html">Résumé Français et Anglais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_Introduction_Generale.html">Introduction Générale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Developpement_Principal/index.html">Le Cœur du Sujet : L’Usine Logicielle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_Conclusion_et_Perspectives.html">Conclusion et perspectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Bibliographie.html">Bibliographie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_Glossaire.html">Glossaire</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Annexes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Annexe_A_Diagrammes_Architecture.html">Annexe A : Diagrammes d’Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_B_Le_Pipeline_Parent.html">Annexe B : Le Pipeline Parent (<code class="docutils literal notranslate"><span class="pre">docs-index</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_C_Le_Pipeline_Enfant_Type.html">Annexe C : Le Pipeline Enfant Type (<code class="docutils literal notranslate"><span class="pre">project-template-hub</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_D_Environnement_de_Construction.html">Annexe D : Environnement de Construction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_E_Systeme_de_Metadonnees.html">Annexe E : Le Système de Métadonnées</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_F_Laboratoire_ETLab_et_Configuration_SAML.html">Annexe F : Laboratoire ETLab et Configuration SAML</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Annexe G : Suivi Chronologique Détaillé</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#diagramme-de-gantt-chronologie-du-projet">Diagramme de Gantt : Chronologie du Projet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#journal-de-bord-detaille">Journal de Bord Détaillé</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#suivi-chronologique-avril-2025">Suivi Chronologique - Avril 2025</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#semaine-1-7-avril-11-avril-2025">Semaine 1 (7 avril - 11 avril 2025)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lundi-7-avril-premier-jour-de-stage">Lundi 7 avril - Premier jour de stage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mardi-8-avril">Mardi 8 avril</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mercredi-9-avril">Mercredi 9 avril</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jeudi-10-avril">Jeudi 10 avril</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vendredi-11-avril">Vendredi 11 avril</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#semaine-2-14-avril-18-avril-2025">Semaine 2 (14 avril - 18 avril 2025)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lundi-14-avril">Lundi 14 avril</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mardi-15-avril">Mardi 15 avril</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mercredi-16-avril">Mercredi 16 avril</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jeudi-17-avril">Jeudi 17 avril</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vendredi-18-avril">Vendredi 18 avril</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#semaine-3-21-avril-25-avril-2025">Semaine 3 (21 avril - 25 avril 2025)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mardi-22-avril">Mardi 22 avril</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mercredi-23-avril">Mercredi 23 avril</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jeudi-24-avril">Jeudi 24 avril</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vendredi-25-avril">Vendredi 25 avril</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#semaine-4-28-avril-30-avril-2025">Semaine 4 (28 avril - 30 avril 2025)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lundi-28-avril">Lundi 28 avril</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mardi-29-avril">Mardi 29 avril</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mercredi-30-avril">Mercredi 30 avril</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#suivi-chronologique-mai-2025">Suivi Chronologique - Mai 2025</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#semaine-0-12-mai-20-mai-2025">Semaine 0 (12 mai - 20 mai 2025)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lundi-12-mai">Lundi 12 mai</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mardi-13-mai">Mardi 13 mai</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mercredi-14-mai">Mercredi 14 mai</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jeudi-15-mai">Jeudi 15 mai</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lundi-19-mai">Lundi 19 mai</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mardi-20-mai">Mardi 20 mai</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#semaine-1-22-mai-26-mai-2025">Semaine 1 (22 mai - 26 mai 2025)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#jeudi-22-mai">Jeudi 22 mai</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vendredi-23-mai">Vendredi 23 mai</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dimanche-25-mai">Dimanche 25 mai</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lundi-26-mai">Lundi 26 mai</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#semaine-2-27-mai-31-mai-2025">Semaine 2 (27 mai - 31 mai 2025)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mardi-27-mai">Mardi 27 mai</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jeudi-29-mai">Jeudi 29 mai</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vendredi-30-mai">Vendredi 30 mai</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#samedi-31-mai">Samedi 31 mai</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#suivi-chronologique-juin-2025">Suivi Chronologique - Juin 2025</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#semaine-1-10-juin-13-juin-2025">Semaine 1 (10 juin - 13 juin 2025)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mardi-10-juin">Mardi 10 juin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mercredi-11-juin">Mercredi 11 juin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jeudi-12-juin">Jeudi 12 juin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vendredi-13-juin">Vendredi 13 juin</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#semaine-2-15-juin-18-juin-2025">Semaine 2 (15 juin - 18 juin 2025)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dimanche-15-juin">Dimanche 15 juin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lundi-16-juin">Lundi 16 juin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mardi-17-juin">Mardi 17 juin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mercredi-18-juin">Mercredi 18 juin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Annexe_H_Resolution_de_Problemes_Techniques.html">Annexe H : Résolution de Problèmes Techniques</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Rapport de Stage - Fortinet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Annexes</a></li>
+      <li class="breadcrumb-item active">Annexe G : Suivi Chronologique Détaillé</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Rapport_Stage/10_Annexes/Annexe_G_Suivi_Chronologique_Detaille.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="annexe-g-suivi-chronologique-detaille">
+<span id="annexe-g-suivi-chronologique"></span><h1>Annexe G : Suivi Chronologique Détaillé<a class="headerlink" href="#annexe-g-suivi-chronologique-detaille" title="Link to this heading"></a></h1>
+<section id="diagramme-de-gantt-chronologie-du-projet">
+<h2>Diagramme de Gantt : Chronologie du Projet<a class="headerlink" href="#diagramme-de-gantt-chronologie-du-projet" title="Link to this heading"></a></h2>
+<p>Le diagramme de Gantt ci-dessous présente une vue macroscopique du déroulement du stage, mettant en évidence les différentes phases, du besoin initial au pivot stratégique vers une architecture CI/CD, jusqu’à la finalisation du projet.</p>
+<pre  class="mermaid">
+        gantt
+    title Chronologie du Projet
+    dateFormat  YYYY-MM-DD
+    axisFormat %m-%d
+
+    section Phase Initiale
+    Analyse Homepage : 2025-04-07, 10d
+    Decouverte Blocage : 2025-04-17, 2d
+
+    section Architecture CI/CD
+    Conception CI/CD : 2025-04-21, 5d
+    Pipeline Enfant : 2025-04-28, 10d
+    Pipeline Parent : 2025-05-12, 10d
+
+    section Taches Paralleles
+    Labo et SAML : 2025-05-26, 10d
+    Analyse Power BI : 2025-05-26, 5d
+
+    section Finalisation
+    Tests Plateforme : 2025-06-09, 10d
+    Documentation : 2025-06-23, 10d
+    Rapport et Soutenance : 2025-07-07, 14d
+    </pre></section>
+<section id="journal-de-bord-detaille">
+<h2>Journal de Bord Détaillé<a class="headerlink" href="#journal-de-bord-detaille" title="Link to this heading"></a></h2>
+<p>Cette annexe présente un journal de bord détaillé des activités menées au cours du stage, semaine par semaine. Il sert de référence pour suivre la progression, les défis rencontrés et les décisions prises au jour le jour.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="suivi-chronologique-avril-2025">
+<h1>Suivi Chronologique - Avril 2025<a class="headerlink" href="#suivi-chronologique-avril-2025" title="Link to this heading"></a></h1>
+<section id="semaine-1-7-avril-11-avril-2025">
+<h2>Semaine 1 (7 avril - 11 avril 2025)<a class="headerlink" href="#semaine-1-7-avril-11-avril-2025" title="Link to this heading"></a></h2>
+<section id="lundi-7-avril-premier-jour-de-stage">
+<h3>Lundi 7 avril - Premier jour de stage<a class="headerlink" href="#lundi-7-avril-premier-jour-de-stage" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Arrivée chez Fortinet</strong> : Accueil et visite des locaux de Valbonne</p></li>
+<li><p><strong>Récupération du matériel</strong> : Installation et configuration de mon poste de travail</p></li>
+<li><p><strong>Première découverte du Projet 1</strong> : Analyse de l’existant pour l’implémentation de la page d’accueil</p></li>
+<li><p><strong>Configuration initiale</strong> : Mise en place de l’environnement de développement</p></li>
+<li><p><strong>Compréhension de l’architecture</strong> : Étude du fonctionnement du pipeline GitHub et de la génération de documentation</p></li>
+</ul>
+</section>
+<section id="mardi-8-avril">
+<h3>Mardi 8 avril<a class="headerlink" href="#mardi-8-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Récupération des éléments techniques</strong> pour le Projet 1</p></li>
+<li><p><strong>Définition des besoins</strong> : Clarification des exigences pour la page d’accueil avec moteur de recherche</p></li>
+<li><p><strong>Documentation des privilèges d’accès</strong> : Compréhension des différents niveaux d’autorisation</p></li>
+<li><p><strong>Premier défi technique</strong> : Problème identifié avec l’intégration du moteur Pagefind</p></li>
+</ul>
+</section>
+<section id="mercredi-9-avril">
+<h3>Mercredi 9 avril<a class="headerlink" href="#mercredi-9-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Approfondissement du contexte technique</strong> : Compréhension détaillée de l’architecture Sphinx</p></li>
+<li><p><strong>Analyse de la structure existante</strong> : Étude des répertoires <code class="docutils literal notranslate"><span class="pre">Docs_*</span></code> et de leur génération automatique</p></li>
+<li><p><strong>Définition de l’approche technique</strong> :</p>
+<ul>
+<li><p>Intégration d’une page d’index principale regroupant toutes les documentations</p></li>
+<li><p>Mise en place du moteur de recherche global avec Pagefind</p></li>
+<li><p>Harmonisation des templates pour une expérience utilisateur cohérente</p></li>
+</ul>
+</li>
+<li><p><strong>Première version fonctionnelle</strong> : Mise en place du versioning avec GitLab</p></li>
+<li><p><strong>Tests initiaux</strong> : Vérification du moteur de recherche et de ses réponses</p></li>
+</ul>
+</section>
+<section id="jeudi-10-avril">
+<h3>Jeudi 10 avril<a class="headerlink" href="#jeudi-10-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Réunion avec Sébastien</strong> : Résolution des problèmes de compte utilisateur</p></li>
+<li><p><strong>Implémentation de la template</strong> : Adaptation pour la page d’index</p></li>
+<li><p><strong>Développement du système de cartes</strong> : Interface pour les résultats de la page d’index</p></li>
+<li><p><strong>Transition vers Docs_Home</strong> : Mise en place d’une documentation Sphinx centrale comme page d’accueil</p></li>
+<li><p><strong>Briefing avec Benoit et Gregory</strong> : Validation de l’approche et des choix techniques</p></li>
+</ul>
+</section>
+<section id="vendredi-11-avril">
+<h3>Vendredi 11 avril<a class="headerlink" href="#vendredi-11-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Optimisation du thème global</strong> : Recherche d’une solution pour éviter la duplication de thème</p></li>
+<li><p><strong>Intégration de la barre de recherche</strong> : Surcharge pour l’ajout du moteur Pagefind dans la sidebar</p></li>
+<li><p><strong>Développement de la page de recherche</strong> : Création d’une page dédiée aux résultats</p></li>
+<li><p><strong>Réflexion sur les tags et filtres</strong> : Définition de la stratégie de catégorisation</p></li>
+<li><p><strong>Investigation SSO</strong> : Étude des possibilités d’authentification unique</p></li>
+</ul>
+</section>
+</section>
+<section id="semaine-2-14-avril-18-avril-2025">
+<h2>Semaine 2 (14 avril - 18 avril 2025)<a class="headerlink" href="#semaine-2-14-avril-18-avril-2025" title="Link to this heading"></a></h2>
+<section id="lundi-14-avril">
+<h3>Lundi 14 avril<a class="headerlink" href="#lundi-14-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Intégration technique avancée</strong> : Finalisation de l’intégration de Pagefind dans la sidebar Sphinx</p></li>
+<li><p><strong>Développement CSS</strong> : Travail sur le style de la sidebar Pagefind</p></li>
+<li><p><strong>Implémentation des cartes</strong> : Début du développement des cartes pour la page Home avec métadonnées RST</p></li>
+<li><p><strong>Réunions techniques</strong> : EBC avec Akanchha sur SD-WAN et présentation de la solution SASE par Gregory</p></li>
+</ul>
+</section>
+<section id="mardi-15-avril">
+<h3>Mardi 15 avril<a class="headerlink" href="#mardi-15-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Définition du format des métadonnées</strong> : Standardisation du format RST</p></li>
+<li><p><strong>Génération automatique</strong> : Création de fichiers RST dans un répertoire séparé pour plus de propreté</p></li>
+<li><p><strong>Implémentation des tags de visibilité</strong> : Intégration dans les métadonnées</p></li>
+<li><p><strong>Stylisation des cartes</strong> : Finalisation du design et intégration à la page d’index</p></li>
+</ul>
+</section>
+<section id="mercredi-16-avril">
+<h3>Mercredi 16 avril<a class="headerlink" href="#mercredi-16-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Nettoyage de la structure</strong> : Refactoring complet de l’architecture</p></li>
+<li><p><strong>Mise en place des tags et filtres</strong> : Implémentation fonctionnelle</p></li>
+<li><p><strong>Internationalisation</strong> : Passage de l’interface en anglais</p></li>
+<li><p><strong>Documentation</strong> : Création de la documentation d’utilisation et d’intégration</p></li>
+<li><p><strong>Optimisation</strong> : Suppression des commentaires inutiles et amélioration des commentaires importants</p></li>
+</ul>
+</section>
+<section id="jeudi-17-avril">
+<h3>Jeudi 17 avril<a class="headerlink" href="#jeudi-17-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Gestion des accès</strong> : Résolution des problèmes d’assignation</p></li>
+<li><p><strong>Réunion stratégique avec Benoit</strong> : Discussion sur la structure de build (internal vs external)</p></li>
+<li><p><strong>Architecture de déploiement</strong> : Définition des trois environnements (Fortinet/user-based/Public)</p></li>
+<li><p><strong>Planification GitLab</strong> : Organisation des sous-groupes et de la structure de déploiement</p></li>
+</ul>
+</section>
+<section id="vendredi-18-avril">
+<h3>Vendredi 18 avril<a class="headerlink" href="#vendredi-18-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Documentation technique</strong> : Création du diagramme des flux de données</p></li>
+<li><p><strong>Amélioration des fonctionnalités</strong> :</p>
+<ul>
+<li><p>Ajout de la date automatique à chaque push</p></li>
+<li><p>Système de contributeurs</p></li>
+<li><p>Gestion des accès privé/externe</p></li>
+</ul>
+</li>
+<li><p><strong>Optimisation du tri</strong> : Recherche de solutions de tri plus adaptées</p></li>
+<li><p><strong>Planification du déploiement</strong> : Définition des pipelines GitLab et des règles de déploiement</p></li>
+</ul>
+</section>
+</section>
+<section id="semaine-3-21-avril-25-avril-2025">
+<h2>Semaine 3 (21 avril - 25 avril 2025)<a class="headerlink" href="#semaine-3-21-avril-25-avril-2025" title="Link to this heading"></a></h2>
+<section id="mardi-22-avril">
+<h3>Mardi 22 avril<a class="headerlink" href="#mardi-22-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Finalisation des filtres</strong> : Automatisation de la récupération des filtres depuis les tags et groupes</p></li>
+<li><p><strong>Amélioration de l’interface</strong> : Différenciation visuelle entre groupes et tags</p></li>
+<li><p><strong>Gestion des métadonnées</strong> : Assurance de la récupération des métadonnées depuis index.rst</p></li>
+<li><p><strong>Optimisation de la structure</strong> : Décision sur la gestion des dossiers temporaires vs. structure finale</p></li>
+</ul>
+</section>
+<section id="mercredi-23-avril">
+<h3>Mercredi 23 avril<a class="headerlink" href="#mercredi-23-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Configuration serveur</strong> : Récupération des informations pour les serveurs Apache interne et externe</p></li>
+<li><p><strong>Tests d’accès</strong> : Vérification des accès sur les deux serveurs</p></li>
+<li><p><strong>Configuration IT</strong> : Mise en place des permissions avec l’équipe IT</p></li>
+<li><p><strong>Création des index</strong> : Développement des index respectifs à chaque catégorie</p></li>
+<li><p><strong>Support IT (Bilell)</strong> : collecte d’informations SSO (métadonnées IdP/FAC) et liste des dépendances nécessaires.</p></li>
+</ul>
+</section>
+<section id="jeudi-24-avril">
+<h3>Jeudi 24 avril<a class="headerlink" href="#jeudi-24-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Résolution de bugs</strong> : Correction des problèmes de filtres</p></li>
+<li><p><strong>Amélioration des filtres</strong> : Ajout des filtres par tag et date</p></li>
+<li><p><strong>Décision architecturale</strong> : Choix entre proxy et double arborescence</p></li>
+<li><p><strong>Introduction au Projet 2</strong> : Premier bilan avec Benoit sur Power BI et Power Automate</p></li>
+<li><p><strong>Premier lab</strong> : Mise en place avec Fabric Studio</p></li>
+</ul>
+</section>
+<section id="vendredi-25-avril">
+<h3>Vendredi 25 avril<a class="headerlink" href="#vendredi-25-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Interface utilisateur</strong> : Passage des cartes à un format rectangulaire</p></li>
+<li><p><strong>Configuration Apache</strong> : Installation des modules nécessaires</p></li>
+<li><p><strong>Planification Power BI</strong> : Demande d’accès aux tables et workflow.</p></li>
+<li><p><strong>Amélioration de l’expérience utilisateur</strong> : Thème sombre/clair, couleurs de groupe, optimisation de l’indexation.</p></li>
+<li><p><strong>Échanges avec Paul (IT)</strong> : clarification des méthodes de transfert et obtention des droits.</p></li>
+</ul>
+</section>
+</section>
+<section id="semaine-4-28-avril-30-avril-2025">
+<h2>Semaine 4 (28 avril - 30 avril 2025)<a class="headerlink" href="#semaine-4-28-avril-30-avril-2025" title="Link to this heading"></a></h2>
+<section id="lundi-28-avril">
+<h3>Lundi 28 avril<a class="headerlink" href="#lundi-28-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Optimisation de la recherche</strong> : Mise en place des résultats sur la page de recherche dédiée</p></li>
+<li><p><strong>Organisation du contenu</strong> : Placement des articles par groupe sur le côté</p></li>
+<li><p><strong>Amélioration visuelle</strong> : Mise en place des couleurs Fortinet pour les groupes et tags</p></li>
+<li><p><strong>Permissions</strong> : Correction des problèmes de droits sur les dossiers.</p></li>
+</ul>
+</section>
+<section id="mardi-29-avril">
+<h3>Mardi 29 avril<a class="headerlink" href="#mardi-29-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Optimisation de la structure</strong> : Travail sur l’intégration de docs_merged dans _build</p></li>
+<li><p><strong>Amélioration continue du thème</strong> : Mise à jour de la recherche Pagefind et des cartes</p></li>
+<li><p><strong>Développement de la table latérale</strong> : Récupération et listage automatique des docs</p></li>
+<li><p><strong>Planification des pipelines</strong> : Réflexion sur la gestion des dossiers temporaires</p></li>
+<li><p><strong>Versioning</strong> : Ajout de la date et heure dans les noms de documentation.</p></li>
+</ul>
+</section>
+<section id="mercredi-30-avril">
+<h3>Mercredi 30 avril<a class="headerlink" href="#mercredi-30-avril" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Débogage SAML</strong> : Investigation des erreurs de signature via les logs FAC.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="suivi-chronologique-mai-2025">
+<h1>Suivi Chronologique - Mai 2025<a class="headerlink" href="#suivi-chronologique-mai-2025" title="Link to this heading"></a></h1>
+<section id="semaine-0-12-mai-20-mai-2025">
+<h2>Semaine 0 (12 mai - 20 mai 2025)<a class="headerlink" href="#semaine-0-12-mai-20-mai-2025" title="Link to this heading"></a></h2>
+<section id="lundi-12-mai">
+<h3>Lundi 12 mai<a class="headerlink" href="#lundi-12-mai" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Accès infrastructure</strong> : vérification du portail vCenter.</p></li>
+</ul>
+</section>
+<section id="mardi-13-mai">
+<h3>Mardi 13 mai<a class="headerlink" href="#mardi-13-mai" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Tests SAML</strong> : premier succès d’authentification après correction des signatures et ajout des attributs.</p></li>
+</ul>
+</section>
+<section id="mercredi-14-mai">
+<h3>Mercredi 14 mai<a class="headerlink" href="#mercredi-14-mai" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Erreur SAML récurrente</strong> : retour du message d’erreur de signature.</p></li>
+</ul>
+</section>
+<section id="jeudi-15-mai">
+<h3>Jeudi 15 mai<a class="headerlink" href="#jeudi-15-mai" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Synchronisation IdP/SP</strong> : nouvelle importation des métadonnées SP.</p></li>
+</ul>
+</section>
+<section id="lundi-19-mai">
+<h3>Lundi 19 mai<a class="headerlink" href="#lundi-19-mai" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Rollback VM</strong> : restauration de la VM pour annuler les configurations instables.</p></li>
+</ul>
+</section>
+<section id="mardi-20-mai">
+<h3>Mardi 20 mai<a class="headerlink" href="#mardi-20-mai" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Réactivation des services</strong> : remise en service des modules SSL et <code class="docutils literal notranslate"><span class="pre">mod_auth_mellon</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="semaine-1-22-mai-26-mai-2025">
+<h2>Semaine 1 (22 mai - 26 mai 2025)<a class="headerlink" href="#semaine-1-22-mai-26-mai-2025" title="Link to this heading"></a></h2>
+<section id="jeudi-22-mai">
+<h3>Jeudi 22 mai<a class="headerlink" href="#jeudi-22-mai" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Optimisation des pipelines CI/CD</strong> : Mise en place d’un conteneur Docker pour les outils de build.</p></li>
+<li><p><strong>Maintenance</strong> : Mise à jour des modules et librairies.</p></li>
+<li><p><strong>Nettoyage des workflows</strong> : Reprise et simplification des workflows GitLab.</p></li>
+<li><p><strong>Démarches pour l’alternance</strong> : Prise de contact avec les RH.</p></li>
+</ul>
+</section>
+<section id="vendredi-23-mai">
+<h3>Vendredi 23 mai<a class="headerlink" href="#vendredi-23-mai" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Début du Projet 2 (Power BI)</strong> : Planification, définition des objectifs et analyse des données.</p></li>
+</ul>
+</section>
+<section id="dimanche-25-mai">
+<h3>Dimanche 25 mai<a class="headerlink" href="#dimanche-25-mai" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Optimisation des pipelines</strong> et amélioration de l’interface (CSS, navigation, recherche).</p></li>
+</ul>
+</section>
+<section id="lundi-26-mai">
+<h3>Lundi 26 mai<a class="headerlink" href="#lundi-26-mai" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Amélioration continue du Projet 1</strong> : Nettoyage des builds, gestion des liens et interface utilisateur.</p></li>
+<li><p><strong>Coordination</strong> sur les deux projets.</p></li>
+</ul>
+</section>
+</section>
+<section id="semaine-2-27-mai-31-mai-2025">
+<h2>Semaine 2 (27 mai - 31 mai 2025)<a class="headerlink" href="#semaine-2-27-mai-31-mai-2025" title="Link to this heading"></a></h2>
+<section id="mardi-27-mai">
+<h3>Mardi 27 mai<a class="headerlink" href="#mardi-27-mai" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Déploiement et Sécurité</strong> : Création de pipeline, sécurisation des accès, configuration des variables d’environnement.</p></li>
+<li><p><strong>Amélioration des fonctionnalités</strong> : Filtres cliquables et optimisation du script de récupération d’artefacts.</p></li>
+</ul>
+</section>
+<section id="jeudi-29-mai">
+<h3>Jeudi 29 mai<a class="headerlink" href="#jeudi-29-mai" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Documentation et Sécurité</strong> : Documentation du processus SSH et nettoyage serveur.</p></li>
+</ul>
+</section>
+<section id="vendredi-30-mai">
+<h3>Vendredi 30 mai<a class="headerlink" href="#vendredi-30-mai" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Optimisation des pipelines CI/CD</strong> : Ajustement des builds Docker et des commandes de déploiement <code class="docutils literal notranslate"><span class="pre">rsync</span></code>.</p></li>
+</ul>
+</section>
+<section id="samedi-31-mai">
+<h3>Samedi 31 mai<a class="headerlink" href="#samedi-31-mai" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Finalisation de l’interface utilisateur</strong> : Thème sombre et style.</p></li>
+<li><p><strong>Sécurité</strong> : Gestion des listes d’accès sur GitLab.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="suivi-chronologique-juin-2025">
+<h1>Suivi Chronologique - Juin 2025<a class="headerlink" href="#suivi-chronologique-juin-2025" title="Link to this heading"></a></h1>
+<section id="semaine-1-10-juin-13-juin-2025">
+<h2>Semaine 1 (10 juin - 13 juin 2025)<a class="headerlink" href="#semaine-1-10-juin-13-juin-2025" title="Link to this heading"></a></h2>
+<section id="mardi-10-juin">
+<h3>Mardi 10 juin<a class="headerlink" href="#mardi-10-juin" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Documentation utilisateur</strong> : Préparation de la documentation pour les utilisateurs finaux.</p></li>
+<li><p><strong>Bilan avec l’équipe</strong> : Réunion pour faire un bilan complet des projets.</p></li>
+<li><p><strong>Préparation de la soutenance</strong> : Premier point sur le contenu et la structure.</p></li>
+</ul>
+</section>
+<section id="mercredi-11-juin">
+<h3>Mercredi 11 juin<a class="headerlink" href="#mercredi-11-juin" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Déploiement Public</strong> : Mise à jour des pipelines et configuration Apache.</p></li>
+<li><p><strong>Planification Infosec</strong> : Préparation des scans de sécurité.</p></li>
+</ul>
+</section>
+<section id="jeudi-12-juin">
+<h3>Jeudi 12 juin<a class="headerlink" href="#jeudi-12-juin" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Documentation technique</strong> : Recherche d’outils pour générer les diagrammes.</p></li>
+<li><p><strong>Optimisation des builds</strong> : Ajout d’un job de vérification et synchronisation Docker.</p></li>
+</ul>
+</section>
+<section id="vendredi-13-juin">
+<h3>Vendredi 13 juin<a class="headerlink" href="#vendredi-13-juin" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Finalisation du déploiement</strong> : Fin du déploiement public et lancement des tests de sécurité.</p></li>
+<li><p><strong>Planification de la documentation</strong> et de l’internationalisation.</p></li>
+</ul>
+</section>
+</section>
+<section id="semaine-2-15-juin-18-juin-2025">
+<h2>Semaine 2 (15 juin - 18 juin 2025)<a class="headerlink" href="#semaine-2-15-juin-18-juin-2025" title="Link to this heading"></a></h2>
+<section id="dimanche-15-juin">
+<h3>Dimanche 15 juin<a class="headerlink" href="#dimanche-15-juin" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Planification finale</strong> : Pipeline, UI, et structure de la documentation.</p></li>
+</ul>
+</section>
+<section id="lundi-16-juin">
+<h3>Lundi 16 juin<a class="headerlink" href="#lundi-16-juin" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Mise en œuvre</strong> : Finalisation du job de vérification des variables d’environnement et création de documents récapitulatifs.</p></li>
+</ul>
+</section>
+<section id="mardi-17-juin">
+<h3>Mardi 17 juin<a class="headerlink" href="#mardi-17-juin" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Fusion et tests</strong> : Test de la solution <code class="docutils literal notranslate"><span class="pre">devcontainer</span></code>.</p></li>
+<li><p><strong>Mise à jour globale</strong> : Mise à jour des index, des pipelines enfants et de la template.</p></li>
+<li><p><strong>Planification de la fin du stage</strong> : Préparation de la vidéo de démonstration.</p></li>
+</ul>
+</section>
+<section id="mercredi-18-juin">
+<h3>Mercredi 18 juin<a class="headerlink" href="#mercredi-18-juin" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Derniers ajustements</strong> : CSS, documentation, et organisation du rapport de stage.</p></li>
+<li><p><strong>Nettoyage CSS</strong> : injection de correctifs pour le style.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Annexe_F_Laboratoire_ETLab_et_Configuration_SAML.html" class="btn btn-neutral float-left" title="Annexe F : Laboratoire ETLab et Configuration SAML" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Annexe_H_Resolution_de_Problemes_Techniques.html" class="btn btn-neutral float-right" title="Annexe H : Résolution de Problèmes Techniques" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Rezki Mohammad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

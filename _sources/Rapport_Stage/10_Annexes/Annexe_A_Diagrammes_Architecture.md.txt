@@ -1,0 +1,88 @@
+(annexe-a-diagrammes-architecture)=
+# Annexe A : Diagrammes d'Architecture
+
+## Architecture Globale de l'Usine Logicielle
+
+Le système n'est pas basé sur une unique architecture Parent/Enfant, mais sur un modèle **fédéré et multi-Hub**. Il existe un projet "Parent", toujours nommé `docs-index`, pour chaque grand silo de visibilité. C'est le **groupe GitLab** qui héberge ce projet qui définit le niveau de confidentialité (Public, Corporate, etc.).
+
+Chaque projet Parent est autonome : il gère son propre groupe de projets "Enfants", génère son propre portail et son propre index de recherche.
+
+```{mermaid}
+graph TD
+    subgraph "Silo de Visibilité 1 : Groupe 'Public'"
+        direction LR
+        Parent1["Projet Hub<br><b>docs-index</b>"]
+        Enfant1A["Doc Enfant A"]
+        Enfant1B["Doc Enfant B"]
+        
+        Enfant1A -- trigger --> Parent1
+        Enfant1B -- trigger --> Parent1
+        Parent1 -- déploie sur --> SitePublic["Serveur Web<br>/public"]
+    end
+
+    subgraph "Silo de Visibilité 2 : Groupe 'Core_tech'"
+        direction LR
+        Parent2["Projet Hub<br><b>docs-index</b>"]
+        Enfant2A["Doc Enfant C"]
+        Enfant2B["Doc Enfant D"]
+
+        Enfant2A -- trigger --> Parent2
+        Enfant2B -- trigger --> Parent2
+        Parent2 -- déploie sur --> SiteCorporate["Serveur Web<br>/corporate (protégé par SSO)"]
+    end
+
+    subgraph "Silo de Visibilité N..."
+        ParentN["..."]
+        EnfantN["..."]
+    end
+
+    style Parent1 fill:#d1e7dd,stroke:#198754
+    style Parent2 fill:#cfe2ff,stroke:#0d6efd
+```
+
+## Flux de Données CI/CD (pour un silo)
+
+Ce diagramme illustre l'architecture complète du pipeline de CI/CD mis en place. Il montre le flux de travail depuis le push du code sur GitLab jusqu'au déploiement automatisé de la documentation sur le serveur Apache.
+
+```{mermaid}
+graph TD
+    subgraph "1. Développement"
+        A[Developer] -- "git push" --> B(GitLab Repository);
+    end
+
+    subgraph "2. Orchestration CI/CD"
+        B -- "Déclenche le Pipeline" --> C{GitLab CI/CD Pipeline};
+    end
+
+    subgraph "3. Étapes du Pipeline (Conteneurs Docker)"
+        C -- "Si Dockerfile changes" --> D["Build Images<br/>Construit les images Docker et les pousse au registre."];
+        D --> E(GitLab Container Registry);
+
+        C --> F["Fetch Child Artifacts<br/>Un script Python récupère les artefacts<br/>des projets de documentation enfants."];
+        
+        F --> G["Index & Build Docs<br/>Génère la page d'accueil, construit les docs<br/>avec Sphinx, et crée l'index de recherche avec Pagefind."];
+        
+        G --> H["Deploy to Server<br/>Copie les fichiers HTML et l'index<br/>sur le serveur Apache via rsync et SSH."];
+    end
+
+    subgraph "4. Hébergement"
+        direction LR
+        I[Serveur Web Apache]
+        subgraph "Environnements"
+            J["/var/www/html/public"]
+            K["/var/www/html/core_tech"]
+        end
+        I --- J & K
+    end
+    
+    H -- "Déploie sur" --> I;
+
+    subgraph "5. Accès Utilisateur"
+        M[Ingénieur Fortinet] -- "Accède à la documentation via HTTPS/SSO" --> I;
+    end
+
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style I fill:#cfc,stroke:#333,stroke-width:2px
+    style M fill:#fec,stroke:#333,stroke-width:2px
+```

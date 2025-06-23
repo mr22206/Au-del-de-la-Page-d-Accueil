@@ -1,0 +1,28 @@
+# Fiche de confidentialité
+
+La fiche de confidentialité CESI, dûment remplie et signée par le maître de stage, est présentée ci-dessous. Ce document atteste de la prise de connaissance par le maître de stage du contenu du rapport et de l'accord pour sa soumission.
+
+```{raw} html
+<style>
+.pdf-container {
+    position: relative;
+    width: 100%;
+    padding-top: 141.42%; /* Ratio A4 (sqrt(2)) */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.pdf-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+<div class="pdf-container">
+    <iframe src="../_static/Fiche_de_confidentialité_signée.pdf" class="pdf-iframe" title="Fiche de confidentialité signée"></iframe>
+</div>
+```
+
+Si le PDF ne s'affiche pas, vous pouvez le consulter directement en cliquant sur ce [lien de téléchargement](../_static/Fiche_de_confidentialité_signée.pdf).

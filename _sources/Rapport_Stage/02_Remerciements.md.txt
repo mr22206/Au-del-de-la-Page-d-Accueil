@@ -1,0 +1,17 @@
+# Remerciements
+
+Je souhaite exprimer ma sincère gratitude à toutes les personnes qui m'ont accompagné et soutenu durant ce stage.
+
+Un grand merci à mon tuteur de stage, **Benoit Rech**, pour sa confiance, sa vision et sa disponibilité tout au long de ces mois.
+
+Je remercie chaleureusement l'équipe technique pour son soutien précieux : **Gregory Le-Bras**, pour son aide déterminante sur les missions de documentation et Power BI ; **Laurent Aubert**, pour notre collaboration sur le Dev Container ; ainsi que **Frederic Gilloteau** et **Emmanuel Lety** pour leur support respectif sur l'ETLab et le FortiLab.
+
+Ma reconnaissance va également à l'équipe IT, et tout particulièrement à **Bilell Isarti**, **Paul Verbeek** et **Victor Gosse**, pour leur aide indispensable face aux défis d'infrastructure.
+
+Je remercie également **Amira Gorani** pour son suivi administratif efficace, **Celina Mitri** pour son aide et ses éclaircissements côté école tout au long du stage, et **Lamyae Menhaj**, ma pilote de projet, pour son guidage sur le rapport et la soutenance.
+
+Enfin, je remercie chaleureusement **Isis Descormiers**, HR Talent Acquisition Program Manager, pour son rôle clé dans mon intégration. Son engagement à travers le programme "Early Talent", marqué par des échanges réguliers et des rencontres, a grandement facilité mon arrivée au sein de Fortinet.
+
+Je tiens également à exprimer ma reconnaissance envers l'ensemble de l'équipe **Consulting Systems Engineering (CSE)** pour leur accueil chaleureux, leur disponibilité et les nombreux échanges techniques et humains que nous avons pu avoir. Leur expertise et leur bienveillance ont grandement facilité mon arrivée au sein de Fortinet.
+
+Enfin, je remercie les membres du jury pour le temps qu'ils consacreront à la lecture de ce rapport.
