@@ -1,0 +1,27 @@
+(annexe-d-environnement-de-construction)=
+# Annexe D : Environnement de Construction
+
+Toute l'usine logicielle repose sur le principe de standardisation. Pour garantir que chaque documentation est construite exactement de la même manière, avec les mêmes outils et les mêmes configurations, un environnement de construction unique a été créé sous la forme d'une image Docker.
+
+Cette image, définie dans le projet `dev_container_image`, sert de "source de vérité" pour l'ensemble de la plateforme.
+
+## Rôle et Contenu
+
+L'image Docker est basée sur une image officielle de Sphinx (`sphinxdoc/sphinx-latexpdf`) et y ajoute plusieurs couches de personnalisation :
+
+1.  **Installation des Dépendances Système :** Elle installe des outils système essentiels qui sont utilisés par les pipelines, tels que `git`, `curl`, `rsync`, etc.
+
+2.  **Installation des Dépendances Python :** Elle installe toutes les librairies Python nécessaires à la construction des documentations (Sphinx, thèmes, extensions...) via un fichier `requirements.txt` centralisé. Cela garantit que tous les projets enfants utilisent les mêmes versions des dépendances.
+
+3.  **Intégration des Fichiers de Référence :** C'est le point le plus important. L'image embarque les versions "officielles" des fichiers de configuration critiques qui doivent être présents dans chaque projet enfant :
+    -   `conf.py` (configuration Sphinx)
+    -   `Makefile` (commandes de construction)
+    -   `.gitlab-ci.yml` (squelette du pipeline enfant)
+    -   `requirements.txt`
+    -   Les assets statiques (CSS, images...)
+
+## L'Image comme "Source de Vérité"
+
+Le fait d'embarquer ces fichiers de référence dans l'image est ce qui permet au mécanisme d'auto-correction (décrit en Annexe C) de fonctionner. Le job `check` du pipeline enfant peut démarrer cette image, extraire un fichier de référence (ex: `/opt/sphinx/conf.py`) et le comparer avec celui présent dans le projet de l'utilisateur.
+
+Cette approche centralisée garantit que toute mise à jour d'un standard (une nouvelle règle dans le `Makefile`, une nouvelle extension dans `requirements.txt`) est effectuée à un seul endroit : le `Dockerfile`. Une fois l'image reconstruite, tous les projets enfants se mettront automatiquement en conformité lors de leur prochain pipeline, sans aucune action requise de la part des utilisateurs.

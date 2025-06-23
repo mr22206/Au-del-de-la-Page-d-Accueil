@@ -1,0 +1,21 @@
+# Rapport de Stage : Ingénieur Développement et BI
+
+Bienvenue sur le rapport de stage détaillé de mon expérience chez Fortinet.
+
+Ce document retrace les projets, les défis et les apprentissages acquis durant cette période.
+
+```{toctree}
+:caption: Table des Matières
+:maxdepth: 2
+
+Rapport_Stage/00_Page_de_Garde.md
+Rapport_Stage/01_Fiche_Confidentialite.md
+Rapport_Stage/02_Remerciements.md
+Rapport_Stage/03_Resume_Francais_Anglais.md
+Rapport_Stage/05_Introduction_Generale.md
+Rapport_Stage/06_Developpement_Principal/index.md
+Rapport_Stage/07_Conclusion_et_Perspectives.md
+Rapport_Stage/08_Bibliographie.md
+Rapport_Stage/09_Glossaire.md
+Rapport_Stage/10_Annexes/index.md
+```

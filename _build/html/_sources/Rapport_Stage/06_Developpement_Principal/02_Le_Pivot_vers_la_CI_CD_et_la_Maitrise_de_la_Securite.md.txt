@@ -1,0 +1,79 @@
+# Chapitre 2 : La Réponse Architecturale - Concevoir l'Usine Logicielle
+
+Face au mur du "zéro exécution", la solution était de déplacer toute l'intelligence de la production en amont. L'idée est simple : si rien ne peut être construit sur le serveur, alors tout doit être construit **avant** d'y arriver. Cette idée est le fondement de l'usine logicielle qu'il a fallu concevoir.
+
+## 2.1 Le Choix de l'Architecture : CI/CD Distribuée
+
+Plutôt qu'un unique et massif pipeline monolithique, le choix s'est porté sur une **architecture CI/CD distribuée**, basée sur un modèle "Parent/Enfant" sur GitLab.
+
+Ce découplage est stratégique : il **isole la logique de construction** (spécifique à chaque projet de documentation "enfant") de la **logique d'orchestration et de déploiement** (gérée par le projet "parent"). Cette séparation des préoccupations est la clé de voûte de la robustesse et de la maintenabilité du système.
+
+-   **Les Pipelines Enfants (dans chaque projet de documentation) :** Ils agissent comme des "usines de production" locales et autonomes. Leur seule responsabilité est de valider et de construire *leur propre* documentation en un site HTML statique impeccable.
+-   **Le Pipeline Parent (central) :** Il joue le rôle de chef d'orchestre. Sa mission est de récupérer les sites construits par les enfants, de les assembler en un portail unifié et de déployer l'ensemble sur le serveur de production.
+
+Le passage du modèle monolithique à l'architecture distribuée a résolu le problème de la fragilité.
+
+### AVANT : Le Monolithe Fragile
+
+Le modèle initial reposait sur un script complexe et centralisé, créant un point de défaillance unique (*Single Point of Failure*). La moindre erreur dans ce script paralysait les mises à jour pour tous les projets.
+
+```{mermaid}
+%%{init: {'theme': 'neutral'}}%%
+graph TB
+    subgraph "Développeurs"
+        direction LR
+        Dev1[Dev 1]
+        Dev2[Dev 2]
+        Dev3[...]
+    end
+
+    Script("
+        <b>Script Central Monolithique</b>
+        - Gère tous les projets
+        - Logique complexe
+        - Single Point of Failure
+    ")
+
+    Resultat("fa:fa-bomb <b>Casse pour tout le monde</b><br>si le script a un bug")
+
+    Dev1 --> Script
+    Dev2 --> Script
+    Dev3 --> Script
+    Script -.-> Resultat
+
+    style Script fill:#F8D7DA,stroke:#DC3545,stroke-width:2px
+    style Resultat fill:#F8D7DA,stroke:#DC3545,stroke-width:2px
+```
+
+### APRÈS : L'Usine Distribuée et Robuste
+
+La nouvelle architecture isole chaque projet dans son propre pipeline. Le "Chef d'Orchestre" se contente d'assembler les livrables, sans connaître la logique de construction interne de chaque projet. Une erreur dans un projet n'impacte plus les autres.
+
+```{mermaid}
+%%{init: {'theme': 'neutral'}}%%
+graph TB
+    Chef("<b>Chef d'Orchestre Central</b><br><i>Pipeline Parent</i><br>Assemble et déploie")
+    
+    subgraph "Projets Autonomes"
+        direction LR
+        Enfant1["<b>Doc A</b><br><i>Pipeline Enfant</i><br>Construit son site"]
+        Enfant2["<b>Doc B</b><br><i>Pipeline Enfant</i><br>Construit son site"]
+    end
+
+    Enfant1 -- "Envoie son livrable" --> Chef
+    Enfant2 -- "Envoie son livrable" --> Chef
+    
+    style Chef fill:#d1e7dd,stroke:#198754,stroke-width:2px
+    style Enfant1 fill:#cfe2ff,stroke:#0d6efd,stroke-width:2px
+    style Enfant2 fill:#cfe2ff,stroke:#0d6efd,stroke-width:2px
+```
+
+## 2.2 La Standardisation : Le Pilier de l'Usine
+
+Pour qu'une usine fonctionne, chaque composant doit être standardisé. Trois éléments ont été créés pour garantir cette homogénéité :
+
+1.  **Le Template de Projet (`project-template-hub`) :** Un squelette de projet GitLab qui contient toute la structure de dossiers, la configuration Sphinx et surtout le pipeline Enfant préconfiguré. Tout nouveau projet de documentation est un clone de ce template.
+2.  **L'Image Docker (`dev_container_image`) :** L'environnement de construction unique et universel. Cette image contient tous les outils (Sphinx, Python, etc.) et toutes les dépendances, garantissant que chaque site est construit exactement de la même manière. C'est la "source de vérité" de l'environnement, comme détaillé en {ref}`annexe-d-environnement-de-construction`.
+3.  **Les Listes de Métadonnées (`env-lists`) :** Un dépôt central qui définit les valeurs autorisées pour les métadonnées de classification (groupes, priorités...). Cela assure la cohérence des filtres de recherche sur le portail final (voir {ref}`annexe-e-systeme-de-metadonnees`).
+
+Avec cette architecture et ces piliers de standardisation, le plan de l'usine logicielle était prêt. Le chapitre suivant explique comment cette usine a été mise en action et comment elle fonctionne du point de vue de l'utilisateur.

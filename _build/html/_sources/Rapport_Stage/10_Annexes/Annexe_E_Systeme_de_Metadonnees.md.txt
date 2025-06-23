@@ -1,0 +1,50 @@
+(annexe-e-systeme-de-metadonnees)=
+# Annexe E : Le Système de Métadonnées
+
+Pour que le portail de documentation soit utile, il doit permettre de filtrer, de trier et de rechercher efficacement le contenu. Cela repose sur un système de métadonnées cohérent et standardisé, appliqué à chaque projet de documentation.
+
+La gestion de ces métadonnées est assurée par deux composants : le fichier `project.env` à la racine de chaque projet enfant, et le projet central `env-lists` qui sert de référentiel.
+
+## Le Fichier `project.env`
+
+Chaque projet enfant, basé sur le template, contient un fichier `project.env`. C'est le point d'entrée unique où l'utilisateur définit les métadonnées de son projet.
+
+Ce fichier est divisé en plusieurs sections :
+1.  **Variables injectées automatiquement :** Des informations comme le nom du projet (`PROJECT_NAME`), l'auteur (`AUTHOR`), etc., sont automatiquement remplies par le pipeline CI/CD. L'utilisateur n'a pas à s'en soucier.
+2.  **Variables à valider :** Ce sont les métadonnées de classification les plus importantes, comme `META_PRIORITY` et `META_GROUP`.
+3.  **Variables éditoriales :** Titres, descriptions, etc.
+4.  **Mots-clés :** Une liste de `META_TAGS` pour la recherche.
+
+Voici un extrait du `project.env` type :
+```yaml
+# ... (variables injectées) ...
+
+# === Variables à valider via YAML (clé) ===
+META_PRIORITY= PR0001       # clé pour "High"
+META_GROUP= GR0002          # clé pour "SASE"
+
+# ... (autres variables) ...
+
+META_TAGS="SASE, ZTNA, FortiSASE"
+```
+
+## Le Référentiel `env-lists` et la Validation
+
+Pour éviter que chaque utilisateur n'invente ses propres catégories (ex: "SASE", "Sase", "sase"), les valeurs des métadonnées critiques sont contrôlées.
+
+Le projet `env-lists` contient une série de fichiers YAML qui agissent comme des listes de valeurs autorisées. Par exemple, le fichier `meta_group.yaml` contient :
+```yaml
+GR0000: "Documentation"
+GR0001: "SD-WAN"
+GR0002: "SASE"
+# ... et ainsi de suite
+```
+
+Le job `prepare_env` du pipeline enfant (décrit en Annexe C) effectue alors la validation :
+1.  Il clone le projet `env-lists`.
+2.  Il lit la clé fournie par l'utilisateur dans `project.env` (ex: `GR0002`).
+3.  Il vérifie que cette clé existe bien dans le fichier YAML correspondant.
+4.  Si la clé est valide, il la remplace par sa valeur textuelle correspondante (ex: "SASE").
+5.  Si la clé est invalide, le pipeline s'arrête avec une erreur, forçant l'utilisateur à choisir une valeur correcte.
+
+Ce mécanisme garantit une **cohérence parfaite des métadonnées** sur tout le portail, ce qui est indispensable pour la fiabilité des filtres et de la recherche.

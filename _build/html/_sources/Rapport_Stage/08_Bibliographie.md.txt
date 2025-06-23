@@ -1,0 +1,29 @@
+# Bibliographie
+
+Cette section recense les références des documents, sites web et outils qui ont été essentiels à la réalisation de ce projet.
+
+## Technologies, Outils et Spécifications
+
+*   **Apache Module mod_auth_mellon**. *mod_auth_mellon Documentation*. [En ligne]. Uninett. Disponible sur <https://github.com/Uninett/mod_auth_mellon>. (Consulté pour la mise en place de l'authentification SAML).
+*   **Docker Inc.**. *Docker Documentation*. [En ligne]. Docker Inc. Disponible sur <https://docs.docker.com/>. (Consulté pour la création des environnements de build).
+*   **Fortinet**. *Fortinet Document Library*. [En ligne]. Fortinet. Disponible sur <https://docs.fortinet.com/>. (Consulté pour la configuration du FortiAuthenticator).
+*   **GitLab B.V.**. *GitLab CI/CD Documentation*. [En ligne]. GitLab B.V. Disponible sur <https://docs.gitlab.com/ce/ci/>. (Consulté tout au long du projet pour la configuration des pipelines).
+*   **Microsoft**. *Power BI Documentation*. [En ligne]. Microsoft. Disponible sur <https://docs.microsoft.com/en-us/power-bi/>. (Consulté pour le projet 2).
+*   **MyST Parser**. *MyST Parser Documentation*. [En ligne]. Executable Books. Disponible sur <https://myst-parser.readthedocs.io/en/latest/>. (Consulté pour la syntaxe Markdown avancée).
+*   **Pagefind**. *Pagefind Documentation*. [En ligne]. CloudCannon. Disponible sur <https://pagefind.app/>. (Consulté durant la phase d'implémentation de la recherche).
+*   **Pocoo Team**. *Jinja2 Documentation*. [En ligne]. Pallets Projects. Disponible sur <https://jinja.palletsprojects.com/en/3.1.x/>. (Consulté pour la création des templates).
+*   **SAML V2.0 Core Specification**. [En ligne]. OASIS Standard. Disponible sur <https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf>.
+*   **Sphinx**. *Sphinx documentation*. [En ligne]. The Sphinx Developers. Disponible sur <https://www.sphinx-doc.org/en/master/>. (Consulté tout au long du projet).
+*   **The Python Software Foundation**. *Python 3 documentation*. [En ligne]. Python Software Foundation. Disponible sur <https://docs.python.org/3/>. (Consulté pour le développement des scripts).
+*   **XCA - X Certificate and Key Management**. [En ligne]. Hopp, Christian. Disponible sur <https://hohnstaedt.de/xca/>.
+
+## Normes et Bonnes Pratiques
+
+*   **CommonMark Spec**. [En ligne]. John MacFarlane. Disponible sur <https://spec.commonmark.org/>.
+*   **Keep a Changelog**. [En ligne]. Olivier Lacan. Disponible sur <https://keepachangelog.com/en/1.0.0/>.
+*   **PEP 8 -- Style Guide for Python Code**. [En ligne]. Python.org. Disponible sur <https://www.python.org/dev/peps/pep-0008/>.
+
+## Références méthodologiques
+
+*   SCD Université Rennes I. *Droit et Sciences Politiques - Citer et rédiger une référence bibliographique*. Mise à jour 16 janvier 2019 [En ligne]. Disponible sur <http://focus.univrennes1.fr/print_content.php?pid=467660&sid=3828861> (consulté le 21/10/2022).
+*   UQAM Infosphère. *Présenter sa bibliographie : documents imprimés et électroniques*. 2011. Mise à jour 20 août 2014 [En ligne] Infosphère Sciences. Services des Bibliothèques de l'UQAM. <http://www.bibliotheques.uqam.ca/InfoSphere/sciences/module7/citer3.html> (consulté le 21/10/2022). 

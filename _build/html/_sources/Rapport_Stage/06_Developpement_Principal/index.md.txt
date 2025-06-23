@@ -1,0 +1,21 @@
+# Le Cœur du Sujet : L'Usine Logicielle
+
+Cette section constitue le cœur du rapport. Elle détaille le parcours de transformation d'une simple mission de développement en un projet d'architecture complet, visant à construire une usine logicielle de documentation.
+
+La narration suit un ordre logique :
+1.  **Le Mur :** La découverte d'une contrainte technique bloquante.
+2.  **La Réponse :** La conception d'une architecture pour surmonter le mur.
+3.  **L'Action :** La mise en œuvre et le fonctionnement de l'architecture.
+4.  **Le Nouveau Défi :** La gestion de la sécurité, un problème découlant du succès de la solution.
+5.  **L'Amélioration :** L'ajout de nouvelles fonctionnalités d'analyse sur la plateforme.
+
+```{toctree}
+:caption: Développement Principal
+:maxdepth: 2
+
+01_La_Mission_et_Le_Mur.md
+02_Le_Pivot_vers_la_CI_CD_et_la_Maitrise_de_la_Securite.md
+03_La_Plateforme_CI_CD_En_Action.md
+04_Le_Defi_de_la_Securite_Maitriser_l_Authentification.md
+05_Power_BI_pour_Analyser_l_Utilisation_de_la_Documentation.md
+```

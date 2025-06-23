@@ -1,0 +1,9 @@
+/* control the width of the article section ˜*/
+.bd-main .bd-content .bd-article-container {
+    max-width: 60em ;  /* default is 60em */
+}
+
+/* control the width of the entire page including the sidebars and the article sections ˜*/
+.bd-page-width {
+max-width: 88rem;  /* default is 88rem */
+}

@@ -1,0 +1,64 @@
+# Chapitre 3 : L'Usine Logicielle en Action
+
+Le chapitre précédent a présenté le plan de l'usine logicielle. Ce chapitre explique comment cette usine fonctionne concrètement, du point de vue de l'ingénieur qui publie sa documentation jusqu'au détail de l'orchestration des pipelines qui s'exécute en coulisses.
+
+## 3.1 Le Workflow Utilisateur : La Simplicité par l'Abstraction
+
+L'un des objectifs clés du projet était de masquer la complexité de l'usine. Pour l'ingénieur, le processus de publication est simple et se résume à une commande `git`.
+
+1.  **Création :** L'utilisateur crée son projet de documentation à partir d'un template GitLab, qui contient déjà toute la configuration nécessaire (pipeline enfant, structure de dossiers, etc.).
+2.  **Édition :** Il rédige sa documentation en Markdown, comme il le ferait pour n'importe quel projet.
+3.  **Publication :** Pour publier ou mettre à jour sa documentation, il ajoute simplement un tag à la fin de son message de commit.
+
+| Tag de commit | Action déclenchée |
+| :--- | :--- |
+| `[web-pub]` | Publication / Mise à jour de la documentation sur le Hub. |
+| `[web-unpub]`| Dépublication de la documentation du Hub. |
+| *(aucun tag)* | Le code est versionné sur GitLab, sans aucun impact sur le site. |
+
+Une simple commande `git commit -m "feat: ajout de mon guide [web-pub]"` suivie d'un `git push` suffit à déclencher toute l'usine logicielle.
+
+## 3.2 Sous le Capot : L'Orchestration des Pipelines
+
+Cette simplicité repose sur l'interaction entre les deux types de pipelines, dont le fonctionnement détaillé est décrit dans les annexes techniques. Le diagramme suivant résume ce flux.
+
+```{mermaid}
+%%{init: {'theme': 'neutral'}}%%
+flowchart LR
+    A["<b>Commit de l'ingénieur</b><br>avec tag [web-pub]"] --> Enfant;
+    subgraph Enfant [Pipeline Enfant]
+        direction TB
+        B["Build du site statique"] --> T["Déclenchement du Parent"];
+    end
+    Enfant --> Parent;
+    subgraph Parent [Pipeline Parent]
+        direction TB
+        D["Récupération des artefacts"] --> E["Indexation globale"] --> F["Déploiement"];
+    end
+    Parent --> G["Hub de Documentation<br><b>Mis à Jour</b>"];
+    
+    style A fill:#cfe2ff,stroke:#0D6EFD,stroke-width:2px
+    style G fill:#D1E7DD,stroke:#198754,stroke-width:4px
+```
+
+### Le Pipeline Enfant : Le Gardien de la Qualité
+
+Le pipeline enfant (détaillé en {ref}`annexe-c-le-pipeline-enfant-type`), présent dans chaque projet, agit comme un **contrôle qualité** et un atelier de préparation. Ses `jobs` clés sont :
+-   **`check` :** Il garantit la conformité et la standardisation. Grâce à une logique d'**auto-correction**, il restaure automatiquement les fichiers de configuration s'ils dévient du standard.
+-   **`build` :** Il transforme les sources Markdown en un site HTML complet.
+-   **`trigger` :** Il déclenche le pipeline Parent et lui passe le relais.
+
+### Le Pipeline Parent : L'Assembleur et le Livreur
+
+Le pipeline Parent (détaillé en {ref}`annexe-b-le-pipeline-parent`) est le **centre logistique** du silo. Ses `jobs` clés sont :
+-   **`fetch_artifacts` :** Il télécharge les sites HTML de tous les projets enfants de son périmètre.
+-   **`index_and_build` :** Un script Python (`gen_index.py`) assemble la page d'accueil, **injecte les métadonnées** pour la recherche dans le HTML, et lance Pagefind pour créer l'index global.
+-   **`deploy` :** Il copie les fichiers mis à jour sur le serveur web ou supprime le dossier d'un projet dépublié.
+
+## 3.3 Le Succès de l'Usine et le Nouveau Défi
+
+La mise en service de cette usine logicielle est un succès : la publication est désormais simple, fiable et entièrement automatisée. Cependant, ce succès a immédiatement fait émerger une nouvelle question, qui n'était plus technique mais de gouvernance :
+
+**Maintenant que n'importe qui peut publier si facilement du contenu, comment s'assurer que seules les bonnes personnes y ont accès ?**
+
+La plateforme devait héberger des documentations aux niveaux de confidentialité variés (public, interne, partenaire, etc.). Il devenait donc impératif de mettre en place un système de contrôle d'accès robuste. Le prochain chapitre décrit comment ce nouveau défi de la sécurité a été relevé.

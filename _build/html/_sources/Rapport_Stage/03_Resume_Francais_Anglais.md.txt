@@ -1,0 +1,21 @@
+# Résumé Français et Anglais
+
+## Résumé
+
+Ce rapport présente les travaux réalisés durant un stage de 16 semaines au sein de l'équipe Consulting Systems Engineering de Fortinet, du 7 avril au 25 juillet 2025. Le stage s'est articulé autour de deux projets majeurs visant à optimiser la gestion de l'information et des projets internes.
+
+Le premier projet a consisté en l'implémentation d'une page d'accueil dynamique pour le site web interne de l'équipe. L'objectif était de centraliser et de faciliter l'accès aux recherches des ingénieurs avant-vente, avec l'intégration potentielle d'un moteur de recherche par mots clés. Ce développement s'inscrit dans le pipeline GitHub existant, transformant la documentation Markdown en sites web.
+
+Le second projet s'est concentré sur la modélisation et l'exploitation des données issues des outils Microsoft Power Automate, utilisés pour le suivi des projets d'équipe. L'objectif était d'extraire ces données dans une nouvelle base de données Power BI afin de générer des rapports et des tableaux de bord pertinents pour les dirigeants, le management et les ingénieurs. Ces rapports visent à améliorer le suivi de l'avancement des projets, l'analyse des performances et l'identification des projets nécessitant une attention particulière. L'intégration de ces visualisations sur Microsoft SharePoint a également été une composante clé.
+
+Ces initiatives ont permis de significativement améliorer l'accessibilité de l'information technique et la capacité d'analyse décisionnelle de l'équipe, renforçant ainsi l'efficacité des opérations avant-vente.
+
+## Abstract
+
+This report details the work undertaken during a 16-week internship within the Consulting Systems Engineering team at Fortinet, from April 7 to July 25, 2025. The internship focused on two major projects aimed at optimizing internal information and project management.
+
+ The first project involved implementing a dynamic homepage for the team's internal website. The objective was to centralize and facilitate access to pre-sales engineers' research, with the potential integration of a keyword search engine. This development was integrated into the existing GitHub pipeline, which transforms Markdown documentation into websites.
+
+ The second project focused on modeling and leveraging data from Microsoft Power Automate tools, used for tracking team projects. The goal was to extract this data into a new Power BI database to generate relevant reports and dashboards for executives, management, and engineers. These reports aim to improve project progress monitoring, performance analysis, and the identification of projects requiring special attention. The integration of these visualizations on Microsoft SharePoint was also a key component.
+
+ These initiatives have significantly improved the accessibility of technical information and the team's decision-making analytical capabilities, thereby enhancing the efficiency of pre-sales operations. 
