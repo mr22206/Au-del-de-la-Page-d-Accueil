@@ -7,3 +7,11 @@
 .bd-page-width {
 max-width: 88rem;  /* default is 88rem */
 }
+
+.mermaid {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: fit-content; /* Pas besoin de !important ici */
+    margin-bottom: 20px; /* Ni ici */
+}

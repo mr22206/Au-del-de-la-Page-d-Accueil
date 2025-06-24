@@ -17,7 +17,7 @@ Pour ce stage, l'entité d'accueil était le siège social de la région EMEA, d
 
 ### 1.1 L'équipe Consulting Systems Engineering
 
-Mon intégration s'est faite au sein de l'équipe Consulting Systems Engineering, un pôle d'expertise technique agissant comme un maillon essentiel entre la R&D et les ingénieurs avant-vente des régions EMEA (Europe, Moyen-Orient, Afrique) et APAC (Asie-Pacifique).
+Mon intégration s'est faite au sein de l'équipe Consulting Systems Engineering, un pôle d'expertise technique agissant comme un maillon essentiel entre la R&D et les ingénieurs avant-vente des régions EMEA (Europe, Moyen-Orient, Afrique).
 
 La mission de l'équipe est de fournir un support technique avancé, de développer des outils internes, des démonstrations et de la documentation pour aider les équipes terrain à maîtriser et vendre les solutions complexes de Fortinet.
 

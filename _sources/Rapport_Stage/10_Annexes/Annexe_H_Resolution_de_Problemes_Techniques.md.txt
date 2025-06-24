@@ -16,7 +16,7 @@ $ pip install -r requirements.txt
 
 error: externally-managed-environment
 × This environment is externally managed
-╰─> To install Python packages system-wide, use apt-get.
+> To install Python packages system-wide, use apt-get.
     To install Python packages into an environment, create a virtual
     environment using `python3 -m venv venv`.
 ```
