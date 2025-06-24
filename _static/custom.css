@@ -9,9 +9,9 @@ max-width: 88rem;  /* default is 88rem */
 }
 
 .mermaid {
-    display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: fit-content; /* Pas besoin de !important ici */
-    margin-bottom: 20px; /* Ni ici */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content; /* S'adapte à la largeur du diagramme */
+    margin-bottom: 20px; /* Conserve l'espace en dessous */
 }
