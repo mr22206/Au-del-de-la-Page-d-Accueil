@@ -3,7 +3,6 @@
 
 Ce glossaire répertorie les abréviations et les termes techniques clés utilisés dans ce rapport, ainsi que leurs définitions, afin de faciliter la compréhension du lecteur.
 
-*   **APAC :** Asia-Pacific. Région géographique comprenant l'Asie et le Pacifique.
 *   **Apache :** Serveur HTTP Apache. Logiciel de serveur web open-source largement utilisé.
 *   **BI :** Business Intelligence. Ensemble de technologies et de processus pour transformer des données brutes en informations exploitables pour la prise de décision.
 *   **CI/CD :** Continuous Integration/Continuous Delivery (ou Deployment). Méthodologies et pratiques permettant d'intégrer et de déployer fréquemment et de manière fiable des modifications de code.
